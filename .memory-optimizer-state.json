@@ -1,8 +1,9 @@
 {
   "q_values": {
-    "mem_1": 2.2584417678694875,
+    "mem_1": 0.5,
     "mem_2": 0.5,
-    "mem_3": 0.5
+    "mem_3": 0.5,
+    "mem_4": 0.5
   },
   "config": {
     "alpha": 0.01,
@@ -14,7 +15,7 @@
   "stats": {
     "total_recalls": 5,
     "successful_recalls": 5,
-    "total_stores": 3,
+    "total_stores": 7,
     "avg_lookup_time": 0,
     "access_history": [
       {
@@ -54,5 +55,5 @@
       }
     ]
   },
-  "timestamp": 1771785166205
+  "timestamp": 1771853791875
 }
