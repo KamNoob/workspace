@@ -1,0 +1,21 @@
+{
+  "name": "memory-optimizer",
+  "version": "1.0.0",
+  "description": "RL-Based Memory Optimizer using Q-Learning + TD(λ)",
+  "main": "lib/optimizer.js",
+  "bin": {
+    "memory-optimizer": "bin/cli.js"
+  },
+  "keywords": [
+    "reinforcement-learning",
+    "memory",
+    "q-learning",
+    "eligibility-traces",
+    "openclaw-skill"
+  ],
+  "author": "Art",
+  "license": "MIT",
+  "scripts": {
+    "test": "node tests/test-optimizer.js"
+  }
+}

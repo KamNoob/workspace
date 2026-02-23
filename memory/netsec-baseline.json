@@ -1,0 +1,17 @@
+{
+  "updated": "2026-02-15T22:20:00Z",
+  "timestamp": 1745539200000,
+  "open_ports": [
+    {"port": 22, "protocol": "tcp", "service": "ssh"},
+    {"port": 53, "protocol": "tcp", "service": "dns"},
+    {"port": 631, "protocol": "tcp", "service": "ipp"},
+    {"port": 3306, "protocol": "tcp", "service": "mysql"},
+    {"port": 5432, "protocol": "tcp", "service": "postgresql"},
+    {"port": 11434, "protocol": "tcp", "service": "ollama"},
+    {"port": 18789, "protocol": "tcp", "service": "openclaw-gateway"},
+    {"port": 18792, "protocol": "tcp", "service": "openclaw-gateway-2"},
+    {"port": 33060, "protocol": "tcp", "service": "mysql-x-protocol"},
+    {"port": 57706, "protocol": "tcp", "service": "tailscale"}
+  ],
+  "notes": "All new ports are legitimate services. Baseline updated 2026-02-15."
+}

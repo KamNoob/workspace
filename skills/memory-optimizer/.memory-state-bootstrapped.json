@@ -1,0 +1,35 @@
+{
+  "q_values": {
+    "mem_1": 0.8,
+    "mem_2": 0.8,
+    "mem_3": 0.8,
+    "mem_4": 0.8,
+    "mem_5": 0.8,
+    "mem_6": 0.5,
+    "mem_7": 0.5,
+    "mem_8": 0.5,
+    "mem_9": 0.8,
+    "mem_10": 0.8,
+    "mem_11": 0.8,
+    "mem_12": 0.5,
+    "mem_13": 0.5,
+    "mem_14": 0.8,
+    "mem_15": 0.8,
+    "mem_16": 0.5
+  },
+  "config": {
+    "alpha": 0.01,
+    "gamma": 0.99,
+    "lambda": 0.9,
+    "max_memories": 1000,
+    "forgetting_threshold": 0.05
+  },
+  "stats": {
+    "total_recalls": 0,
+    "successful_recalls": 0,
+    "total_stores": 16,
+    "avg_lookup_time": 0,
+    "access_history": []
+  },
+  "timestamp": 1771798961928
+}

@@ -1,0 +1,58 @@
+{
+  "q_values": {
+    "mem_1": 2.2584417678694875,
+    "mem_2": 0.5,
+    "mem_3": 0.5
+  },
+  "config": {
+    "alpha": 0.01,
+    "gamma": 0.99,
+    "lambda": 0.9,
+    "max_memories": 1000,
+    "forgetting_threshold": 0.05
+  },
+  "stats": {
+    "total_recalls": 5,
+    "successful_recalls": 5,
+    "total_stores": 3,
+    "avg_lookup_time": 0,
+    "access_history": [
+      {
+        "timestamp": 1771785166204,
+        "query": "Q-Learning",
+        "memory_id": "mem_1",
+        "reward": 15.1,
+        "lookup_time": 0
+      },
+      {
+        "timestamp": 1771785166204,
+        "query": "Q-Learning",
+        "memory_id": "mem_1",
+        "reward": 15.2,
+        "lookup_time": 0
+      },
+      {
+        "timestamp": 1771785166204,
+        "query": "Q-Learning",
+        "memory_id": "mem_1",
+        "reward": 15.3,
+        "lookup_time": 0
+      },
+      {
+        "timestamp": 1771785166204,
+        "query": "Q-Learning",
+        "memory_id": "mem_1",
+        "reward": 15.4,
+        "lookup_time": 0
+      },
+      {
+        "timestamp": 1771785166204,
+        "query": "Q-Learning",
+        "memory_id": "mem_1",
+        "reward": 15.5,
+        "lookup_time": 0
+      }
+    ]
+  },
+  "timestamp": 1771785166205
+}

@@ -1,0 +1,78 @@
+Starting network scan for 192.168.0.0/24 at 2026-02-01_21-49-55...
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-02-01 21:49 GMT
+Nmap scan report for SkyRouter.Home (192.168.0.1)
+Host is up (0.0050s latency).
+Not shown: 98 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+53/tcp open  domain
+80/tcp open  http
+
+Nmap scan report for UNKNOWN (192.168.0.9)
+Host is up (0.083s latency).
+Not shown: 97 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+80/tcp   open  http
+514/tcp  open  shell
+8080/tcp open  http-proxy
+
+Nmap scan report for SKY+HD (192.168.0.10)
+Host is up (0.0051s latency).
+Not shown: 91 filtered tcp ports (no-response), 3 closed tcp ports (conn-refused)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT      STATE SERVICE
+80/tcp    open  http
+5000/tcp  open  upnp
+8008/tcp  open  http
+8080/tcp  open  http-proxy
+49153/tcp open  unknown
+49155/tcp open  unknown
+
+Nmap scan report for UNKNOWN (192.168.0.23)
+Host is up (0.0090s latency).
+Not shown: 95 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+80/tcp   open  http
+443/tcp  open  https
+631/tcp  open  ipp
+8080/tcp open  http-proxy
+9100/tcp open  jetdirect
+
+Nmap scan report for UNKNOWN (192.168.0.179)
+Host is up (0.023s latency).
+Not shown: 99 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+49152/tcp open  unknown
+
+Nmap scan report for UNKNOWN (192.168.0.187)
+Host is up (0.012s latency).
+Not shown: 67 closed tcp ports (conn-refused), 32 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT      STATE SERVICE
+49152/tcp open  unknown
+
+Nmap scan report for UNKNOWN (192.168.0.189)
+Host is up (0.028s latency).
+Not shown: 73 closed tcp ports (conn-refused), 25 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+53/tcp   open  domain
+8888/tcp open  sun-answerbook
+
+Nmap scan report for UNKNOWN (192.168.0.210)
+Host is up (0.00025s latency).
+Not shown: 98 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+3389/tcp open  ms-wbt-server
+
+Nmap scan report for UNKNOWN (192.168.0.227)
+Host is up (0.0053s latency).
+Not shown: 99 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT   STATE SERVICE
+80/tcp open  http
+
+Nmap done: 256 IP addresses (13 hosts up) scanned in 28.53 seconds
+Scan complete.
+Hosts found: 9
+Open ports found: 23

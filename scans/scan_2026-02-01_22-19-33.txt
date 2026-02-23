@@ -1,0 +1,9 @@
+# Nmap 7.94SVN scan initiated Sun Feb  1 22:19:33 2026 as: nmap --open -oN /home/art/.openclaw/workspace/scans/scan_2026-02-01_22-19-33.txt 192.168.0.210
+Nmap scan report for UNKNOWN (192.168.0.210)
+Host is up (0.00017s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+3389/tcp open  ms-wbt-server
+
+# Nmap done at Sun Feb  1 22:19:33 2026 -- 1 IP address (1 host up) scanned in 0.06 seconds

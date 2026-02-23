@@ -1,0 +1,88 @@
+# Nmap 7.94SVN scan initiated Wed Feb  4 21:14:49 2026 as: nmap --open -oN /home/art/.openclaw/workspace/scans/scan_2026-02-04_21-14-49.txt 192.168.0.0/24
+Nmap scan report for SkyRouter.Home (192.168.0.1)
+Host is up (0.0072s latency).
+Not shown: 995 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+53/tcp    open  domain
+80/tcp    open  http
+5431/tcp  open  park-agent
+31337/tcp open  Elite
+49163/tcp open  unknown
+
+Nmap scan report for UNKNOWN (192.168.0.9)
+Host is up (0.039s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+80/tcp   open  http
+514/tcp  open  shell
+8080/tcp open  http-proxy
+
+Nmap scan report for SKY+HD (192.168.0.10)
+Host is up (0.0059s latency).
+Not shown: 983 filtered tcp ports (no-response), 8 closed tcp ports (conn-refused)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT      STATE SERVICE
+80/tcp    open  http
+1234/tcp  open  hotline
+5000/tcp  open  upnp
+8008/tcp  open  http
+8080/tcp  open  http-proxy
+9091/tcp  open  xmltec-xmlmail
+49153/tcp open  unknown
+49155/tcp open  unknown
+49160/tcp open  unknown
+
+Nmap scan report for UNKNOWN (192.168.0.23)
+Host is up (0.0076s latency).
+Not shown: 994 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+80/tcp   open  http
+443/tcp  open  https
+631/tcp  open  ipp
+8080/tcp open  http-proxy
+9100/tcp open  jetdirect
+9220/tcp open  unknown
+
+Nmap scan report for UNKNOWN (192.168.0.32)
+Host is up (0.011s latency).
+Not shown: 999 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+8009/tcp open  ajp13
+
+Nmap scan report for iPhone (192.168.0.179)
+Host is up (0.016s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+49152/tcp open  unknown
+62078/tcp open  iphone-sync
+
+Nmap scan report for UNKNOWN (192.168.0.188)
+Host is up (0.0095s latency).
+Not shown: 999 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+10002/tcp open  documentum
+
+Nmap scan report for 192.168.0.189
+Host is up (0.0057s latency).
+Not shown: 789 filtered tcp ports (no-response), 208 closed tcp ports (conn-refused)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+53/tcp   open  domain
+8888/tcp open  sun-answerbook
+9050/tcp open  tor-socks
+
+Nmap scan report for UNKNOWN (192.168.0.210)
+Host is up (0.00020s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+3389/tcp open  ms-wbt-server
+
+Nmap scan report for 192.168.0.227
+Host is up (0.012s latency).
+Not shown: 999 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT   STATE SERVICE
+80/tcp open  http
+
+# Nmap done at Wed Feb  4 21:15:02 2026 -- 256 IP addresses (12 hosts up) scanned in 12.58 seconds

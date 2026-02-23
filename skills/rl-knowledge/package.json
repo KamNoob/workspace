@@ -1,0 +1,31 @@
+{
+  "name": "rl-knowledge",
+  "version": "1.0.0",
+  "description": "Reinforcement Learning Knowledge Base - Sutton & Barto integrated skill",
+  "main": "lib/rl-kb.js",
+  "bin": {
+    "rl": "bin/rl-cli.js"
+  },
+  "keywords": [
+    "reinforcement-learning",
+    "rl",
+    "algorithms",
+    "knowledge-base",
+    "openclaw-skill"
+  ],
+  "author": "Art (Enhanced from Sutton & Barto 2nd Ed)",
+  "license": "CC-BY-NC-ND-2.0",
+  "repository": {
+    "type": "git",
+    "url": "local://~/.openclaw/workspace/skills/rl-knowledge"
+  },
+  "scripts": {
+    "test": "node tests/test-queries.js",
+    "index": "node lib/build-index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

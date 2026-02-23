@@ -1,0 +1,33 @@
+Starting network scan for 192.168.0.1-10 at 2026-02-01_21-34-12...
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-02-01 21:34 GMT
+Nmap scan report for SkyRouter.Home (192.168.0.1)
+Host is up (0.0060s latency).
+Not shown: 98 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+53/tcp open  domain
+80/tcp open  http
+
+Nmap scan report for 192.168.0.9
+Host is up (0.20s latency).
+Not shown: 97 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+80/tcp   open  http
+514/tcp  open  shell
+8080/tcp open  http-proxy
+
+Nmap scan report for SKY+HD (192.168.0.10)
+Host is up (0.0082s latency).
+Not shown: 91 filtered tcp ports (no-response), 3 closed tcp ports (conn-refused)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT      STATE SERVICE
+80/tcp    open  http
+5000/tcp  open  upnp
+8008/tcp  open  http
+8080/tcp  open  http-proxy
+49153/tcp open  unknown
+49155/tcp open  unknown
+
+Nmap done: 10 IP addresses (4 hosts up) scanned in 5.73 seconds
+Scan complete.
+Hosts found: 3
+Open ports found: 11
