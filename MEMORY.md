@@ -102,9 +102,24 @@ Spawned as one-shot tasks (mode=run). Each completes task and reports.
 - **Verify completion indicators** — All agents must report back via system messages, not just exist in session logs
 - Pay attention to patterns: if 5 agents delivered but 3 didn't, that's a problem to flag immediately
 
+### Knowledge Building Workflow (Art's Standard Process - 2026-02-27)
+**Mandatory process for all unknown information:**
+1. **Scout** → Research & gather information
+2. **Veritas** → Verify the information's accuracy  
+3. **Chronicle** → Write comprehensive documentation
+4. **Store** → Add to library (MEMORY.md, docs/, or reference files)
+
+**Principles:**
+- Never answer a question twice without reference material
+- All discoveries become permanent institutional knowledge
+- Every research project produces documented output
+- Build a searchable knowledge base over time
+
+**Status:** ACTIVE - All future research follows this workflow
+
 ## Current Projects (Session 2026-02-26)
 
-### Commander Project ✅ LIVE & ORGANIZED
+### Commander Project ✅ REFACTORED & ORGANIZED (2026-02-27)
 - **Project Root:** ~/projects/commander/
 - **Dashboard Location:** ~/projects/commander/commander-dashboard/
 - **API Location:** ~/projects/commander/projects-tasks-api/
@@ -112,11 +127,18 @@ Spawned as one-shot tasks (mode=run). Each completes task and reports.
 - **Tech:** React + Vite (frontend) | Node/Express (backend)
 - **Status:** Both running, fully integrated
 
-### Frontend: Commander Dashboard ✅
-- **Tech:** React 18 + Vite + TypeScript + Tailwind CSS
-- **Port:** 3000 (Tailscale) / 5173 (Vite dev)
-- **Features:** Agent roster, projects view, project detail, responsive UI
+### Frontend: Commander Dashboard ✅ REFACTORED
+- **Tech:** React 18 + Vite + TypeScript + Tailwind CSS + Lucide Icons
+- **Port:** 3000 (or 3001 if busy)
+- **Features:** Agent roster, projects view, project detail, responsive UI, **chat panel**
 - **Data Source:** http://localhost:4000/api/projects
+- **Chat Integration:** Messages sent to http://localhost:4001/api/chat
+- **UI Improvements:** 
+  - Modularized components (Header, AgentCard, ProjectCard, Chat, etc.)
+  - Hardware optimized (mobile-first, fluid typography, touch-friendly)
+  - Real-time polling capability
+  - Error handling and retry logic
+- **Start:** `npm run dev` from dashboard directory
 
 ### Backend: Projects/Tasks API ✅
 - **Tech:** Node/Express
@@ -125,6 +147,24 @@ Spawned as one-shot tasks (mode=run). Each completes task and reports.
 - **Data:** 4 projects + 4 tasks (sample)
 - **Endpoints:** All CRUD ops tested ✓
 - **Response time:** <50ms per request
+
+### Chat Backend Server ✅ NEW (CONNECTED TO MORPHEUS)
+- **Tech:** Node/Express
+- **Port:** 4001
+- **Purpose:** Receives chat messages from dashboard, stores them, integrates with Morpheus
+- **CORS:** Enabled (allows cross-origin requests from dashboard)
+- **Storage:** File-based (chat-messages.json)
+- **Start:** `node chat-server.js` from dashboard directory
+- **Admin Endpoints:**
+  - `GET /api/admin/pending` — Fetch unanswered user messages
+  - `POST /api/admin/respond` — Submit Morpheus response
+  - `GET /api/admin/conversations` — View all chats
+- **Morpheus Integration:** Can fetch pending messages and respond directly via API
+
+### Chat CLI (Optional) ✅ NEW
+- **Purpose:** Interactive CLI to monitor and respond to user messages
+- **Storage:** Reads/writes to same chat-messages.json
+- **Start:** `node chat-cli.js` from dashboard directory
 
 ### Deployment & Documentation
 - **Systemd Services:** commander-api.service, commander-dashboard.service
