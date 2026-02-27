@@ -40,7 +40,7 @@
 ## System Status
 
 - **Gateway:** Auto-startup enabled (tested via reboot)
-- **Cron jobs:** 6 active (Notion syncs, alerts, scans)
+- **Cron jobs:** 2 active (Overdue alerts, security scans) — Notion syncs removed
 - **Sub-agent tools:** web_fetch enabled
 - **Security:** SSH, RDP, MySQL, PostgreSQL open locally; UFW not installed
 
@@ -49,13 +49,6 @@
 - **Version:** v2026.2.2-3 (latest: v2026.2.17)
 - **Update frequency:** Every few days to a week
 - **Haiku:** Primary model with Sonnet/Gemini fallbacks
-
-## Notion Mission Control
-
-- **Status:** 4 databases + hub pages created
-- **Workspace ID:** 30d1ae7a-37e2-8000-bad9-d97541e42241
-- **Synced:** Projects, Tasks, Team, Knowledge Base
-- **Team agents:** Morpheus (Commander), Codex, Cipher, Scout, Chronicle, Sentinel, Lens, Echo, Veritas
 
 ## Agent Collective (Subagents)
 
