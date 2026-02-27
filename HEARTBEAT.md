@@ -8,12 +8,12 @@ Monitor these sync scripts and batch their status:
 - sync-projects.sh
 - sync-task-updates.sh
 
-**Only alert if:**
+**Alert only if:**
 - Any script fails (non-zero exit)
 - Gateway disconnects without auto-reconnect within 5s
 - Database sync errors
 
-**Otherwise:** Silent (no batch summary).
+**Otherwise:** Completely silent (no responses, no HEARTBEAT_OK).
 
 ---
 
