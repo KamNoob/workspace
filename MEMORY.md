@@ -74,11 +74,15 @@ Spawned as one-shot tasks (mode=run). Each completes task and reports.
 ## Morpheus Working Notes
 
 ### Session Health & Context Management (2026-02-27)
-- **Decision:** Auto-reset sessions when approaching context window limit
-- **Trigger:** 90K+ tokens (80% of Haiku 4.5's safe estimate)
+- **Decision:** Auto-reset sessions (main + agents) when approaching context window limit
+- **Triggers (Per-Model):**
+  - Haiku 4.5: 90K tokens
+  - Sonnet 4.5/4.6: 100K tokens
+  - Opus 4.5: 100K tokens
 - **Behavior:** Announce reset, summarize state, spawn continuation automatically
-- **Implementation:** Monitored during active multi-step tasks
+- **Implementation:** Monitored during active multi-step tasks (main session) and extended agent tasks
 - **User action:** None required; seamless across sessions
+- **Agent Handling:** One-shot agents (mode=run) rarely hit limits; monitor only for extended investigations
 
 ### Art's Preferences (Session 2026-02-25)
 
