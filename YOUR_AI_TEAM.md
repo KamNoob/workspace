@@ -2,6 +2,8 @@
 
 Everything you need to know about your team of AI specialists.
 
+> _This document is authoritative for team structure. Update it whenever you add, remove, or reconfigure agents._
+
 ---
 
 ## 🎬 Your Team in Action
@@ -88,6 +90,8 @@ Each team member has:
 
 ## 🚀 Getting Started
 
+(If you're reading this after the initial setup, remember to revisit the top section when the roster changes.)
+
 ### 1. View your team
 https://www.notion.so/3dc9665ec16d4641870389e086f7420d
 
@@ -114,6 +118,8 @@ sessions_spawn(
   agentId="codex"
 )
 ```
+
+> You can run this command from the workspace root or via the control panel; agent IDs correspond to the **Team database** entries.
 
 ### Check who's available
 View Team database → filter by Status = "Active"

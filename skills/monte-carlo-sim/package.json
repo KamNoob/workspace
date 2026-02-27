@@ -1,0 +1,25 @@
+{
+  "name": "monte-carlo-sim",
+  "version": "1.0.0",
+  "description": "Monte Carlo simulation engine for probability, integration, and risk modeling",
+  "main": "lib/simulator.js",
+  "bin": {
+    "mc": "bin/mc-cli.js"
+  },
+  "scripts": {
+    "test": "node tests/test.js",
+    "example:integral": "node bin/mc-cli.js integrate 'x*x' 0 1 --samples 100000",
+    "example:pi": "node bin/mc-cli.js pi --samples 1000000",
+    "example:probability": "node bin/mc-cli.js probability 'Math.random() > 0.7' --samples 100000"
+  },
+  "keywords": [
+    "monte-carlo",
+    "simulation",
+    "probability",
+    "numerical-integration",
+    "statistics",
+    "risk-modeling"
+  ],
+  "author": "Art",
+  "license": "MIT"
+}
