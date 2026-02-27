@@ -73,6 +73,13 @@ Spawned as one-shot tasks (mode=run). Each completes task and reports.
 
 ## Morpheus Working Notes
 
+### Session Health & Context Management (2026-02-27)
+- **Decision:** Auto-reset sessions when approaching context window limit
+- **Trigger:** 90K+ tokens (80% of Haiku 4.5's safe estimate)
+- **Behavior:** Announce reset, summarize state, spawn continuation automatically
+- **Implementation:** Monitored during active multi-step tasks
+- **User action:** None required; seamless across sessions
+
 ### Art's Preferences (Session 2026-02-25)
 
 1. **Action > Permission** — Announce the plan, then execute with confidence. Don't ask "would you like me to...?" unless there's real uncertainty.
