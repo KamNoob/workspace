@@ -1,5 +1,23 @@
 # HEARTBEAT.md
 
+## Chat Monitoring (Real-Time)
+
+Check for pending chat messages via webhook listener:
+- Webhook listener running on port 4002
+- Chat server POSTs to `http://localhost:4002/webhook/message` on new user messages
+- Notifications logged to `/tmp/morpheus-chat-notifications.log`
+
+**Alert when:**
+- New pending messages detected in log
+- Show message content and conversation ID
+
+**Response protocol:**
+- Fetch pending via: `curl -s http://localhost:4001/api/admin/pending`
+- Generate response to user
+- POST response via: `curl -X POST http://localhost:4001/api/admin/respond -d '{conversationId, response}'`
+
+---
+
 ## Sync Batch Check (hourly)
 
 Monitor these sync scripts and batch their status:
