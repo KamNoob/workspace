@@ -1,4 +1,8 @@
-# HEARTBEAT.md
+# HEARTBEAT.md — Morpheus Monitoring Protocol
+
+**Reference:** PROCESS_FLOWS.md for task execution.
+
+---
 
 ## Chat Monitoring (Real-Time)
 
@@ -12,9 +16,10 @@ Check for pending chat messages via webhook listener:
 - Show message content and conversation ID
 
 **Response protocol:**
-- Fetch pending via: `curl -s http://localhost:4001/api/admin/pending`
-- Generate response to user
-- POST response via: `curl -X POST http://localhost:4001/api/admin/respond -d '{conversationId, response}'`
+- Identify task type (research, code, verification, etc.)
+- Reference PROCESS_FLOWS.md for correct flow
+- Spawn appropriate agent or execute task
+- Report results back to user
 
 ---
 
@@ -59,7 +64,7 @@ Monitor these sync scripts and batch their status:
 ## Agent Session Health (Spawned Sub-Agents)
 
 **Monitoring:**
-- Track token usage for long-running agents (Codex, Scout, Chronicle, Sentinel, etc.)
+- Track token usage for long-running agents (Codex, Scout, etc.)
 - Same per-model thresholds apply
 - For multi-step agent tasks:
   1. Check agent session health via `sessions_list` 
@@ -67,3 +72,13 @@ Monitor these sync scripts and batch their status:
   3. Chain results back to main session
 
 **Note:** One-shot agent runs (mode=run) typically complete before hitting limits. Monitor only for extended investigations or multi-part tasks.
+
+---
+
+## Failure Tracking
+
+Before responding to heartbeat or any task:
+- Read MORPHEUS_FAILURES.md
+- If current task matches a previous failure pattern, execute correctly this time
+- If you skip a process flow, log it immediately
+- Reference guide prevents repeated mistakes

@@ -1,0 +1,8 @@
+# Q-Learning Agent Selection Task Execution Log
+# Format: One JSON object per line (JSONL)
+# Updated after each task completion
+# Used to track outcomes for Q-value updates
+
+# Example entries (not yet populated, system will add them):
+# {"timestamp":"2026-02-28T19:40:00Z","task_type":"research","agent":"Scout","quality_score":0.95,"success":true,"time_minutes":8.5}
+# {"timestamp":"2026-02-28T19:50:00Z","task_type":"code","agent":"Codex","quality_score":0.88,"success":true,"time_minutes":12.0}

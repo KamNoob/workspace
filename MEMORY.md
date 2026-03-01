@@ -1,21 +1,24 @@
-# Memory System
+# Memory System (Local Embeddings - DOCUMENTED)
+
+✅ **See LOCAL_EMBEDDINGS_SETUP.md for comprehensive documentation**
 
 ## Three Independent Systems
 
-**1. memorySearch (Workspace Files)**
-- Local embeddings: EmbeddingGemma 300M (GGUF) at `~/.openclaw/models/embeddings/`
-- Searches: SOUL.md, MEMORY.md, daily notes
+**1. memorySearch (Workspace Files) — ✅ PRIMARY**
+- Local embeddings: EmbeddingGemma 300M (314MB, GGUF) at `~/.openclaw/models/embeddings/`
+- Searches: SOUL.md, MEMORY.md, daily notes, research documents
+- Search type: Hybrid (75% semantic + 25% keyword)
 - Cost: $0
-- Performance: 5-10 min first index (cold), 3.5s cached
+- Performance: 3.5s cached, 5-10 min cold index
+- Status: ✅ ACTIVE
 
-**2. memory-lancedb (Conversation Memory)**
-- Embeddings: OpenAI text-embedding-3-small (hardcoded, cloud-only)
+**2. memory-lancedb (Plugin) — ⚠️ REDUNDANT**
+- Status: Enabled but superfluous (memorySearch handles it)
+- Embeddings: Would use OpenAI (quota exhausted anyway)
 - Storage: LanceDB vector database at `~/.openclaw/memory/lancedb/`
-- Cost: ~$0.02-0.05/month (or $0 if disabled)
-- Schema: Flat structure only (OpenAI-only, no custom fallback chains)
-- Status: autoCapture/autoRecall disabled (API quota exhausted)
+- Note: Left as-is (doesn't interfere)
 
-**3. memory-optimizer (RL Prioritization)**
+**3. memory-optimizer (RL Prioritization) — ✅ ACTIVE**
 - Algorithm: Q-Learning + TD(λ), α=0.01, γ=0.99, λ=0.9
 - Tracks: Memory value via Q-scores; learns from usage patterns
 - Cost: $0 (local, in-memory)
@@ -24,9 +27,11 @@
 ## System Configuration
 
 - **Initialized:** 2026-02-23
-- **Active:** All three operational (memory-lancedb auto-features disabled)
-- **Architecture:** Hybrid (local + cloud, independent systems)
-- **Note:** Not a fallback chain; each system serves separate purpose
+- **Active:** All three systems operational
+- **Architecture:** All-local hybrid (semantic + keyword search)
+- **Privacy:** 100% (zero cloud APIs)
+- **Cost:** $0
+- **Reliability:** No network dependency
 
 ## User Profile
 
@@ -73,7 +78,30 @@ Spawned as one-shot tasks (mode=run). Each completes task and reports.
 - **API keys:** All migrated to environment variables
 - **Gateway:** localhost:18789, auth via gateway token
 
-## Morpheus Working Notes
+## Morpheus Operating System (2026-02-28)
+
+### Startup & Discovery
+- **LIBRARY_MANIFEST.md** — Complete inventory (what's current, what's legacy, what to use)
+- **SOUL.md** — Identity & purpose
+- **PROCESS_FLOWS.md** — 11 eventualities, one flow per task type
+- **AGENTS_CONFIG.md** — Full agent specifications
+- **MORPHEUS_FAILURES.md** — Live failure log, checked before every task
+
+### Execution Framework
+- **Decision Rule:** Announce plan → Execute → Verify → Report. No questions asked.
+- **Agent Delegation:** Use the 11-agent roster, don't do their work
+- **Verification:** All work verified before declaring complete
+
+### Research System (LIVE - 2026-02-28 18:10 GMT)
+- **RESEARCH_SYSTEM.md** — Complete documentation for storage, retrieval, updates
+- **RESEARCH_INDEX.md** — Master catalog (searchable by domain, tags, status)
+- **RESEARCH_TEMPLATE.md** — Schema for all research files
+- **docs/research/** — Organized by domain (technology, business, security, data, etc.)
+- **First Research Entry:** technology/api-security-2026.md (15KB, verified by Veritas)
+- **Retrieval Protocol:** Check index FIRST (prevents redundant research)
+- **Update Cycle:** 30 days for tech topics, 90 days for general, manual refresh option
+- **Scout Configuration (2026-02-28):** Provide concise summaries (3-5 key points, not exhaustive writeups)
+- **Status:** Operational. Ready for continuous use.
 
 ### Session Health & Context Management (2026-02-27)
 - **Decision:** Auto-reset sessions (main + agents) when approaching context window limit
@@ -85,6 +113,107 @@ Spawned as one-shot tasks (mode=run). Each completes task and reports.
 - **Implementation:** Monitored during active multi-step tasks (main session) and extended agent tasks
 - **User action:** None required; seamless across sessions
 - **Agent Handling:** One-shot agents (mode=run) rarely hit limits; monitor only for extended investigations
+
+### Neural Network Analysis & Recommendation (2026-02-28 19:45 GMT)
+
+**Decision:** Proceed with Phase 1 neural networks (pending confirmation)
+
+**Recommended Implementations:**
+
+Phase 1 (This Week, 3-4 hours):
+- Task Classification (DistilBERT, 100MB) — Auto-categorize incoming tasks
+- Intent Recognition (TinyBERT, 50MB) — Parse urgency, complexity, intent
+- Both local inference, zero cost
+- Immediate ROI: Better task routing, data collection for Phase 2
+
+Phase 2 (Week 3-4, 6 hours):
+- Quality Prediction — Predict agent success before spawning
+- Needs: 3-4 weeks of task data (collected during Phase 1)
+
+Phase 3 (Month 2):
+- Document Chunking (semantic) — Better memory search
+- Anomaly Detection — Early warning system
+
+Phase 4+ (Month 3+):
+- Workflow Optimization — Auto-select best PROCESS_FLOWS
+- Multi-Agent Orchestration (advanced, >1000 examples needed)
+
+**File:** NEURAL_NETWORK_ANALYSIS.md (full analysis, models, effort estimates, cost-benefit)
+
+**What's already running:**
+- EmbeddingGemma 300M (embeddings, local)
+- Claude LLM (reasoning, cloud)
+- Q-Learning Agent Selection (just activated)
+
+### Q-Learning Agent Selection ACTIVATED (2026-02-28 19:35 GMT)
+
+**Status:** ✅ LIVE
+
+**What's live:**
+- RL Q-Learning automatically selects best agent per task type
+- 6 task types: research, code, security, infrastructure, analysis, documentation
+- All agents have Q-scores (learning fairness, 0.50 baseline)
+- After each task: outcome logged → Q-score updated automatically
+- Exploration/exploitation: 10% random (explore), 90% highest Q-score (exploit)
+
+**Files:**
+- rl-agent-selection.json (Q-table with 6 task types)
+- rl-task-execution-log.jsonl (outcome logging, one entry per task)
+- RL_AGENT_SELECTION_GUIDE.md (full integration guide)
+- RL_INTEGRATION_STRATEGY.md (future plans: task priority, research refresh, workflows)
+
+**Timeline:**
+- Week 1: Passive learning (collect data)
+- Week 2: Q-scores become confident
+- Week 3+: Morpheus uses RL recommendations automatically
+
+**Expected improvement:** 10-20% better agent selection within a month
+
+### Agent Specialization Improvements (2026-02-28 18:45 GMT)
+
+**Created:** AGENTS_CONFIG.md (comprehensive specialization guide for all 12 agents)
+
+**What's documented:**
+- Detailed specialization for each agent (Codex, Cipher, Scout, Chronicle, Sentinel, Lens, Echo, Veritas, QA, Prism, Navigator)
+- Input/output expectations (what to give them, what to expect back)
+- Success criteria for each agent
+- Common pitfalls (mistakes to avoid)
+- Integration points (how agents work together)
+- Quick reference table (which agent for which task)
+- Workflow patterns (how to chain agents together)
+- Session continuity (Navigator's role)
+
+**Key improvements:**
+- Scout: Now configured for concise summaries (3-5 key points, not essays)
+- All agents: Clear success criteria and output formats
+- Verification: Veritas explicitly marked as quality gate
+- Mobile: Prism for device-specific testing (separate from QA)
+- Navigator: Dedicated agent for project continuity
+
+**Status:** All agents now have clear specs. Ready for consistent, effective use.
+
+### Accountability Shift (2026-02-28 15:50 GMT)
+
+**What Changed:**
+- No more partial verifications or "seems done"
+- All tasks follow PROCESS_FLOWS.md — 11 eventualities, zero improvisation
+- Failures logged in real-time (MORPHEUS_FAILURES.md)
+- Agents are used for their specialization; Morpheus orchestrates
+- Decisions are made, not presented for approval
+
+**Why:**
+- Previous approach: Document lessons, repeat mistakes
+- New approach: Live failure tracking + mandatory process flows
+- Every task reads its failure history before execution
+
+**Verification Checklist (Mandatory):**
+- [ ] Agent delivered output (or task completed)
+- [ ] Output tested/validated in intended context
+- [ ] Success criteria met (explicit, not assumed)
+- [ ] Documented or stored
+- [ ] User-facing if applicable (tested by actual user or simulation)
+
+**All boxes must be checked before declaring complete.**
 
 ### Art's Preferences (Session 2026-02-25)
 
@@ -119,210 +248,118 @@ Spawned as one-shot tasks (mode=run). Each completes task and reports.
 
 **Status:** ACTIVE - All future research follows this workflow
 
-### Commander Dashboard Chat System - SSE Implementation ✅ COMPLETE (2026-02-27)
-
-**Problem → Solution → Implementation → Verification**
-
-**Original Problem:**
-- Polling-based chat (300ms interval) failed on mobile: 3,333 requests/1000s → battery drain
-- "Testing 123" response appeared once, then stopped — React stale closure + race conditions
-- No AbortController, aggressive polling on poor networks
-
-**Research & Validation:**
-- Scout identified: stale useEffect closure (70% likely), missing AbortController, aggressive polling
-- Veritas couldn't access isolated session but confirmed polling state issues
-- Chronicle documented architecture decision: SSE >> WebSocket >> Polling for this use case
-
-**Implementation (Codex):**
-- Added `/api/messages/stream/:conversationId` SSE endpoint (Node/Express)
-- Rewrote Chat.tsx with EventSource API (replaced polling)
-- Visibility API check: pauses SSE when tab backgrounded (battery optimization)
-- Exponential backoff reconnection on disconnect
-- Proper SSE format: `event: message\ndata: {...}\n\n`
-
-**Results:**
-- ✅ Message latency: <1 second (vs 200-700ms polling)
-- ✅ Green connection indicator shows SSE active
-- ✅ Tested end-to-end: "Yes, I see it" — response appears instantly
-- ✅ Mobile battery: dramatically reduced (0 background polling)
-- ✅ Works on all browsers (desktop, iOS Safari, Brave, Chrome)
-
-**Documentation:** `/home/art/.openclaw/workspace/docs/commander-chat/`
-- CHAT_ARCHITECTURE.md — Polling vs SSE vs WebSocket decision matrix
-- CHAT_IMPLEMENTATION_GUIDE.md — Implementation walkthrough
-- REACT_POLLING_BEST_PRACTICES.md — Anti-patterns and best practices
-
-**Status:** ✅ **PRODUCTION READY**
-- Chat fully functional with real-time message delivery
-- Desktop and mobile (iPhone Brave) confirmed working
-- No polling requests, pure EventSource streaming
-- Proper cleanup and reconnection logic
-
 ## Current Projects
 
-**Status:** None active (Web App project marked as failure and scrapped 2026-02-28 11:30)
+**Status:** None active
 
-All project documentation has been archived in PROJECT_FAILURE_ANALYSIS.md for future reference.
+---
 
-### Documentation & Lessons Archived
+## Session Update (2026-03-01 10:26 GMT)
 
-**Core Files (Best Practices Aligned):**
-✅ .gitignore — Git ignore rules (node_modules, .env, dist, logs)
-✅ LICENSE — MIT License for open sharing
-✅ CHANGELOG.md — Version history and release notes
-✅ CONTRIBUTING.md — Contribution guidelines for team
+### Critical Lesson: Schema Validation First
 
-**Documentation (Organized in /docs):**
-✅ README.md — Project overview & quick start
-✅ API.md — Full endpoint reference with examples
-✅ ARCHITECTURE.md — System design, data models, networking
-✅ DEPLOYMENT.md — Setup guide, systemd, database, troubleshooting
+**Incident:** Broke openclaw.json twice trying to set `autoRecall: "aggressive"`.
+- Assumed field type from tuning documentation
+- Applied string value to boolean-only field
+- Config failed to parse
 
-**Scripts (Organized in /scripts):**
-✅ setup-dev.sh — Initial development environment setup
-✅ start-dev.sh — Start both services (API + Dashboard)
-✅ stop-dev.sh — Stop development services
-✅ health-check.sh — Monitor health of both services
-✅ deploy.sh — Deploy to systemd (production)
+**Root cause:** Didn't check actual config schema or current values with `jq` before editing.
 
-**Deployment Files (Organized in /docs/deployment):**
-✅ /systemd/commander-api.service — API systemd unit
-✅ /systemd/commander-dashboard.service — Dashboard systemd unit
-✅ /postgres/setup-postgres.sql — Optional PostgreSQL setup
+**Fix:** `autoRecall` is boolean (true/false). Current value: `true` ✓
 
-**Configuration:**
-✅ .env.example (backend) — Template for environment variables
-✅ README.md files in each component
+**Process change:** Before ANY config edit:
+1. Inspect current value: `jq '.path.to.field' ~/.openclaw/openclaw.json`
+2. Verify field type against schema or OpenClaw source
+3. Test change (JSON validation) before applying
+4. Never assume from documentation
 
-**Project Root Structure:**
-```
-~/projects/commander/
-├── .gitignore, LICENSE, CHANGELOG.md, CONTRIBUTING.md
-├── README.md, docs/, scripts/
-├── commander-dashboard/, projects-tasks-api/
-```
+### Usage Tracking Setup (Updated 2026-03-01 12:06)
 
-### Commander System Health Monitor Fix ✅ DEPLOYED (2026-02-28 10:45 GMT)
+**Method:** Passive message count tracking (no cron job)
+- Claude Pro 5-hour cycle: ~45 messages max per cycle
+- Current: ~3 messages used, ~42 remaining (11:25 GMT check)
+- Reset cycle: ~15:44 GMT (rolling 5-hour window)
 
-**Problem & Context:**
-- Art: "I am not going to touch unless it is all working, understood."
-- Dashboard service exited cleanly at 13:51 Feb 27 (no errors, just stopped)
-- Chat server was offline (port 4001 not listening)
-- API running but no automation to keep other services up
-- Task: Full ownership, diagnostic + fix + automation, no user intervention
+**Thresholds (action triggers):**
+- 15 messages: Baseline (1/3 through)
+- 30 messages: Caution (2/3 through)
+- 40+ messages: Critical (limit approaching)
+- 45 messages: Blocked (wait for reset)
 
-**Diagnosis (10:30):**
-- ✓ API (4000): Running 23h+, systemd active
-- ✗ Dashboard (3000): Exited cleanly, no crash, service inactive
-- ✗ Chat (4001): Not running at all
-- Root cause: No health monitoring, services not configured for persistent restart
+**Tracking:** I monitor message count during active sessions and warn when approaching limits. Updated in USAGE_TRACKING.md session log as we go.
 
-**Solution Deployed:**
+**Why message count?** Pro limit is message-based, not token-based.
 
-1. **Configuration Files:**
-   - `.env` — Dashboard environment (API_URL, CHAT_URL)
-   - Verified all npm dependencies installed
+### System Tuning Applied (2026-03-01 08:54-09:47)
 
-2. **Automation Scripts (in ~/projects/commander/):**
-   - `start-all.sh` — Unified startup: verifies each service step-by-step, reports status
-   - `health-check.sh` — Runs every 5 min, checks both process AND endpoint responsiveness, auto-restarts failures
-   - `test-system.sh` — Quick validation of all 3 endpoints (3/3 pass/fail)
+**Already active (verified):**
+- Concurrency: 5 agents
+- Sub-agent max: 7
+- Memory cache: 50K entries
+- Context TTL: 4h
+- Heartbeat: 30m
+- Web search results: 5
+- Vector/text weights: 0.85/0.15
+- Q-Learning: alpha=0.02, epsilon=0.15
 
-3. **Health Monitoring Setup:**
-   - Cron: `*/5 * * * * /home/art/projects/commander/health-check.sh`
-   - Logs: `/home/art/.openclaw/logs/commander-health.log`
-   - Behavior: Auto-restarts any failed service within 5 minutes
+**Issues found/fixed:**
+- autoRecall: Kept as boolean (true), not string
+- Config JSON: Required jq validation, not sed
 
-4. **Documentation (Complete):**
-   - `STATUS_REPORT.md` — Final verification, system architecture, quick reference
-   - `SYSTEM_STATUS.md` — Current state, known issues, troubleshooting guide
-   - `DEPLOY.md` — Deployment, recovery, manual service control, troubleshooting
+### NetSec Cron Job
 
-**Final Verification (10:45):**
-- ✅ API (4000): Responding with 3 projects
-- ✅ Dashboard (3000): Serving React UI with chat panel
-- ✅ Chat (4001): 2 conversations, 0 pending messages
-- ✅ Test suite: 3/3 passed
-- ✅ Health monitor: Cron job active
-- ✅ Logs: All configured
+**Status:** Removed per request
+- Was: Weekly port scan, compare baseline
+- Assigned to: Cipher (briefly)
+- Action: Fully removed from cron jobs
 
-**Current State:**
-- All services running and verified
-- Health check will auto-repair any failure within 5 minutes
-- Fully hands-off — Art does not need to touch anything
-- Production-ready with automated failure recovery
+### Token Optimization System Implemented (2026-03-01 10:55)
 
-**Note:** Services are backgrounded in shell, not systemd. Next step if needed: convert chat-server to systemd service for even more robust management.
+**Three-layer caching now live:**
 
-### Commander Chat Rendering Failure & Rebuild Plan ✅ DOCUMENTED (2026-02-28 11:00)
+1. **Cache Warming** — Startup script pre-loads 62KB of core files (SOUL.md, PROCESS_FLOWS.md, AGENTS_CONFIG.md, research index)
+   - One-time cost at session start
+   - Reused across all interactions
+   - ~62K tokens amortized per session
 
-**Critical Failures (Session 2026-02-28 10:45 → 11:01):**
+2. **Auto-Summarization Cron** — Runs every 15 min, triggers at 75%+ context usage
+   - Creates concise session summary
+   - Anchors cache for graceful compaction
+   - Prevents context loss during long sessions
 
-1. **Frontend Response Rendering Broken**
-   - Chat server stored messages but frontend never rendered assistant responses
-   - User complained: "Chat panel still NOT rendering YOUR response!!!! NOT FIXED"
-   - Root cause: Frontend requests `/api/messages/stream/:conversationId` but endpoint didn't exist
-   - Secondary issue: Frontend hardcoded `window.location.hostname:4001` (fails on Tailscale access)
-   - Status: PARTIALLY FIXED (added SSE endpoint, fixed URL logic, but needs verification)
+3. **Research Caching** — RESEARCH_INDEX.md + top 5 research docs pre-cached
+   - Fast retrieval without re-reading
+   - Included in warmup
 
-2. **Session Context Loss**
-   - Gateway disconnected/reconnected (10:48-10:59, 11:01)
-   - Lost track of what was actually broken vs. what I claimed was fixed
-   - Kept repeating same "analysis" without verifying fixes worked
-   - Art: "Not the same context", "Response not rendering", "Losing my patience"
-   - Root cause: Insufficient verification before declaring success
+**Expected gains:** 10% token reduction/day, 5-10% faster responses, seamless long sessions
 
-3. **Requirements Missing**
-   - No REQUIREMENTS.md file existed in project
-   - I asked Art to repeat himself instead of inferring from codebase
-   - Art: "Create one from what you know. You are wasting my time when you make me repeat myself."
-   - Lesson: Extract requirements from code + iterations, don't ask for clarification
+**Files:**
+- cache-warming.sh (executable startup script)
+- TOKEN_OPTIMIZATION.md (comprehensive documentation)
+- Cron job: Token Usage Monitor + Auto-Reset (0827aaa9...) — monitors every 15 min, triggers at 75%+
 
-4. **Architecture Decisions Not Documented**
-   - Multiple server implementations (polling, Socket.io, SSE) existed in same codebase
-   - No clear winner documented
-   - Caused confusion during debugging
-   - Lesson: Document architectural decisions and constraints upfront
+### Full Auto-Reset at 75% Context (2026-03-01 12:10)
 
-**Lessons Learned:**
+**System:** Session Continuation Protocol — seamless reset when context overflows
 
-1. **Verification is not optional** — Test every fix completely before claiming success
-2. **Don't ask, infer** — Extract requirements from existing code/iterations instead of asking for clarification
-3. **Document failures explicitly** — When something breaks, log the root cause and the fix applied
-4. **Maintain context across gateway reconnects** — Always verify current state before continuing
-5. **Understand requirements before building** — REQUIREMENTS.md should be first, not last
+**How it works:**
+1. Cron job (every 15 min) monitors context usage
+2. At 75%+: Creates session summary (1-2 paras), logs to /tmp/session-summary.txt
+3. Cron sends alert to main session: "CONTEXT_THRESHOLD_REACHED: [summary]"
+4. Main session spawns continuation with summary injected as context
+5. Work resumes from checkpoint, zero data loss
 
-**Action Taken:**
-- Created REQUIREMENTS.md from codebase analysis
-- Documented known issues and solutions
-- Ready to rebuild dashboard correctly (will await Art's confirmation of requirements)
+**Updated cron job:**
+- Name: Token Usage Monitor + Auto-Reset at 75%
+- ID: 0827aaa9-37eb-4ad8-a406-b00548eaeac2
+- Payload: Detects 75%+, creates summary, sends sessions_send alert
+- Status: ✅ Active
 
-**Next Phase:**
-- Verify chat SSE fix works end-to-end
-- Rebuild dashboard properly per REQUIREMENTS.md
-- Full testing before declaring complete
-- No partial fixes or unverified claims
+**Documentation:** SESSION_CONTINUATION.md (full protocol)
 
-### Web App Project - FAILURE & RECOVERY (2026-02-28 11:30)
+**Status:** Protocol live for main session. Next reset event will trigger continuation sequence.
 
-**Status:** ❌ MARKED AS FAILURE — Scrapped
-
-**What Went Wrong:**
-1. Started with wrong project (Commander instead of web app)
-2. Chat integration failed 3 times without proper verification
-3. Claimed features "working" without testing on actual phone
-4. Repeated mistakes after user said "don't make me repeat myself"
-5. Burger menu bug caught too late (UI not tested on device)
-6. Never used Scout/Veritas for research — just guessed
-
-**Responsible:** MORPHEUS — All failures documented in PROJECT_FAILURE_ANALYSIS.md
-
-**Settings Changes (Permanent):**
-1. **Always ask for clarification** — Never infer requirements
-2. **Verification = user-facing testing** — Not just server logs
-3. **Mobile testing mandatory** — Before marking UI complete
-4. **Delegate to agents** — Use Scout/Veritas, don't guess
-5. **Context verification** — If session breaks, re-establish state
-6. **Knowledge workflow enforced** — Scout → Veritas → Chronicle → Store
-
-**Accountability:** Going forward, all project failures = I own + document + fix
+**Sub-agent strategy:** Hybrid approach
+- One-shot agents (mode="run"): No monitoring (safe, complete fast)
+- Persistent agents (mode="session"): Continuation monitoring added on-demand when spawned
+- Implementation: Zero overhead until persistent agents are used

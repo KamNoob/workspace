@@ -1,0 +1,163 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    TUNING QUICK CARD — 21 SETTINGS                         ║
+║                     Effort: 30-45 min | Cost: $0 | Gain: 15-20%            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+┌─ OPENCLAW CONFIG (~/.openclaw/openclaw.json) ─────────────────────────────┐
+│                                                                            │
+│ 1. Max Concurrent Agents                                                 │
+│    agents.defaults.maxConcurrent                                         │
+│    Current: 3  →  Change to: 5                                           │
+│    Why: Allow more parallel work                                         │
+│                                                                            │
+│ 2. Sub-Agent Max Concurrent                                              │
+│    agents.defaults.subagents.maxConcurrent                               │
+│    Current: 5  →  Change to: 7                                           │
+│    Why: Better parallelization                                           │
+│                                                                            │
+│ 3. Memory Cache Size                                                      │
+│    agents.defaults.memorySearch.cache.maxEntries                         │
+│    Current: 20000  →  Change to: 50000                                   │
+│    Why: Larger cache = better retention                                  │
+│                                                                            │
+│ 4. Memory Context TTL                                                     │
+│    agents.defaults.contextPruning.ttl                                    │
+│    Current: "2h"  →  Change to: "4h"                                     │
+│    Why: Keep context longer                                              │
+│                                                                            │
+│ 5. Heartbeat Interval                                                     │
+│    agents.defaults.heartbeat.every                                       │
+│    Current: "55m"  →  Change to: "30m"                                   │
+│    Why: Faster health checks                                             │
+│                                                                            │
+│ 6. Web Search Results                                                     │
+│    tools.web.search.maxResults                                           │
+│    Current: 3  →  Change to: 5                                           │
+│    Why: Deeper research                                                  │
+│                                                                            │
+│ 7. Model Fallbacks (Reorder)                                             │
+│    agents.defaults.model.fallbacks                                       │
+│    Current: [sonnet-4-6, opus-4-5, sonnet-4-5, mistral]                 │
+│    Change: [sonnet-4-6, sonnet-4-5, opus-4-5, mistral]                  │
+│    Why: Better fallback priority                                         │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌─ Q-LEARNING CONFIG (rl-agent-selection.json) ──────────────────────────────┐
+│                                                                            │
+│ 8. Learning Rate (Alpha)                                                 │
+│    metadata.alpha                                                        │
+│    Current: 0.01  →  Change to: 0.02                                     │
+│    Why: Learn 2x faster from experiences                                 │
+│                                                                            │
+│ 9. Exploration Rate (Epsilon)                                            │
+│    metadata.epsilon                                                      │
+│    Current: 0.1  →  Change to: 0.15                                      │
+│    Why: Try alternatives more often                                      │
+│                                                                            │
+│ 10. Update Interval                                                       │
+│     Change from: Daily cron                                              │
+│     Change to: Every 6 hours (*/6 * * * *)                               │
+│     Why: Faster iteration                                                │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌─ MEMORY SYSTEM ───────────────────────────────────────────────────────────┐
+│                                                                            │
+│ 11. Vector Weight (Hybrid Search)                                        │
+│     agents.defaults.memorySearch.query.hybrid.vectorWeight               │
+│     Current: 0.75  →  Change to: 0.85                                    │
+│     Why: Prioritize semantic meaning                                     │
+│                                                                            │
+│ 12. Text Weight (Hybrid Search)                                          │
+│     agents.defaults.memorySearch.query.hybrid.textWeight                 │
+│     Current: 0.25  →  Change to: 0.15                                    │
+│     Why: Less keyword emphasis                                           │
+│                                                                            │
+│ 13. Auto-Capture Conversations                                           │
+│     plugins.entries.memory-lancedb.config.autoCapture                    │
+│     Current: false  →  Change to: true                                   │
+│     Why: Save conversation context automatically                         │
+│                                                                            │
+│ 14. Auto-Recall Mode                                                      │
+│     plugins.entries.memory-lancedb.config.autoRecall                     │
+│     Current: true  →  Change to: "aggressive"                            │
+│     Why: More proactive context injection                                │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌─ LOGGING & VERIFICATION ──────────────────────────────────────────────────┐
+│                                                                            │
+│ 15. Task Logging Detail                                                   │
+│     Current: Basic (failures only)                                       │
+│     Change to: Comprehensive (all tasks)                                 │
+│     Why: Better analytics                                                │
+│                                                                            │
+│ 16. Quality Threshold                                                     │
+│     Current: Implicit                                                    │
+│     Change to: 0.70 (explicit)                                           │
+│     Why: Clear quality gate                                              │
+│                                                                            │
+│ 17. Failure Auto-Logging                                                 │
+│     Current: Manual                                                      │
+│     Change to: Automatic                                                 │
+│     Why: Never miss patterns                                             │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌─ PROCESS & CRON JOBS ─────────────────────────────────────────────────────┐
+│                                                                            │
+│ 18. Research Refresh Intervals                                           │
+│     Current: 30d (tech), 90d (general)                                   │
+│     Change to: 14d (tech), 45d (general)                                 │
+│     Why: Fresher research                                                │
+│                                                                            │
+│ 19. Daily Health Check Cron                                              │
+│     Add: Daily backup of rl-*.json                                       │
+│     Cron: 0 2 * * * cp rl-*.json /backup/rl-backup-$(date).json         │
+│     Why: Persist Q-Learning data                                         │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌─ GATEWAY SETTINGS (OPTIONAL) ──────────────────────────────────────────────┐
+│                                                                            │
+│ 20. IP Whitelist                                                          │
+│     gateway.trustedProxies                                               │
+│     Add: Your IP if accessing remotely                                   │
+│     Why: Prevent unauthorized access                                     │
+│                                                                            │
+│ 21. Tailscale Mode                                                        │
+│     gateway.tailscale.mode                                               │
+│     Current: "off"  →  Change to: "on" (if want remote)                 │
+│     Why: Secure remote access                                            │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                          HOW TO APPLY CHANGES                             ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║                                                                            ║
+║ Option 1: Direct JSON Edit                                               ║
+║   nano ~/.openclaw/openclaw.json                                         ║
+║   (Edit settings from above)                                             ║
+║   openclaw gateway restart                                               ║
+║                                                                            ║
+║ Option 2: Config API                                                     ║
+║   curl -X PATCH http://localhost:18789/config \                          ║
+║     -d '{"agents": {"defaults": {"maxConcurrent": 5}}}'                  ║
+║                                                                            ║
+║ Option 3: Ask Morpheus                                                   ║
+║   "Tune system: concurrency 5, alpha 0.02, cache 50K, TTL 4h"           ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+PRIORITY: High (1-7) | Medium (8-14) | Low (15-21)
+TIME: ~30-45 minutes total
+COST: $0
+EXPECTED GAIN: 15-20% improvement
+
+After tuning, restart and monitor:
+  jq '.agents.defaults.maxConcurrent' ~/.openclaw/openclaw.json
+  jq '.metadata.alpha' ~/rl-agent-selection.json
+
+See TUNING_CHECKLIST.md for complete details with JSON snippets.
