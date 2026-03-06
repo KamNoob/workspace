@@ -6,6 +6,110 @@
 
 ---
 
+## QUICK REFERENCE: Task → Flow Mapping
+
+| User Request Keywords | Flow # | Primary Agents | Duration |
+|----------------------|--------|----------------|----------|
+| "research", "investigate", "find out", "analyze" | #1 | Scout → Veritas → Chronicle | 3-5 min |
+| "build", "create", "develop", "code", "implement" | #2 | Codex → QA | 5-15 min |
+| "security", "audit", "vulnerability", "harden" | #3 | Cipher → Sentinel | 5-10 min |
+| "verify", "check", "validate", "test" | #4 | Veritas or QA | 1-2 min |
+| "document", "write docs", "explain" | #5 | Chronicle | 2-3 min |
+| "automate", "monitor", "deploy", "infrastructure" | #6 | Sentinel → Veritas | 5-10 min |
+| "analyze data", "metrics", "insights", "report" | #7 | Lens | 2-4 min |
+| "brainstorm", "ideas", "design", "conceptualize" | #8 | Echo | 1-2 min |
+| "test on mobile", "device testing", "responsive" | #9 | Prism → QA | 3-5 min |
+| "project status", "timeline", "track progress" | #10 | Navigator | 1-2 min |
+| Simple questions, calculations, lookups | #11 | Direct (no agent) | <1 min |
+
+---
+
+## PRE-DEFINED WORKFLOW CHAINS
+
+**These chains can execute in parallel where noted:**
+
+### Chain A: Knowledge Pipeline (Research → Verification → Documentation)
+```
+Scout → Veritas → Chronicle
+Duration: 3-5 min | Use: Any research task
+Parallel opportunity: None (sequential dependencies)
+```
+
+### Chain B: Code Development (Build → Test → Verify)
+```
+Codex → QA → Veritas (optional)
+Duration: 5-15 min | Use: Feature development
+Parallel opportunity: QA + Veritas can run in parallel if Codex output is stable
+```
+
+### Chain C: Security Hardening (Audit → Fix → Re-verify)
+```
+Cipher → Sentinel → Cipher (re-audit)
+Duration: 10-15 min | Use: Security reviews
+Parallel opportunity: None (sequential dependencies)
+```
+
+### Chain D: Research + Implementation (Investigate → Build → Verify)
+```
+Scout → Codex → QA
+Duration: 10-20 min | Use: "Research how to do X, then build it"
+Parallel opportunity: After Scout completes, spawn Codex + Veritas in parallel
+```
+
+### Chain E: Data Analysis + Documentation (Analyze → Document)
+```
+Lens → Chronicle
+Duration: 4-6 min | Use: "Analyze X and document findings"
+Parallel opportunity: None (Chronicle needs Lens output)
+```
+
+### Chain F: Mobile + Web Testing (Multi-platform QA)
+```
+Prism (mobile) + QA (web) → Veritas (consolidate)
+Duration: 4-6 min | Use: Cross-platform testing
+Parallel opportunity: Prism + QA run in parallel, Veritas waits for both
+```
+
+---
+
+## DECISION TREE: Complex Multi-Step Tasks
+
+**When user gives multi-step request:**
+
+1. **Parse intent:** Identify all required flows
+2. **Check dependencies:** Can any steps run in parallel?
+3. **Execute chain:**
+   - Sequential: Spawn → Wait → Spawn → Wait
+   - Parallel: Spawn multiple → Wait for all → Continue
+4. **Report progress:** After each major step
+5. **Verify at checkpoints:** Use Veritas or QA between major transitions
+
+**Example 1:** "Research API security, then implement best practices"
+```
+Flow: #1 (Research) → #2 (Code Development)
+Chain: Scout → Veritas → Chronicle → Codex → QA
+Parallel: None (implementation needs research first)
+Duration: 8-20 min
+```
+
+**Example 2:** "Test the app on mobile and web, then document any issues"
+```
+Flow: #9 (Testing) → #5 (Documentation)
+Chain: [Prism + QA in parallel] → Chronicle
+Parallel: Prism + QA (no dependencies)
+Duration: 5-8 min
+```
+
+**Example 3:** "Audit security and analyze performance metrics"
+```
+Flow: #3 (Security) + #7 (Data Analysis)
+Chain: [Cipher + Lens in parallel] → Chronicle (combined report)
+Parallel: Cipher + Lens (independent tasks)
+Duration: 5-7 min
+```
+
+---
+
 ## 1. RESEARCH / INVESTIGATION
 
 **When:** Need to understand something, find information, analyze a topic
@@ -228,8 +332,32 @@ Before declaring ANY task complete:
 - [ ] Success criteria met (explicit, not assumed)
 - [ ] Documented or stored
 - [ ] User-facing if applicable (tested by real user or me simulating user)
+- [ ] **Outcome logged** (task + workflow via scripts) — MANDATORY
 
 **If ANY box is unchecked: Task is not complete. Say so explicitly.**
+
+---
+
+## OUTCOME LOGGING (MANDATORY — 2026-03-06)
+
+**After every agent task:**
+```bash
+scripts/log-task-outcome.sh <task_type> <agent> <success> <quality> <time>
+```
+
+**After every workflow:**
+```bash
+scripts/log-workflow.sh "<flow_name>" <success> <time> "<notes>"
+```
+
+**Quality scoring:**
+- 0.9-1.0: Excellent (exceeded expectations)
+- 0.7-0.9: Good (met expectations)
+- 0.5-0.7: Acceptable (usable, needs refinement)
+- 0.3-0.5: Poor (multiple issues)
+- 0.0-0.3: Failed (unusable)
+
+**Result:** Q-Learning improves agent selection, workflow analysis identifies optimizations.
 
 ---
 
@@ -244,6 +372,75 @@ I immediately update `MORPHEUS_FAILURES.md` and reference it before next task.
 
 ---
 
+## EFFICIENCY PATTERNS
+
+### Pattern 1: Batch Similar Tasks
+**When:** Multiple requests of same type (e.g., "research A, B, and C")
+**Optimization:** Spawn single agent with batched task list
+**Savings:** 40-60% time vs sequential spawns
+
+### Pattern 2: Parallel Independent Work
+**When:** Tasks have no dependencies (security audit + data analysis)
+**Optimization:** Spawn both agents simultaneously, consolidate at end
+**Savings:** 50% time (tasks complete in parallel)
+
+### Pattern 3: Cache-First Research
+**When:** Any research task
+**Optimization:** ALWAYS check RESEARCH_INDEX.md first
+**Savings:** 100% time if cached (0 min vs 3-5 min)
+
+### Pattern 4: Early Verification
+**When:** Complex builds or multi-step work
+**Optimization:** Insert Veritas checkpoints between major steps
+**Savings:** Prevents cascade failures, 20-30% time saved on rework avoidance
+
+### Pattern 5: Progressive Disclosure
+**When:** Large projects
+**Optimization:** Break into phases, verify each before next
+**Savings:** Prevents dead-end work, maintains context quality
+
+---
+
+## COMMON ANTI-PATTERNS (AVOID)
+
+❌ **Sequential when parallel possible** → Check for independence first  
+❌ **Research without checking index** → Always retrieval-first  
+❌ **Verification at the end only** → Insert checkpoints throughout  
+❌ **Spawning wrong agent** → Use Quick Reference table  
+❌ **No timeout specified** → Always set reasonable timeouts  
+❌ **Assuming completion** → Verify explicitly  
+
+---
+
+## PATTERN RECOGNITION EXAMPLES
+
+### Example: "Can you find information about X and implement it in the codebase?"
+**Pattern detected:** Research + Implementation (Chain D)  
+**Execution:**
+1. Check RESEARCH_INDEX.md for X
+2. If not found: Scout → Veritas → Chronicle (Flow #1)
+3. Codex (Flow #2, uses research output)
+4. QA (Flow #9, verifies implementation)
+5. Report with research file + code location
+
+### Example: "Test on mobile, web, and document any bugs"
+**Pattern detected:** Multi-platform testing + Documentation (Chain F → Flow #5)  
+**Execution:**
+1. Spawn Prism (mobile) + QA (web) **in parallel**
+2. Wait for both reports
+3. Chronicle consolidates findings
+4. Report with documentation location
+
+### Example: "Secure the API and set up monitoring"
+**Pattern detected:** Independent parallel work (Flow #3 + Flow #6)  
+**Execution:**
+1. Spawn Cipher (security audit) + Sentinel (monitoring setup) **in parallel**
+2. Wait for both completions
+3. Veritas verifies both (can be batched)
+4. Report status of both systems
+
+---
+
 **Effective:** 2026-02-28 15:45 GMT  
-**Last Updated:** 2026-02-28 15:45 GMT  
+**Last Updated:** 2026-03-06 13:54 GMT  
 **Status:** ACTIVE — No exceptions

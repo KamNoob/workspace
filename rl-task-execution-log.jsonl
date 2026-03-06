@@ -6,3 +6,18 @@
 # Example entries (not yet populated, system will add them):
 # {"timestamp":"2026-02-28T19:40:00Z","task_type":"research","agent":"Scout","quality_score":0.95,"success":true,"time_minutes":8.5}
 # {"timestamp":"2026-02-28T19:50:00Z","task_type":"code","agent":"Codex","quality_score":0.88,"success":true,"time_minutes":12.0}
+{"timestamp":"2026-03-06T14:36:57+00:00","task_type":"research","agent":"Scout","success":true,"quality_score":0.9,"time_minutes":8.5}
+{"timestamp":"2026-03-06T14:37:03+00:00","task_type":"research","agent":"Veritas","success":true,"quality_score":0.85,"time_minutes":3.2}
+{"timestamp":"2026-03-06T14:37:03+00:00","task_type":"research","agent":"Chronicle","success":true,"quality_score":0.95,"time_minutes":2.5}
+{"timestamp":"2026-03-06T14:37:03+00:00","task_type":"code","agent":"Codex","success":true,"quality_score":0.88,"time_minutes":12.0}
+{"timestamp":"2026-03-06T14:37:03+00:00","task_type":"code","agent":"QA","success":true,"quality_score":0.92,"time_minutes":4.5}
+{"timestamp":"2026-03-06T14:40:43+00:00","task_type":"research","agent":"direct","success":true,"quality_score":0.95,"time_minutes":15}
+{"timestamp":"2026-03-06T14:40:43+00:00","task_type":"research","agent":"direct","success":true,"quality_score":0.92,"time_minutes":18}
+{"timestamp":"2026-03-06T14:40:47+00:00","task_type":"infrastructure","agent":"direct","success":true,"quality_score":1.0,"time_minutes":120}
+{"timestamp":"2026-03-06T14:54:26+00:00","task_type":"research","agent":"Scout","success":true,"quality_score":0.9,"time_minutes":12}
+{"timestamp":"2026-03-06T14:54:26+00:00","task_type":"research","agent":"Veritas","success":true,"quality_score":0.95,"time_minutes":5}
+{"timestamp":"2026-03-06T14:54:26+00:00","task_type":"documentation","agent":"Chronicle","success":true,"quality_score":0.95,"time_minutes":3}
+{"timestamp":"2026-03-06T14:54:26+00:00","task_type":"documentation","agent":"direct","success":true,"quality_score":1.0,"time_minutes":15}
+{"timestamp":"2026-03-06T14:54:26+00:00","task_type":"code","agent":"direct","success":false,"quality_score":0.3,"time_minutes":60}
+{"timestamp":"2026-03-06T14:54:26+00:00","task_type":"documentation","agent":"direct","success":true,"quality_score":0.9,"time_minutes":20}
+{"timestamp":"2026-03-06T14:54:26+00:00","task_type":"infrastructure","agent":"direct","success":true,"quality_score":0.85,"time_minutes":10}

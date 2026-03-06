@@ -6,7 +6,8 @@
 3. Read `MORPHEUS_FAILURES.md` (what not to repeat)
 4. Read `USER.md` & `IDENTITY.md` (context)
 5. Read `MEMORY.md` (long-term state)
-6. If daily notes exist: `memory/YYYY-MM-DD.md`
+6. Read `LEARNING_QUICK_REF.md` (outcome logging — ACTIVE)
+7. If daily notes exist: `memory/YYYY-MM-DD.md`
 
 ## Task Execution
 
@@ -16,9 +17,22 @@
 3. Follow the process flow exactly
 4. Use agents as specified in the flow
 5. Complete verification checklist
-6. Report results
+6. **LOG OUTCOME** (task + workflow) — MANDATORY
+7. Report results
 
 **No shortcuts. No exceptions.**
+
+**After EVERY agent task:**
+```bash
+scripts/log-task-outcome.sh <task_type> <agent> <success> <quality> <time>
+```
+
+**After EVERY workflow:**
+```bash
+scripts/log-workflow.sh "<flow_name>" <success> <time> "<notes>"
+```
+
+**Learning System Status:** ✅ ACTIVE (2026-03-06)
 
 ## Agent Roster & Configuration
 

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created": "2026-02-28T19:35:00Z",
-    "algorithm": "Q-Learning + TD(\u03bb)",
+    "algorithm": "Q-Learning + TD(λ)",
     "alpha": 0.02,
     "gamma": 0.99,
     "lambda": 0.9,
@@ -13,28 +13,28 @@
       "description": "Research, investigation, information gathering",
       "agents": {
         "Scout": {
-          "q_score": 0.7089,
-          "success_count": 8,
+          "q_score": 0.5,
+          "success_count": 0,
           "failure_count": 0,
-          "total_uses": 8,
-          "success_rate": 1.0,
-          "last_updated": "2026-03-06T14:54:27.002511Z"
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-02-28T19:35:00Z"
         },
         "Veritas": {
-          "q_score": 0.7073,
-          "success_count": 8,
+          "q_score": 0.5,
+          "success_count": 0,
           "failure_count": 0,
-          "total_uses": 8,
-          "success_rate": 1.0,
-          "last_updated": "2026-03-06T14:54:27.002516Z"
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-02-28T19:35:00Z"
         },
         "Chronicle": {
-          "q_score": 0.6393,
-          "success_count": 5,
+          "q_score": 0.5,
+          "success_count": 0,
           "failure_count": 0,
-          "total_uses": 5,
-          "success_rate": 1.0,
-          "last_updated": "2026-03-06T14:54:27.002492Z"
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-02-28T19:35:00Z"
         },
         "Codex": {
           "q_score": 0.5,
@@ -58,20 +58,20 @@
       "description": "Code development, building, refactoring, testing",
       "agents": {
         "Codex": {
-          "q_score": 0.6326,
-          "success_count": 5,
+          "q_score": 0.5,
+          "success_count": 0,
           "failure_count": 0,
-          "total_uses": 5,
-          "success_rate": 1.0,
-          "last_updated": "2026-03-06T14:54:27.002499Z"
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-02-28T19:35:00Z"
         },
         "QA": {
-          "q_score": 0.6364,
-          "success_count": 5,
+          "q_score": 0.5,
+          "success_count": 0,
           "failure_count": 0,
-          "total_uses": 5,
-          "success_rate": 1.0,
-          "last_updated": "2026-03-06T14:54:27.002504Z"
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-02-28T19:35:00Z"
         },
         "Prism": {
           "q_score": 0.5,
@@ -182,12 +182,12 @@
       "description": "Documentation, technical writing, guides",
       "agents": {
         "Chronicle": {
-          "q_score": 0.5574,
-          "success_count": 2,
+          "q_score": 0.5,
+          "success_count": 0,
           "failure_count": 0,
-          "total_uses": 2,
-          "success_rate": 1.0,
-          "last_updated": "2026-03-06T14:54:27.002520Z"
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-02-28T19:35:00Z"
         },
         "Veritas": {
           "q_score": 0.5,
@@ -204,26 +204,6 @@
     {
       "timestamp": "2026-02-28T19:35:00Z",
       "note": "Q-Learning Agent Selection initialized. Starting with equal Q-scores (0.5) for all agents per task type."
-    },
-    {
-      "timestamp": "2026-03-06T14:37:03.809233Z",
-      "note": "Processed 5 outcomes. Q-scores updated based on task results."
-    },
-    {
-      "timestamp": "2026-03-06T14:40:51.776855Z",
-      "note": "Processed 5 outcomes. Q-scores updated based on task results."
-    },
-    {
-      "timestamp": "2026-03-06T14:54:26.823952Z",
-      "note": "Processed 7 outcomes. Q-scores updated based on task results."
-    },
-    {
-      "timestamp": "2026-03-06T14:54:26.950236Z",
-      "note": "Processed 8 outcomes. Q-scores updated based on task results."
-    },
-    {
-      "timestamp": "2026-03-06T14:54:27.002545Z",
-      "note": "Processed 8 outcomes. Q-scores updated based on task results."
     }
   ]
 }
