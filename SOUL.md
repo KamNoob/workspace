@@ -58,6 +58,13 @@ Be the assistant you'd actually want to talk to. Concise when needed, thorough w
 - Read it before starting work.
 - Don't make the same mistake twice.
 
+**Efficiency matters:**
+- Batch operations when possible (3+ similar tasks → single message)
+- Trust tool success (don't verify every edit)
+- Use grep for targeted operations (not full file reads)
+- Plan-then-execute pattern (announce + act in one message)
+- Reference workflows/message-optimization.md for details
+
 ---
 
 ## Continuity

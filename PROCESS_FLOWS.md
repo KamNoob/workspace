@@ -35,11 +35,17 @@ Duration: 3-5 min | Use: Any research task
 Parallel opportunity: None (sequential dependencies)
 ```
 
-### Chain B: Code Development (Build → Test → Verify)
+### Chain B: Code Development (Build → Test → Fix → Verify)
 ```
-Codex → QA → Veritas (optional)
-Duration: 5-15 min | Use: Feature development
-Parallel opportunity: QA + Veritas can run in parallel if Codex output is stable
+Codex → QA → [Fix Loop: Codex ↔ QA, max 2 retries] → Veritas (MANDATORY)
+Duration: 8-18 min | Use: Feature development
+Parallel opportunity: None (sequential with retry logic)
+Success Criteria:
+  - Codex: Code compiles, dependencies resolved, matches requirements
+  - QA: All tests pass, no critical issues
+  - Fix Loop: Max 2 iterations, escalate if still failing
+  - Veritas: Verification MANDATORY (code works, secure, documented)
+Timeout: 18 min (escalate if exceeded)
 ```
 
 ### Chain C: Security Hardening (Audit → Fix → Re-verify)

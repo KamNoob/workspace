@@ -1,8 +1,8 @@
 # Workflow Performance Analysis
 
-**Generated:** 2026-03-06 14:54:32 UTC  
-**Total Workflows Executed:** 18  
-**Unique Workflows:** 7
+**Generated:** 2026-03-07 19:52:36 UTC  
+**Total Workflows Executed:** 20  
+**Unique Workflows:** 9
 
 ---
 
@@ -33,12 +33,22 @@
 - **Average Time:** 18.0 minutes
 - **Failures:** 0
 
-### 6. Direct_No_Agent
+### 6. Chain_B_Failure_Analysis
+- **Success Rate:** 100.0% (1/1)
+- **Average Time:** 30.0 minutes
+- **Failures:** 0
+
+### 7. Research_Refresh_Automation
+- **Success Rate:** 100.0% (1/1)
+- **Average Time:** 60.0 minutes
+- **Failures:** 0
+
+### 8. Direct_No_Agent
 - **Success Rate:** 83.3% (5/6)
 - **Average Time:** 37.7 minutes
 - **Failures:** 1
 
-### 7. Chain_B_Code_Development
+### 9. Chain_B_Code_Development
 - **Success Rate:** 50.0% (1/2)
 - **Average Time:** 17.8 minutes
 - **Failures:** 1
