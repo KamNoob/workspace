@@ -71,6 +71,13 @@ Last updated: 2026-03-09 14:44 GMT
 - Logs outcomes automatically
 - Target: 50 outcomes by mid-April for Phase 2b.1 retraining
 
+**New Skill: build-your-own-x** ✅ Created & Active
+- 345+ curated tutorials for building technologies from scratch
+- Searchable by technology, language, category
+- CLI tool: `byox` with search, filter, stats commands
+- Available to Codex and all agents for reference & learning
+- Use cases: Architecture understanding, implementation patterns, learning resources
+
 **Blockers:** None. Phase 2b actively gathering real outcome data for retraining.
 
 ---
