@@ -203,6 +203,23 @@ node bin/rl-cli.js list algorithms 2>/dev/null | head -5
 
 ---
 
+## Automated Weekly Test Cycles (Cron)
+
+**Status:** ✅ ACTIVE  
+**Job ID:** 49f85737-b6bf-4255-ba70-43bdefca282d  
+**Schedule:** Every Friday 09:00 London time  
+**Next run:** 2026-03-13 09:00 GMT
+
+**What it does:**
+- Runs 2 test workflows (code-review + research)
+- Logs outcomes to rl-task-execution-log.jsonl
+- Accumulates Phase 2b data (~8 outcomes/month)
+- Keeps system warm between real work
+
+**No action needed** — This runs automatically.
+
+---
+
 ## Heartbeat State Tracking
 
 Create `memory/heartbeat-state.json` to track what was last checked:

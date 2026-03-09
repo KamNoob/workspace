@@ -65,6 +65,12 @@ Last updated: 2026-03-09 14:44 GMT
   - Security Audit (Cipher): success ✅
   - Total outcomes: 8/50 target (16% progress)
 
+**Automation:** ✅ Weekly test cycles cron job active
+- Runs every Friday 09:00 London time
+- Executes 2 test workflows (code-review + research)
+- Logs outcomes automatically
+- Target: 50 outcomes by mid-April for Phase 2b.1 retraining
+
 **Blockers:** None. Phase 2b actively gathering real outcome data for retraining.
 
 ---
