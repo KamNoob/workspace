@@ -18,7 +18,7 @@ _Your development environment, tools, and infrastructure._
 - **Node.js:** v24.11.0 ✅
 - **npm:** Installed ✅
 - **Git:** /usr/bin/git ✅
-- **Julia:** ❌ NOT INSTALLED (Phase 2a/2b requirement)
+- **Julia:** 1.12.5 ✅ (`/snap/julia/165/bin/julia`)
 - **Bash:** 5+ ✅
 
 ### Git Configuration
@@ -31,41 +31,45 @@ user.email = claude@anthropic.com
 
 ## Critical Setup Status
 
-### ⚠️ Julia (MISSING — Blocks Phase 2a/2b)
+### ✅ Julia (INSTALLED — Ready for Phase 2a/2b)
 **Required for:** QualityPredictor agent spawning system  
-**Status:** Not installed  
-**Priority:** HIGH
+**Status:** Installed via snap (v1.12.5, classic)  
+**Location:** `/snap/julia/165/bin/julia`  
+**Symlink:** `/snap/julia/current/bin/julia`  
+**Priority:** Phase 2a/2b can now activate ✅
 
-**Install Julia (one option):**
+**Verify installation:**
 ```bash
-# Option 1: Ubuntu package (recommended)
-sudo apt-get update
-sudo apt-get install -y julia
-
-# Option 2: Direct download (latest)
-cd /tmp
-wget https://julialang-s3.julialang.org/bin/linux/x64/1.10/julia-1.10.0-linux-x86_64.tar.gz
-tar xzf julia-1.10.0-linux-x86_64.tar.gz
-sudo mv julia-1.10.0 /opt/julia
-echo 'export PATH=$PATH:/opt/julia/bin' >> ~/.bashrc
-source ~/.bashrc
-
-# Option 3: Snap (cross-platform)
-snap install julia --classic
-
-# Verify
-julia --version
+/snap/julia/165/bin/julia --version
+# julia version 1.12.5
 ```
 
-**Scripts waiting on Julia:**
-- `scripts/ml/QualityPredictor.jl` (core scoring module)
-- `scripts/ml/agent-spawner-qp.jl` (production CLI + wrapper)
-- Workflow templates: code-review-qp.sh, research-qp.sh, security-audit-qp.sh
-
-**Quick start after install:**
+**Quick start (Phase 2a Testing):**
 ```bash
-julia scripts/ml/agent-spawner-qp.jl --help
-julia scripts/ml/agent-spawner-qp.jl --task code --candidates "Codex,QA"
+# Test Quality Predictor
+/snap/julia/165/bin/julia scripts/ml/agent-spawner-qp.jl --help
+/snap/julia/165/bin/julia scripts/ml/agent-spawner-qp.jl --task code --candidates "Codex,QA"
+
+# Or use alias (add to ~/.bashrc for convenience)
+alias spawn-smart='/snap/julia/165/bin/julia /home/art/.openclaw/workspace/scripts/ml/agent-spawner-qp.jl'
+source ~/.bashrc
+spawn-smart --task code --candidates "Codex,QA,Veritas"
+```
+
+**Ready-to-run workflow templates:**
+```bash
+# Make templates executable
+chmod +x /home/art/.openclaw/workspace/scripts/workflows/*-qp.sh
+
+# Test code review workflow
+cd /home/art/.openclaw/workspace
+./scripts/workflows/code-review-qp.sh "test feature" medium
+
+# Test research workflow
+./scripts/workflows/research-qp.sh "my research topic" standard
+
+# Test security audit workflow
+./scripts/workflows/security-audit-qp.sh "my service" full
 ```
 
 ---
@@ -421,7 +425,8 @@ tail -20 ~/sync-logs/tasks-to-cron.log
 
 ## TODO: Setup Actions
 
-- [ ] **Install Julia** — Required for Phase 2a/2b workflows
+- [x] **Install Julia** — ✅ Installed (snap, v1.12.5)
+- [ ] **Activate Phase 2a/2b** — Run a workflow template (5 min)
 - [ ] **Verify Notion env** — Check NOTION_KEY + database IDs in ~/.openclaw/.env
 - [ ] **Test GitHub CLI** — Run a code-review workflow
 - [ ] **Add SSH hosts** — If you use remote servers, configure them
@@ -434,7 +439,7 @@ tail -20 ~/sync-logs/tasks-to-cron.log
 
 | Tool | Location | Command | Status |
 |------|----------|---------|--------|
-| Julia | /usr/bin/julia (missing) | `julia --version` | ❌ Install |
+| Julia | /snap/julia/165/bin/julia | `julia --version` | ✅ Ready |
 | Python | /usr/bin/python3 | `python3 --version` | ✅ |
 | Node | /usr/bin/node | `node --version` | ✅ |
 | Git | /usr/bin/git | `git --version` | ✅ |
