@@ -3,3 +3,7 @@
 {"timestamp":"2026-03-09T15:14:57.454","task_type":"security","candidates":["Cipher","Sentinel","Veritas"],"selected_agent":"Cipher","prob":0.95,"confidence":"high","actual_success":true}
 {"timestamp":"2026-03-09T15:15:25.022","task_type":"review","candidates":["Codex","QA","Veritas"],"selected_agent":"Veritas","prob":0.94,"confidence":"high","actual_success":true}
 {"timestamp":"2026-03-09T15:15:28.590","task_type":"research","candidates":["Scout"],"selected_agent":"Scout","prob":0.92,"confidence":"high","actual_success":true}
+{"timestamp":"2026-03-09T16:41:33.865","task_type":"review","candidates":["Codex","QA","Veritas"],"selected_agent":"Veritas","prob":0.94,"confidence":"high","actual_success":null}
+{"timestamp":"2026-03-09T16:41:37.436","task_type":"research","candidates":["Scout"],"selected_agent":"Scout","prob":0.92,"confidence":"high","actual_success":null}
+{"timestamp":"2026-03-09T16:41:40.655","task_type":"security","candidates":["Cipher","Veritas"],"selected_agent":"Cipher","prob":0.95,"confidence":"high","actual_success":null}
+{"timestamp":"2026-03-09T20:35:00.004","task_type":"infrastructure","candidates":["Sentinel","Lens"],"selected_agent":"Sentinel","prob":0.93,"confidence":"high","actual_success":null}

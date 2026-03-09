@@ -1,0 +1,50 @@
+{
+  "name": "@openclaw-skills/toon-encoding",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "TOON encoding/decoding skill for OpenClaw — compress JSON 30-60% for token efficiency",
+  "author": "Morpheus",
+  "license": "MIT",
+  "keywords": [
+    "toon",
+    "openclaw",
+    "skill",
+    "encoding",
+    "json",
+    "token-efficiency",
+    "compression"
+  ],
+  "bin": {
+    "toon-encode": "./bin/toon-encode",
+    "toon-decode": "./bin/toon-decode"
+  },
+  "exports": {
+    ".": {
+      "import": "./lib/index.js"
+    }
+  },
+  "main": "./lib/index.js",
+  "files": [
+    "bin",
+    "lib",
+    "SKILL.md",
+    "README.md"
+  ],
+  "dependencies": {
+    "@toon-format/toon": "^2.1.0",
+    "@toon-format/cli": "^2.1.0"
+  },
+  "peerDependencies": {
+    "tokenx": "^1.2.1"
+  },
+  "peerDependenciesMeta": {
+    "tokenx": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "test": "echo 'Tests can be added here'",
+    "example:encode": "echo '{\"agents\": [{\"name\": \"Codex\", \"score\": 0.94}]}' | ./bin/toon-encode --stats",
+    "example:roundtrip": "echo '{\"data\": [1, 2, 3]}' | ./bin/toon-encode | ./bin/toon-decode"
+  }
+}

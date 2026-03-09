@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+# TOON encoding wrapper — JSON to TOON conversion with OpenClaw integration
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SKILL_DIR="$(dirname "$SCRIPT_DIR")"
+
+# Parse arguments
+INPUT_FILE=""
+OUTPUT_FILE=""
+SHOW_STATS=false
+DELIMITER=","
+INDENT="2"
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -o|--output)
+      OUTPUT_FILE="$2"
+      shift 2
+      ;;
+    --stats)
+      SHOW_STATS=true
+      shift
+      ;;
+    --delimiter)
+      DELIMITER="$2"
+      shift 2
+      ;;
+    --indent)
+      INDENT="$2"
+      shift 2
+      ;;
+    -h|--help)
+      cat <<EOF
+toon-encode — Compress JSON to TOON format
+
+Usage:
+  toon-encode [options] [input.json]
+
+Options:
+  -o, --output <path>     Write to file (default: stdout)
+  --stats                 Show token savings estimate
+  --delimiter <char>      Use , (comma), \t (tab), or | (pipe)
+  --indent <number>       Indentation size (default: 2)
+  -h, --help             Show this help
+
+Examples:
+  # Encode file
+  toon-encode agents.json
+
+  # Encode with stats
+  toon-encode agents.json --stats
+
+  # Pipe input
+  cat data.json | toon-encode -o data.toon
+
+  # Send to agent
+  toon-encode rl-scores.json | xargs -I{} echo "Agent data: {}"
+
+EOF
+      exit 0
+      ;;
+    -*)
+      echo "Error: Unknown option $1" >&2
+      exit 1
+      ;;
+    *)
+      INPUT_FILE="$1"
+      shift
+      ;;
+  esac
+done
+
+# Determine input source
+if [ -z "$INPUT_FILE" ]; then
+  # Read from stdin
+  INPUT=$(cat)
+else
+  # Read from file
+  if [ ! -f "$INPUT_FILE" ]; then
+    echo "Error: File not found: $INPUT_FILE" >&2
+    exit 1
+  fi
+  INPUT=$(cat "$INPUT_FILE")
+fi
+
+# Build toon command
+TOON_ARGS=(--encode)
+TOON_ARGS+=(--delimiter "$DELIMITER")
+TOON_ARGS+=(--indent "$INDENT")
+
+if [ "$SHOW_STATS" = true ]; then
+  TOON_ARGS+=(--stats)
+fi
+
+if [ -n "$OUTPUT_FILE" ]; then
+  TOON_ARGS+=(-o "$OUTPUT_FILE")
+fi
+
+# Run toon CLI
+echo "$INPUT" | toon "${TOON_ARGS[@]}"

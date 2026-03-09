@@ -1,0 +1,95 @@
+#!/usr/bin/env bash
+# TOON decoding wrapper — TOON to JSON conversion
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SKILL_DIR="$(dirname "$SCRIPT_DIR")"
+
+# Parse arguments
+INPUT_FILE=""
+OUTPUT_FILE=""
+INDENT="2"
+STRICT=true
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -o|--output)
+      OUTPUT_FILE="$2"
+      shift 2
+      ;;
+    --indent)
+      INDENT="$2"
+      shift 2
+      ;;
+    --no-strict)
+      STRICT=false
+      shift
+      ;;
+    -h|--help)
+      cat <<EOF
+toon-decode — Decompress TOON back to JSON
+
+Usage:
+  toon-decode [options] [input.toon]
+
+Options:
+  -o, --output <path>     Write to file (default: stdout)
+  --indent <number>       Indentation size (default: 2)
+  --no-strict            Disable strict mode
+  -h, --help             Show this help
+
+Examples:
+  # Decode file
+  toon-decode data.toon
+
+  # Pipe input
+  toon-encode data.json | toon-decode
+
+  # Write to file
+  toon-decode data.toon -o data.json
+
+  # Verify lossless conversion
+  toon-encode data.json | toon-decode | diff - data.json
+
+EOF
+      exit 0
+      ;;
+    -*)
+      echo "Error: Unknown option $1" >&2
+      exit 1
+      ;;
+    *)
+      INPUT_FILE="$1"
+      shift
+      ;;
+  esac
+done
+
+# Determine input source
+if [ -z "$INPUT_FILE" ]; then
+  # Read from stdin
+  INPUT=$(cat)
+else
+  # Read from file
+  if [ ! -f "$INPUT_FILE" ]; then
+    echo "Error: File not found: $INPUT_FILE" >&2
+    exit 1
+  fi
+  INPUT=$(cat "$INPUT_FILE")
+fi
+
+# Build toon command
+TOON_ARGS=(--decode)
+TOON_ARGS+=(--indent "$INDENT")
+
+if [ "$STRICT" = true ]; then
+  TOON_ARGS+=(--strict)
+fi
+
+if [ -n "$OUTPUT_FILE" ]; then
+  TOON_ARGS+=(-o "$OUTPUT_FILE")
+fi
+
+# Run toon CLI
+echo "$INPUT" | toon "${TOON_ARGS[@]}"
