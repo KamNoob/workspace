@@ -78,6 +78,15 @@ Last updated: 2026-03-09 14:44 GMT
 - Available to Codex and all agents for reference & learning
 - Use cases: Architecture understanding, implementation patterns, learning resources
 
+**New Skill: llmfit-infrastructure** ✅ Created & Active
+- 536 LLM models indexed and analyzed for hardware compatibility
+- Hardware-aware model selection (RAM, VRAM, CPU, GPU)
+- Fit analysis: Perfect/Good/Marginal/TooTight/Impossible
+- Speed estimation: Tokens/second based on hardware + model
+- CLI tool: `sentinel-llmfit` with analyze, search, recommend commands
+- Primary user: **Sentinel** (infrastructure planning & deployment)
+- Use cases: Deployment planning, resource allocation, cost optimization, upgrade assessment
+
 **Blockers:** None. Phase 2b actively gathering real outcome data for retraining.
 
 ---
@@ -231,6 +240,13 @@ a5966c8  feature: indexing for qdrant
 2. Prioritize real outcome data over simulations
 3. Expand team gradually (started 8 agents → 11 agents)
 4. Keep config lightweight (removed stale plugin entries)
+5. Pull external projects as skills (build-your-own-x, llmfit-infrastructure)
+6. Focus Sentinel on infrastructure (hardware detection, model deployment)
+7. Build agent-specific skills (not generic, targeted to specialized agents)
+
+**External Projects Integrated:**
+1. **KamNoob/build-your-own-x** — Created `build-your-own-x` skill (Codex + team learning)
+2. **KamNoob/llmfit** — Created `llmfit-infrastructure` skill (Sentinel deployment planning)
 
 ---
 
