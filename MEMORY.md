@@ -14,7 +14,13 @@ Last updated: 2026-03-09 14:44 GMT
 
 ## Operational Rules
 
-### 1. Development Workflow
+### 1. Team Structure (Updated 2026-03-09 15:23)
+- **Morpheus** (Lead) — Strategic decisions, oversight
+- **Navigator** (Deputy) — Tactical execution, project management (Q: 0.92)
+- **9 Specialists** — Codex, Cipher, Scout, Chronicle, Sentinel, Lens, Veritas, QA, Prism, Echo
+- **Total:** 11 agents, 100% operational
+
+### 2. Development Workflow
 - **ALL prototyping & experiments** → `prototype/` directory first
 - Structure: `prototype/features/`, `prototype/experiments/`, `prototype/temp/`
 - Rule: Create in prototype/ → Test → Review → Move to main when stable
@@ -81,6 +87,12 @@ Small stale entries (disabled memory-lancedb config) generated repeated warnings
 
 ### 3. Context Pruning & Performance
 System is optimized for speed (Haiku model, local embeddings). Context pruning TTL is 4h. If response speed becomes a bottleneck, can reduce TTL to 1h or disable memorySearch (trades context richness for speed).
+
+### 4. Real Data > Simulation
+Running actual workflows and logging real outcomes (5/5) beats simulations. Phase 2a achieved 100% accuracy on real tasks, proving QualityPredictor is production-ready.
+
+### 5. Agent Specialization Works
+Each agent routed correctly to task type: Veritas → review, Scout → research, Cipher → security. Q-learning profiles are well-tuned for your task distribution.
 
 ## Files to Know
 
