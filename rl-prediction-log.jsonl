@@ -1,1 +1,5 @@
 {"timestamp":"2026-03-09T15:13:46.212","task_type":"review","candidates":["Codex","QA","Veritas"],"selected_agent":"Veritas","prob":0.94,"confidence":"high","actual_success":true}
+{"timestamp":"2026-03-09T15:14:53.943","task_type":"research","candidates":["Scout","Chronicle","Veritas"],"selected_agent":"Scout","prob":0.92,"confidence":"high","actual_success":true}
+{"timestamp":"2026-03-09T15:14:57.454","task_type":"security","candidates":["Cipher","Sentinel","Veritas"],"selected_agent":"Cipher","prob":0.95,"confidence":"high","actual_success":true}
+{"timestamp":"2026-03-09T15:15:25.022","task_type":"review","candidates":["Codex","QA","Veritas"],"selected_agent":"Veritas","prob":0.94,"confidence":"high","actual_success":true}
+{"timestamp":"2026-03-09T15:15:28.590","task_type":"research","candidates":["Scout"],"selected_agent":"Scout","prob":0.92,"confidence":"high","actual_success":true}
