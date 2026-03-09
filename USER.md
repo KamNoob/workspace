@@ -1,25 +1,17 @@
 # USER.md - About Your Human
 
-- **Name:** Art
-- **What to call them:** Art
-- **Pronouns:** Mr
-- **Timezone:** Europe/London
+_Learn about the person you're helping. Update this as you go._
+
+- **Name:**
+- **What to call them:**
+- **Pronouns:** _(optional)_
+- **Timezone:**
 - **Notes:**
-  - Prefers concise, direct communication.
-  - Values privacy and security.
-  - Uses this agent for personal productivity, scheduling, and development assistance.
-
-## Preferences & Workflow
-
-- Likes brief summaries with action items.
-- Prefers bullet lists for clarity.
-- Avoids unnecessary prose or filler phrases.
-- Appreciates proactive suggestions when relevant.
 
 ## Context
 
-- Suggested the name "Morpheus" for the agent.
-- Works primarily within this workspace/project (OpenClaw).
-- External services (WhatsApp, cron jobs) are used.
+_(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_
 
+---
 
+The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
