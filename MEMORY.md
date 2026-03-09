@@ -71,6 +71,11 @@ Last updated: 2026-03-09 14:44 GMT
 - Logs outcomes automatically
 - Target: 50 outcomes by mid-April for Phase 2b.1 retraining
 
+**Workflows:** ✅ 6 templates active
+- core-4: code-review, research, security-audit, planning
+- skill-2: infrastructure-planning, code-learning (NEW)
+- Total: 6 specialized workflows for team
+
 **New Skill: build-your-own-x** ✅ Created & Active
 - 345+ curated tutorials for building technologies from scratch
 - Searchable by technology, language, category
