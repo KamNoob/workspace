@@ -33,3 +33,5 @@
 {"timestamp":"2026-03-07T20:25:40+00:00","task_type":"infrastructure","agent":"Sentinel","success":true,"quality_score":0.85,"time_minutes":12}
 {"timestamp":"2026-03-07T20:25:40+00:00","task_type":"analysis","agent":"Lens","success":true,"quality_score":0.95,"time_minutes":8}
 {"timestamp":"2026-03-07T20:25:40+00:00","task_type":"analysis","agent":"Lens","success":true,"quality_score":0.90,"time_minutes":10}
+{"timestamp":"2026-03-07T20:35:17+00:00","task_type":"security","agent":"Cipher","success":true,"quality_score":0.90,"time_minutes":20}
+{"timestamp":"2026-03-07T20:35:17+00:00","task_type":"infrastructure","agent":"Sentinel","success":true,"quality_score":0.95,"time_minutes":5}

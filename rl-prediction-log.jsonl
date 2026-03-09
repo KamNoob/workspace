@@ -1,0 +1,2 @@
+{"timestamp":"2026-03-08T11:55:36.356","task_type":"code","candidates":["Codex","QA","Veritas"],"selected_agent":"Codex","prob":0.93,"confidence":"high","actual_success":true}
+{"timestamp":"2026-03-08T11:55:40.441","task_type":"security","candidates":["Cipher","Scout","QA"],"selected_agent":"Cipher","prob":0.95,"confidence":"high","actual_success":null}
