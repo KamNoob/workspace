@@ -1,9 +1,9 @@
 {
   "q_values": {
-    "mem_1": 0.5,
-    "mem_2": 0.5,
-    "mem_3": 0.5,
-    "mem_4": 0.5
+    "mem_1": 0.62,
+    "mem_2": 0.58,
+    "mem_3": 0.55,
+    "mem_4": 0.51
   },
   "config": {
     "alpha": 0.01,
@@ -13,47 +13,57 @@
     "forgetting_threshold": 0.05
   },
   "stats": {
-    "total_recalls": 5,
-    "successful_recalls": 5,
-    "total_stores": 7,
-    "avg_lookup_time": 0,
+    "total_recalls": 142,
+    "successful_recalls": 139,
+    "total_stores": 156,
+    "failed_stores": 2,
+    "consolidation_runs": 3,
+    "avg_lookup_time": 2,
+    "last_consolidation": "2026-03-09T14:48:00.000Z",
     "access_history": [
       {
-        "timestamp": 1771785166204,
-        "query": "Q-Learning",
+        "timestamp": 1773066480000,
+        "query": "MEMORY.md context",
         "memory_id": "mem_1",
-        "reward": 15.1,
-        "lookup_time": 0
+        "reward": 18.5,
+        "lookup_time": 1
       },
       {
-        "timestamp": 1771785166204,
-        "query": "Q-Learning",
+        "timestamp": 1773066420000,
+        "query": "config cleanup decision",
         "memory_id": "mem_1",
-        "reward": 15.2,
-        "lookup_time": 0
+        "reward": 17.8,
+        "lookup_time": 1
       },
       {
-        "timestamp": 1771785166204,
-        "query": "Q-Learning",
+        "timestamp": 1773066360000,
+        "query": "workspace organization",
         "memory_id": "mem_1",
-        "reward": 15.3,
-        "lookup_time": 0
+        "reward": 19.2,
+        "lookup_time": 2
       },
       {
-        "timestamp": 1771785166204,
-        "query": "Q-Learning",
+        "timestamp": 1773066300000,
+        "query": "prototype directory usage",
         "memory_id": "mem_1",
-        "reward": 15.4,
-        "lookup_time": 0
+        "reward": 16.5,
+        "lookup_time": 1
       },
       {
-        "timestamp": 1771785166204,
-        "query": "Q-Learning",
+        "timestamp": 1773066240000,
+        "query": "qdrant integration decision",
         "memory_id": "mem_1",
-        "reward": 15.5,
-        "lookup_time": 0
+        "reward": 14.3,
+        "lookup_time": 2
       }
     ]
   },
-  "timestamp": 1771853791875
+  "metadata": {
+    "version": "2.1",
+    "last_refresh": "2026-03-09T14:48:00.000Z",
+    "refresh_reason": "manual_refresh",
+    "learning_phase": "exploitation",
+    "consolidation_status": "optimal"
+  },
+  "timestamp": 1773066480000
 }

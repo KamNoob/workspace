@@ -1,40 +1,459 @@
-# TOOLS.md - Local Notes
+# TOOLS.md - Local Setup & Configuration
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
-
-## What Goes Here
-
-Things like:
-
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
-
-## Examples
-
-```markdown
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+_Your development environment, tools, and infrastructure._
 
 ---
 
-Add whatever helps you do your job. This is your cheat sheet.
+## System Environment
+
+### Host
+- **Hostname:** art-OptiPlex-ubu2
+- **OS:** Ubuntu Linux 6.8.0-101-generic (x64)
+- **User:** art
+- **Home:** /home/art
+- **Workspace:** /home/art/.openclaw/workspace
+
+### Runtime Versions
+- **Python:** 3.12.3 ✅
+- **Node.js:** v24.11.0 ✅
+- **npm:** Installed ✅
+- **Git:** /usr/bin/git ✅
+- **Julia:** ❌ NOT INSTALLED (Phase 2a/2b requirement)
+- **Bash:** 5+ ✅
+
+### Git Configuration
+```bash
+user.name = Claude Code
+user.email = claude@anthropic.com
+```
+
+---
+
+## Critical Setup Status
+
+### ⚠️ Julia (MISSING — Blocks Phase 2a/2b)
+**Required for:** QualityPredictor agent spawning system  
+**Status:** Not installed  
+**Priority:** HIGH
+
+**Install Julia (one option):**
+```bash
+# Option 1: Ubuntu package (recommended)
+sudo apt-get update
+sudo apt-get install -y julia
+
+# Option 2: Direct download (latest)
+cd /tmp
+wget https://julialang-s3.julialang.org/bin/linux/x64/1.10/julia-1.10.0-linux-x86_64.tar.gz
+tar xzf julia-1.10.0-linux-x86_64.tar.gz
+sudo mv julia-1.10.0 /opt/julia
+echo 'export PATH=$PATH:/opt/julia/bin' >> ~/.bashrc
+source ~/.bashrc
+
+# Option 3: Snap (cross-platform)
+snap install julia --classic
+
+# Verify
+julia --version
+```
+
+**Scripts waiting on Julia:**
+- `scripts/ml/QualityPredictor.jl` (core scoring module)
+- `scripts/ml/agent-spawner-qp.jl` (production CLI + wrapper)
+- Workflow templates: code-review-qp.sh, research-qp.sh, security-audit-qp.sh
+
+**Quick start after install:**
+```bash
+julia scripts/ml/agent-spawner-qp.jl --help
+julia scripts/ml/agent-spawner-qp.jl --task code --candidates "Codex,QA"
+```
+
+---
+
+### ✅ Notion Integration (Configured but Verify)
+**Purpose:** Task/project syncing, knowledge base, team status  
+**Status:** Scripts exist, but .env needs verification
+
+**Required environment variables (in ~/.openclaw/.env):**
+```bash
+NOTION_KEY=ntn_...                    # Notion API token
+NOTION_COMMAND_CENTER_ID=52dab2f6... # Main hub database
+NOTION_PROJECTS_DB_ID=...            # Project tracking
+NOTION_TASKS_DB_ID=...               # Task board
+NOTION_TEAM_DB_ID=...                # Agent/team status
+NOTION_KB_DB_ID=...                  # Knowledge base
+```
+
+**Verify Notion setup:**
+```bash
+# Check env variables
+env | grep NOTION
+
+# Test API connectivity
+curl -H "Authorization: Bearer $NOTION_KEY" https://api.notion.com/v1/users/me
+
+# View workspace sync logs
+tail -f ~/sync-logs/memory-to-kb.log
+```
+
+**Sync scripts (run automatically via cron):**
+- `sync-memory-to-kb.sh` — Daily 00:05 UTC (MEMORY.md → Knowledge Base)
+- `sync-tasks-to-cron.sh` — Daily 01:00 UTC (Tasks → Cron Queue)
+- `sync-agent-status.sh` — Hourly :00 (Agent Status → Team DB)
+
+---
+
+### ✅ GitHub CLI Integration (Installed)
+**Status:** git installed, ready for PR review workflows  
+**Location:** /usr/bin/git
+
+**Workflow templates that use it:**
+- `scripts/workflows/code-review-qp.sh` — Reviews PRs with agent spawning
+
+**Verify GitHub access:**
+```bash
+git remote -v
+git status
+```
+
+---
+
+## Development Scripts
+
+### ML/RL Tools
+
+| Script | Purpose | Status | Requires |
+|--------|---------|--------|----------|
+| `scripts/ml/QualityPredictor.jl` | Agent capability scoring | Ready | Julia |
+| `scripts/ml/agent-spawner-qp.jl` | CLI + prediction engine | Ready | Julia |
+| `scripts/ml/quality-predictor.jl` | Legacy version (backup) | Ready | Julia |
+| `data/rl/rl-agent-selection.json` | Q-learning profiles | Live | — |
+| `data/rl/rl-task-execution-log.jsonl` | Outcome tracking | Live | — |
+
+### Workflow Templates
+
+| Template | Purpose | Status | Requires |
+|----------|---------|--------|----------|
+| `scripts/workflows/code-review-qp.sh` | Code review automation | Ready | Julia, git |
+| `scripts/workflows/research-qp.sh` | Research task routing | Ready | Julia |
+| `scripts/workflows/security-audit-qp.sh` | Security audits | Ready | Julia |
+| `scripts/workflows/chain-b-code-dev.sh` | Code development | Ready | — |
+
+**Activate templates:**
+```bash
+chmod +x /home/art/.openclaw/workspace/scripts/workflows/*-qp.sh
+cd /home/art/.openclaw/workspace
+
+# Test one
+./scripts/workflows/code-review-qp.sh "test feature" medium
+./scripts/workflows/research-qp.sh "my research topic" standard
+```
+
+---
+
+## Local Infrastructure
+
+### OpenClaw Gateway
+- **Port:** 18789 (loopback)
+- **Status:** Running (PID 1862892)
+- **Health:** RPC probe OK
+- **Log:** /tmp/openclaw/openclaw-2026-03-09.log
+
+**Check status:**
+```bash
+openclaw status
+openclaw gateway status
+```
+
+### WhatsApp Integration
+- **Status:** Connected ✅
+- **Connection:** Via gateway on 18789
+- **Messaging:** Enabled for allowed numbers
+
+**Verify:**
+```bash
+# Check in gateway logs
+tail -20 /tmp/openclaw/openclaw-*.log | grep -i whatsapp
+```
+
+### Memory Systems
+- **Local Embeddings:** EmbeddingGemma-300M-Q8_0 (local, no API)
+- **Search:** Hybrid (85% semantic + 15% keyword)
+- **Sync:** Auto-watches workspace files
+- **Optimizer:** Q-learning with TD(λ) (live, 98% recall rate)
+
+---
+
+## SSH & Remote Access
+
+### SSH Keys
+- **Location:** ~/.ssh/
+- **Status:** Keys exist (known_hosts configured)
+- **Current:** ⚠️ Add your remote hosts as needed
+
+**Add a remote host:**
+```bash
+# First-time connection (adds to known_hosts)
+ssh your_user@your_host
+
+# Or add key-based auth:
+ssh-keygen -t ed25519 -f ~/.ssh/id_your_host -C "art@art-OptiPlex"
+ssh-copy-id -i ~/.ssh/id_your_host your_user@your_host
+```
+
+**Common remotes (add as needed):**
+```bash
+# Example git remote for code repos
+git remote add origin git@github.com:your-org/your-repo.git
+
+# Example data server
+# ssh art@data-server.local
+```
+
+---
+
+## API Keys & Credentials
+
+### Stored Securely
+**Location:** ~/.openclaw/.env (gitignored, not tracked)
+
+**What's configured:**
+- OPENCLAW_GATEWAY_TOKEN (internal gateway auth)
+- NOTION_KEY + database IDs (task/project syncing)
+- Other API keys (as needed, see SYNC_SCRIPTS_MANIFEST.md)
+
+**Managing credentials:**
+```bash
+# View current (use with caution)
+env | grep -E "NOTION|OPENCLAW|API|TOKEN|KEY"
+
+# Update a credential
+echo 'NEW_VALUE' > ~/.openclaw/.env  # Edit carefully
+systemctl --user restart openclaw-gateway
+```
+
+**Best practice:** Keep .env in ~/.openclaw/ (never in git), reload after changes.
+
+---
+
+## Development Configuration
+
+### Code Editor (VS Code)
+- **Location:** /snap/code or ~/.config/Code
+- **Extensions:** Various language servers installed
+- **Workspace:** Linked to /home/art/.openclaw/workspace
+
+**Settings:**
+```bash
+# Open workspace settings
+code /home/art/.openclaw/workspace
+```
+
+### Shell Environment
+- **Default Shell:** bash
+- **Aliases:** Add to ~/.bashrc as needed
+
+**Useful aliases (optional):**
+```bash
+# Add to ~/.bashrc
+alias spawn-smart='/path/to/julia /home/art/.openclaw/workspace/scripts/ml/agent-spawner-qp.jl'
+alias oc='openclaw'
+alias ocgw='openclaw gateway'
+```
+
+### Git Hooks (Optional)
+- **Location:** .git/hooks/
+- **Use case:** Auto-log commits, trigger syncs
+- **Current:** Not configured (add as needed)
+
+---
+
+## NPM & Node Configuration
+
+### Global Packages
+**Installed:**
+- openclaw CLI (main package)
+- clawhub CLI (skill management)
+- Various skill packages (in ~/.npm-global/lib/node_modules/)
+
+**Workspace node_modules:**
+```bash
+ls -la /home/art/.openclaw/workspace/node_modules/ | head -20
+```
+
+**Install dependencies:**
+```bash
+cd /home/art/.openclaw/workspace
+npm install  # If package.json exists
+```
+
+---
+
+## Python Environment
+
+### System Python
+- **Version:** Python 3.12.3
+- **pip:** Installed ✅
+- **venv:** Available ✅
+
+### Virtual Environments
+**Workspace venv (if exists):**
+```bash
+# Create one if needed
+python3 -m venv /home/art/.openclaw/workspace/venv
+source /home/art/.openclaw/workspace/venv/bin/activate
+
+# Install deps
+pip install -r requirements.txt  # If it exists
+```
+
+### Data Science Stack
+**Available (basic check):**
+```bash
+pip list | grep -E "pandas|numpy|scipy|scikit|tensorflow|torch"
+```
+
+**Install if needed:**
+```bash
+pip install numpy pandas scipy scikit-learn
+```
+
+---
+
+## Voice & Audio (Optional)
+
+### TTS (Text-to-Speech)
+**Status:** sag skill (ElevenLabs TTS) — currently disabled
+
+**If enabling:**
+```bash
+# In openclaw config: enable sag skill
+# Requires ElevenLabs API key
+```
+
+**Preferred voice profile (if needed):**
+- Voice: "Nova" (warm, slightly British)
+- Default speaker: Kitchen HomePod (if available)
+
+---
+
+## System Monitoring
+
+### Resource Monitoring
+**Quick check:**
+```bash
+# CPU, memory, load
+top -bn1 | head -20
+
+# Disk usage
+df -h /
+du -sh /home/art/.openclaw/workspace
+
+# Network
+netstat -tlnp | grep 18789  # Gateway port
+```
+
+### OpenClaw Health
+```bash
+# Gateway status
+openclaw gateway status
+
+# View recent logs
+tail -50 /tmp/openclaw/openclaw-*.log
+
+# Check cron jobs
+openclaw cron list
+```
+
+---
+
+## Common Tasks
+
+### Start a Dev Session
+```bash
+cd /home/art/.openclaw/workspace
+git status
+openclaw status
+```
+
+### Run a Workflow
+```bash
+# Code review (requires Julia)
+./scripts/workflows/code-review-qp.sh "my PR" high
+
+# Research task
+./scripts/workflows/research-qp.sh "my topic" standard
+
+# Security audit
+./scripts/workflows/security-audit-qp.sh "my service" full
+```
+
+### Check Agent Selection
+```bash
+# View Q-learning profiles
+cat data/rl/rl-agent-selection.json | jq '.task_types'
+
+# View prediction log
+tail -20 rl-prediction-log.jsonl | jq '.'
+```
+
+### Update Memory
+```bash
+# Check what was logged today
+ls -la memory/2026-03-09*.md
+
+# Update long-term memory
+edit MEMORY.md
+git add MEMORY.md
+git commit -m "memory: update from daily session"
+```
+
+### Sync Tasks to Cron
+```bash
+# Manual trigger (normally runs daily at 01:00 UTC)
+bash /home/art/.openclaw/sync-scripts/sync-tasks-to-cron.sh
+
+# Check logs
+tail -20 ~/sync-logs/tasks-to-cron.log
+```
+
+---
+
+## TODO: Setup Actions
+
+- [ ] **Install Julia** — Required for Phase 2a/2b workflows
+- [ ] **Verify Notion env** — Check NOTION_KEY + database IDs in ~/.openclaw/.env
+- [ ] **Test GitHub CLI** — Run a code-review workflow
+- [ ] **Add SSH hosts** — If you use remote servers, configure them
+- [ ] **Configure Python venv** — If data engineering work needs specific packages
+- [ ] **Enable TTS (optional)** — If you want voice features
+
+---
+
+## Quick Reference
+
+| Tool | Location | Command | Status |
+|------|----------|---------|--------|
+| Julia | /usr/bin/julia (missing) | `julia --version` | ❌ Install |
+| Python | /usr/bin/python3 | `python3 --version` | ✅ |
+| Node | /usr/bin/node | `node --version` | ✅ |
+| Git | /usr/bin/git | `git --version` | ✅ |
+| OpenClaw | ~/.npm-global/bin/openclaw | `openclaw status` | ✅ |
+| Notion Sync | ~/sync-scripts/ | `bash sync-*.sh` | ✅ (needs env) |
+| RL/ML Scripts | scripts/ml/ | `julia *.jl` | ⏳ Blocked on Julia |
+
+---
+
+## Notes
+
+- **Julia is critical** for Phase 2a/2b activation. Install it first.
+- **Notion credentials** need to be set in ~/.openclaw/.env (not in git).
+- **Workflow scripts** are ready; just need Julia + activation.
+- **SSH/remote work** — Add your servers/keys as needed.
+- **Python/Node packages** — Keep venv clean, use requirements.txt for reproducibility.
+
+---
+
+_Created: 2026-03-09 15:10 GMT_  
+_Source: System check + SYNC_SCRIPTS_MANIFEST.md + PHASE2A/2B docs_  
+_Next: Install Julia, verify Notion, activate workflows_
