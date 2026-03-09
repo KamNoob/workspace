@@ -10,6 +10,7 @@ Last updated: 2026-03-09 14:44 GMT
 - **Memory Search:** Enabled (local embeddings, EmbeddingGemma 300M)
 - **Workspace Root:** `/home/art/.openclaw/workspace`
 - **Julia:** 1.12.5 ✅ (snap, /snap/julia/165/bin/julia) — Phase 2a/2b READY
+- **AI Team:** 11 agents operational (Morpheus + Navigator + 9 specialists)
 
 ## Operational Rules
 
