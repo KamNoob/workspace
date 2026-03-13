@@ -78,14 +78,14 @@ spawn_learning_session() {
   local depth="$1"
   
   if [[ "$depth" == "light" ]]; then
-    echo "⚙️  Light learning → Spawning Codex only..."
+    echo "⚙️  Light learning → Codex (implementation only)"
     $JULIA "$SPAWNER" --task learning --candidates "Codex"
   elif [[ "$depth" == "deep" ]]; then
-    echo "⚙️  Deep learning → Spawning Codex + Echo (brainstorm) + Chronicle (document)..."
-    $JULIA "$SPAWNER" --task learning --candidates "Codex,Echo,Chronicle"
+    echo "⚙️  Deep learning → Codex (impl) + Echo (ideation) + Lens (perf analysis) + Chronicle (docs)"
+    $JULIA "$SPAWNER" --task learning --candidates "Codex,Echo,Lens,Chronicle"
   else
-    echo "⚙️  Standard learning → Spawning Codex + Echo..."
-    $JULIA "$SPAWNER" --task learning --candidates "Codex,Echo"
+    echo "⚙️  Standard learning → Codex (impl) + Echo (ideation) + Lens (analysis)"
+    $JULIA "$SPAWNER" --task learning --candidates "Codex,Echo,Lens"
   fi
 }
 

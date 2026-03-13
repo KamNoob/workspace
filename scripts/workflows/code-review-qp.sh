@@ -35,20 +35,24 @@ echo "   Complexity: $COMPLEXITY"
 echo ""
 
 # --- Quality-aware agent selection -------------------------------------------
-# Use spawn-smart to decide: Codex vs Codex+QA+Veritas
+# Route through all relevant agents: Codex (dev) + QA (testing) + Prism (mobile/responsive)
+# Complexity determines agent count:
+# - low: Codex only
+# - medium: Codex + QA (testing)
+# - high: Codex + QA + Prism (comprehensive multi-device review) + Veritas (validation)
 
 spawn_code_review() {
   local complexity="$1"
   
   if [[ "$complexity" == "low" ]]; then
-    echo "⚙️  Low complexity → Spawning Codex only..."
+    echo "⚙️  Low complexity → Codex (development review)"
     $JULIA "$SPAWNER" --task code --candidates "Codex"
   elif [[ "$complexity" == "high" ]]; then
-    echo "⚙️  High complexity → Spawning Codex (primary) + QA (review) + Veritas (validation)..."
-    $JULIA "$SPAWNER" --task review --candidates "Codex,QA,Veritas"
+    echo "⚙️  High complexity → Codex (dev) + QA (testing) + Prism (responsive) + Veritas (validation)"
+    $JULIA "$SPAWNER" --task code --candidates "Codex,QA,Prism,Veritas"
   else
-    echo "⚙️  Medium complexity → Spawning Codex + QA..."
-    $JULIA "$SPAWNER" --task code --candidates "Codex,QA"
+    echo "⚙️  Medium complexity → Codex (dev) + QA (testing) + Prism (responsive)"
+    $JULIA "$SPAWNER" --task code --candidates "Codex,QA,Prism"
   fi
 }
 
