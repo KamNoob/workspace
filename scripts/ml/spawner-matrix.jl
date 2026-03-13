@@ -7,19 +7,22 @@ using Statistics
 
 const SCRIPT_DIR = @__DIR__
 include(joinpath(SCRIPT_DIR, "MatrixRL.jl"))
+include(joinpath(SCRIPT_DIR, "kb-integration.jl"))
 using .MatrixRL
+using .KBIntegration
 
 const RL_STATE_PATH = joinpath(SCRIPT_DIR, "..", "..", "data", "rl", "rl-state.jld2")
 const SPAWN_THRESHOLD = 0.70
+const KB_ENABLED = KBIntegration.kb_enabled()
 
 # ─── API ───────────────────────────────────────────────────────────────────
 
 """
-    spawn(task::String, candidates::Vector{String}) -> Dict
+    spawn(task::String, candidates::Vector{String}; use_kb=true) -> Dict
 
-Select best agent for task.
+Select best agent for task with optional KB context injection.
 """
-function spawn(task::String, candidates::Vector{String})::Dict{String, Any}
+function spawn(task::String, candidates::Vector{String}; use_kb::Bool=true)::Dict{String, Any}
     # Load RL state
     rl = try
         MatrixRL.load_state(RL_STATE_PATH)
@@ -42,6 +45,12 @@ function spawn(task::String, candidates::Vector{String})::Dict{String, Any}
     decision = best.q_score >= SPAWN_THRESHOLD ? "spawn" : "escalate"
     confidence = best.q_score >= 0.80 ? "high" : best.q_score >= 0.60 ? "medium" : "low"
     
+    # Retrieve KB context if enabled
+    kb_context = Dict("found" => false, "count" => 0)
+    if use_kb && KB_ENABLED
+        kb_context = KBIntegration.get_kb_context(task)
+    end
+    
     return Dict(
         "agent" => best.agent,
         "task" => task,
@@ -49,6 +58,9 @@ function spawn(task::String, candidates::Vector{String})::Dict{String, Any}
         "confidence" => confidence,
         "decision" => decision,
         "candidates" => candidates,
+        "kb_context_found" => kb_context["found"],
+        "kb_context_entries" => kb_context["count"],
+        "kb_context_reason" => kb_context["reason"],
         "timestamp" => string(now()),
     )
 end
@@ -152,8 +164,8 @@ function main()
     
     if cmd == "spawn" && length(ARGS) >= 3
         task = ARGS[2]
-        candidates = split(ARGS[3], ",")
-        result = spawn(task, map(strip, candidates))
+        candidates = String.(map(strip, split(ARGS[3], ",")))
+        result = spawn(task, candidates)
         for (k, v) in result
             println("$k: $v")
         end
