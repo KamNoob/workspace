@@ -6,8 +6,8 @@
     "memory_maintenance": "2026-03-09T15:00:00Z",
     "projects_tasks": "2026-03-09T15:00:00Z",
     "syncs_infrastructure": "2026-03-09T15:11:00Z",
-    "research_knowledge": "2026-03-13T15:23:00Z"
+    "research_knowledge": "2026-03-13T17:42:00Z"
   },
-  "last_updated": "2026-03-13T15:23:00Z",
-  "notes": "Cron heartbeat 2026-03-13 15:23. Research knowledge check: ⚠️ BROKEN — RL-BOOK-ENHANCED.json missing, query engine non-functional. Skills/rl-knowledge/ exists but data file lost. Skill needs rebuild/restore. Gateway: still healthy (check 56 min ago). Memory optimizer: 4d old (acceptable). Recommend: Restore RL knowledge base or rebuild from source (check docs/ml/ for references)."
+  "last_updated": "2026-03-13T17:42:00Z",
+  "notes": "Heartbeat 2026-03-13 17:42. Research knowledge check: ✅ RESOLVED — RL-BOOK-ENHANCED.json restored from git history (commit 864314c^). Skill rl-knowledge verified working. All systems nominal."
 }
