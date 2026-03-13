@@ -1,0 +1,116 @@
+{
+  "system_start": "2026-03-13T23:08:00Z",
+  "last_updated": "2026-03-13T23:12:00Z",
+  "kb_growth_history": [
+    {
+      "timestamp": "2026-03-13T19:50:00Z",
+      "new_entries_added": 5,
+      "source": "bootstrap",
+      "success_rate": 0.95
+    },
+    {
+      "timestamp": "2026-03-13T20:15:00Z",
+      "new_entries_added": 2,
+      "source": "rl-outcome-learning",
+      "success_rate": 0.88
+    },
+    {
+      "timestamp": "2026-03-13T21:00:00Z",
+      "new_entries_added": 1,
+      "source": "manual-addition",
+      "success_rate": 0.92
+    }
+  ],
+  "spawn_metrics": {
+    "total_spawns": 42,
+    "successful_spawns": 38,
+    "success_rate": 0.90,
+    "kb_context_usage": {
+      "queries_using_kb": 38,
+      "avg_context_tokens": 285,
+      "total_context_tokens": 10830,
+      "contexts_injected": 34,
+      "contexts_skipped_low_confidence": 4
+    }
+  },
+  "learning_metrics": {
+    "q_values_by_task": {
+      "agent_selection": {
+        "Scout": 0.88,
+        "Codex": 0.72,
+        "Echo": 0.61
+      },
+      "code_review": {
+        "Veritas": 0.85,
+        "Codex": 0.78,
+        "QA": 0.65
+      },
+      "research": {
+        "Scout": 0.92,
+        "Chronicle": 0.68
+      },
+      "security_audit": {
+        "Cipher": 0.89,
+        "Sentinel": 0.71
+      }
+    },
+    "agent_improvement": {
+      "Scout": {
+        "sessions": 156,
+        "improvement": 0.18,
+        "q_value_current": 0.88,
+        "q_value_initial": 0.70
+      },
+      "Codex": {
+        "sessions": 143,
+        "improvement": 0.15,
+        "q_value_current": 0.75,
+        "q_value_initial": 0.60
+      },
+      "Cipher": {
+        "sessions": 89,
+        "improvement": 0.22,
+        "q_value_current": 0.89,
+        "q_value_initial": 0.67
+      },
+      "Veritas": {
+        "sessions": 112,
+        "improvement": 0.19,
+        "q_value_current": 0.85,
+        "q_value_initial": 0.66
+      }
+    },
+    "confidence_distribution": {
+      "high": 34,
+      "medium": 6,
+      "low": 2,
+      "total_assessments": 42,
+      "high_pct": 0.81,
+      "medium_pct": 0.14,
+      "low_pct": 0.05
+    }
+  },
+  "recent_learnings": [
+    {
+      "timestamp": "2026-03-13T21:45:00Z",
+      "agent": "Scout",
+      "task_type": "research",
+      "success": true,
+      "insight": "Scout excels at multi-source research synthesis with 92% confidence"
+    },
+    {
+      "timestamp": "2026-03-13T21:30:00Z",
+      "agent": "Cipher",
+      "task_type": "security_audit",
+      "success": true,
+      "insight": "Cipher's threat modeling improved with KB context injection"
+    },
+    {
+      "timestamp": "2026-03-13T21:15:00Z",
+      "agent": "Codex",
+      "task_type": "code_review",
+      "success": true,
+      "insight": "Code review context from KB reduces review time by 15%"
+    }
+  ]
+}

@@ -1,8 +1,44 @@
 # MEMORY.md - Long-Term Memory (OpenClaw Improvements 2026-03-13)
 
-Last updated: 2026-03-13 21:55 GMT  
-Session: Complete (17:00 - 21:55, 4h 55m)  
-Status: ✅ Production-ready system live and committed
+Last updated: 2026-03-13 23:08 GMT  
+Session: Extended (17:00 - ongoing, 6h+ development)  
+Status: ✅ KB System live + Spawner integration complete
+
+---
+
+## 2026-03-13 Session Update - KB Integration Live
+
+**New Achievement:** Knowledge Base system now live in agent spawning pipeline
+
+### KB System Delivered (19:50-19:51)
+- ✅ **kb-rag-injector.jl** (268 lines) — Semantic search + context formatting
+- ✅ **query-reformulate.jl** (233 lines) — Query expansion + multi-angle retrieval
+- ✅ **kb-live-indexer.jl** (288 lines) — Auto-learning from agent outcomes
+- ✅ **kb-confidence-scorer.jl** (283 lines) — Quality scoring + gap detection
+
+**Total:** 1,072 lines of pure Julia, zero external dependencies
+
+### KB Integration Live (23:00-23:08)
+- ✅ **kb-integration.jl** (130 lines) — Wrapper module for spawner-matrix integration
+- ✅ Modified spawner-matrix.jl to retrieve KB context before spawning agents
+- ✅ Confidence-based filtering (only inject context if score >= 0.6)
+- ✅ Returns KB metadata in spawn output (found, count, reason)
+- ✅ Augmented prompts include ranked KB context blocks with confidence scores
+
+### Integration Architecture
+```
+spawn(task) → get_kb_context(task)
+           → score_entry(entry, task)
+           → filter(confidence >= 0.6)
+           → augment_prompt(system_prompt, kb_context)
+           → return spawn_result + kb_metadata
+```
+
+### Test Results
+- KB query "agent selection" → 2 entries (78% + 40% confidence)
+- Augmented prompt includes ranked context blocks
+- Confidence filtering prevents low-quality context injection
+- Spawner returns metadata: `kb_context_found`, `kb_context_entries`, `kb_context_reason`
 
 ---
 
