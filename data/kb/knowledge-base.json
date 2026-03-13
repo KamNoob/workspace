@@ -1,0 +1,59 @@
+{
+  "entries": [
+    {
+      "content": "When selecting agents for tasks, consider the task type, required expertise, and agent capabilities. Codex excels at code tasks, Scout at research, Cipher at security audits.",
+      "topic": "Agent Selection Strategies",
+      "id": "1",
+      "tags": [
+        "agent",
+        "selection",
+        "strategy"
+      ],
+      "timestamp": "2026-03-13T19:49:27.075"
+    },
+    {
+      "content": "Use Q-learning to optimize agent assignment over time. Track success rates, update Q-values based on outcomes, and gradually converge on optimal pairings.",
+      "topic": "Q-Learning for Agent Optimization",
+      "id": "2",
+      "tags": [
+        "q-learning",
+        "rl",
+        "optimization"
+      ],
+      "timestamp": "2026-03-13T19:49:27.075"
+    },
+    {
+      "content": "Maintain an organized KB with clear topics, relevant content, and consistent tagging. Regular updates from agent outcomes improve system learning.",
+      "topic": "Knowledge Base Management",
+      "id": "3",
+      "tags": [
+        "kb",
+        "knowledge",
+        "management"
+      ],
+      "timestamp": "2026-03-13T19:49:27.075"
+    },
+    {
+      "content": "For RAG systems: retrieve relevant context first, rank by relevance, inject into prompts with clear markers, monitor retrieval quality metrics.",
+      "topic": "RAG Implementation Best Practices",
+      "id": "4",
+      "tags": [
+        "rag",
+        "retrieval",
+        "generation"
+      ],
+      "timestamp": "2026-03-13T19:49:27.075"
+    },
+    {
+      "content": "Score confidence of agent selections using bootstrap methods or uncertainty quantification. Flag low-confidence decisions for manual review or escalation.",
+      "topic": "Confidence Scoring in RL",
+      "id": "5",
+      "tags": [
+        "confidence",
+        "uncertainty",
+        "scoring"
+      ],
+      "timestamp": "2026-03-13T19:49:27.075"
+    }
+  ]
+}
