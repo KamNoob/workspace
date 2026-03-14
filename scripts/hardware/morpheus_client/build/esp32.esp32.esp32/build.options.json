@@ -1,0 +1,9 @@
+{
+  "additionalFiles": "",
+  "compiler.optimization_flags": "-Os",
+  "customBuildProperties": "",
+  "fqbn": "esp32:esp32:esp32",
+  "hardwareFolders": "/home/art/.arduino15/packages/esp32/hardware/esp32/3.3.7,/home/art/.arduino15/packages/esp32/hardware/esp32/3.3.7",
+  "otherLibrariesFolders": "/home/art/Arduino/libraries",
+  "sketchLocation": "/home/art/.openclaw/workspace/scripts/hardware/morpheus_client"
+}

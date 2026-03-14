@@ -1,0 +1,28 @@
+[Unit]
+Description=Morpheus Decision Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=art
+WorkingDirectory=/home/art/.openclaw/workspace/scripts/hardware
+ExecStart=/snap/julia/165/bin/julia morpheus-server-prod.jl
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=morpheus
+
+# Security
+ProtectSystem=strict
+ProtectHome=yes
+NoNewPrivileges=true
+PrivateTmp=true
+
+# Resource limits
+MemoryLimit=512M
+CPUQuota=50%
+
+[Install]
+WantedBy=multi-user.target
