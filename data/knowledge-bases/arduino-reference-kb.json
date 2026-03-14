@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "title": "Arduino Hardware & Development Reference",
+    "version": "1.0",
+    "created": "2026-03-14",
+    "source": "Official Arduino documentation",
+    "domains": ["Arduino AVR", "ESP32", "Sketches", "Libraries", "Hardware"],
+    "total_entries": 45,
+    "confidence_thresholds": {
+      "high": 0.85,
+      "medium": 0.70,
+      "low": 0.50
+    }
+  },
+  "entries": [
+    {
+      "id": 1,
+      "type": "board_spec",
+      "title": "Arduino UNO Specifications",
+      "tags": ["arduino", "uno", "avr", "specs"],
+      "content": "Arduino UNO is based on ATmega328P microcontroller. Operating voltage 5V, 16MHz clock. 32KB flash memory (2KB bootloader), 2KB SRAM, 1KB EEPROM. 14 digital I/O pins (6 PWM), 6 analog input pins (ADC). USB connection via ATmega16U2. Power: 5-12V DC via barrel jack or USB.",
+      "confidence": 0.95,
+      "source": "arduino.cc official specs"
+    },
+    {
+      "id": 2,
+      "type": "board_spec",
+      "title": "Arduino Nano Specifications",
+      "tags": ["arduino", "nano", "avr", "specs", "compact"],
+      "content": "Arduino Nano is compact version of UNO. Same ATmega328P processor. 22 pins total (20 I/O). 32KB flash, 2KB SRAM, 1KB EEPROM. Operates at 16MHz. Mini USB connector for programming. Smaller breadboard-friendly form factor. Operating voltage: 5V. Power input: 5-12V DC or USB.",
+      "confidence": 0.95,
+      "source": "arduino.cc official specs"
+    },
+    {
+      "id": 3,
+      "type": "board_spec",
+      "title": "ESP32 Specifications",
+      "tags": ["esp32", "wifi", "bluetooth", "specs"],
+      "content": "ESP32 dual-core 32-bit Xtensa processor running at 240MHz. 4MB flash memory, 520KB SRAM (internal), 4MB optional external PSRAM. WiFi 802.11 b/g/n, Bluetooth Classic + BLE. 36 GPIO pins, SPI/I2C/UART/ADC/DAC/PWM/CAN support. Operating voltage: 3.3V. Power consumption: 80mA typical, deep sleep 10μA. Built-in USB-to-UART bridge.",
+      "confidence": 0.95,
+      "source": "espressif.com official specifications"
+    },
+    {
+      "id": 4,
+      "type": "pin_reference",
+      "title": "Arduino UNO Digital Pins",
+      "tags": ["arduino", "uno", "pins", "digital", "io"],
+      "content": "Arduino UNO has 14 digital pins (0-13). Pin 0 (RX) and Pin 1 (TX) used for serial communication. Pins 3, 5, 6, 9, 10, 11 support PWM (analogWrite). Pins 2 and 3 support external interrupts (attachInterrupt). Pins 13 connected to built-in LED. All pins can do digitalWrite/digitalRead. Maximum current per pin: 40mA. Total board current: 200mA.",
+      "confidence": 0.95,
+      "source": "arduino.cc pin reference"
+    },
+    {
+      "id": 5,
+      "type": "pin_reference",
+      "title": "Arduino UNO Analog Pins",
+      "tags": ["arduino", "uno", "pins", "analog", "adc"],
+      "content": "Arduino UNO has 6 analog input pins (A0-A5). Each pin can read values 0-1023 (10-bit ADC). Input voltage range: 0-5V (or 0-3.3V with AREF modification). Can also be used as digital pins 14-19. Analog resolution: 4.9mV per unit. Sampling rate: ~10,000 samples/second. A6 and A7 not available (used for internal measurements).",
+      "confidence": 0.95,
+      "source": "arduino.cc analog reference"
+    },
+    {
+      "id": 6,
+      "type": "pin_reference",
+      "title": "ESP32 GPIO Pins",
+      "tags": ["esp32", "gpio", "pins", "io"],
+      "content": "ESP32 has 36 GPIO pins. Voltage levels: 3.3V (NOT 5V tolerant). Recommended pins for general use: GPIO2, 4, 5, 12-15, 18-23, 25-27. Avoid GPIO0 (boot select), GPIO6-11 (flash), GPIO34-39 (input only). PWM on any GPIO (16+ channels). Analog pins: GPIO32-39 (10-bit ADC). Maximum current per pin: 25-40mA. Total board: 1200mA.",
+      "confidence": 0.90,
+      "source": "espressif idf documentation"
+    },
+    {
+      "id": 7,
+      "type": "library",
+      "title": "Serial Library (Arduino/ESP32)",
+      "tags": ["library", "serial", "communication", "uart"],
+      "content": "Serial library enables communication with computer or other devices via UART. Arduino: Serial.begin(9600) for UNO, ESP32: Serial.begin(115200). Methods: Serial.print(), Serial.println(), Serial.write(), Serial.read(), Serial.available(). Serial monitor for debugging. Baud rates: Arduino typically 9600 or 115200, ESP32 typically 115200. Default RX=0, TX=1.",
+      "confidence": 0.95,
+      "source": "arduino.cc/reference"
+    },
+    {
+      "id": 8,
+      "type": "library",
+      "title": "WiFi Library (ESP32)",
+      "tags": ["esp32", "wifi", "network", "library"],
+      "content": "ESP32 WiFi library for connecting to networks. Include: #include <WiFi.h>. Functions: WiFi.mode(WIFI_STA), WiFi.begin(ssid, password), WiFi.status(), WiFi.localIP(). Can act as access point (WIFI_AP) or both (WIFI_AP_STA). RSSI (signal strength): negative value in dBm, -30 is strong, -90 is weak. Connect timeout default 20 seconds.",
+      "confidence": 0.90,
+      "source": "arduino-esp32 GitHub documentation"
+    },
+    {
+      "id": 9,
+      "type": "library",
+      "title": "Wire Library (I2C)",
+      "tags": ["i2c", "library", "communication", "wire"],
+      "content": "Wire library for I2C (Two-Wire Interface) communication. Arduino UNO: SDA=A4, SCL=A5. ESP32: SDA=21, SCL=22 (configurable). Functions: Wire.begin(), Wire.beginTransmission(addr), Wire.write(), Wire.endTransmission(), Wire.requestFrom(). Speed: 100kHz standard, 400kHz fast mode. Pull-up resistors required (typically 4.7k). Up to 127 devices per bus.",
+      "confidence": 0.90,
+      "source": "arduino.cc/reference"
+    },
+    {
+      "id": 10,
+      "type": "library",
+      "title": "SPI Library",
+      "tags": ["spi", "library", "communication", "bus"],
+      "content": "Serial Peripheral Interface (SPI) for fast synchronous communication. Arduino: MOSI=11, MISO=12, SCK=13, CS=pin of choice. ESP32: MOSI=23, MISO=19, SCK=18 (on VSPI). Functions: SPI.begin(), SPI.transfer(), SPI.setClockDivider(). Speed: up to 10MHz typical. Uses 4 wires. Master-slave architecture. Better for high speed than I2C.",
+      "confidence": 0.85,
+      "source": "arduino.cc SPI reference"
+    },
+    {
+      "id": 11,
+      "type": "sketch_template",
+      "title": "Blink Sketch (Arduino UNO)",
+      "tags": ["sketch", "example", "led", "beginner"],
+      "content": "void setup() { pinMode(13, OUTPUT); } void loop() { digitalWrite(13, HIGH); delay(1000); digitalWrite(13, LOW); delay(1000); } Toggles LED on pin 13 every second. Pin 13 has built-in LED on most Arduino boards. Basic test for upload/communication. LED indicates: alive if blinking.",
+      "confidence": 0.95,
+      "source": "arduino.cc examples"
+    },
+    {
+      "id": 12,
+      "type": "sketch_template",
+      "title": "WiFi Scan Sketch (ESP32)",
+      "tags": ["sketch", "example", "wifi", "esp32"],
+      "content": "#include <WiFi.h> void setup() { Serial.begin(115200); WiFi.mode(WIFI_STA); WiFi.disconnect(); } void loop() { int n = WiFi.scanNetworks(); for(int i=0; i<n; i++) { Serial.println(WiFi.SSID(i)); } delay(5000); } Scans available WiFi networks every 5 seconds. Prints SSID and RSSI (signal strength). Useful for debugging network environment.",
+      "confidence": 0.85,
+      "source": "arduino-esp32 examples"
+    },
+    {
+      "id": 13,
+      "type": "sketch_template",
+      "title": "WiFi Connect Sketch (ESP32)",
+      "tags": ["sketch", "example", "wifi", "esp32", "network"],
+      "content": "#include <WiFi.h> const char* ssid = \"SSID\"; const char* password = \"PASSWORD\"; void setup() { Serial.begin(115200); WiFi.begin(ssid, password); while(WiFi.status() != WL_CONNECTED) { delay(500); Serial.print(\".\"); } Serial.println(WiFi.localIP()); } Connects to WiFi and prints IP address. Update SSID and PASSWORD. Timeout ~20 seconds if credentials wrong.",
+      "confidence": 0.90,
+      "source": "arduino-esp32 examples"
+    },
+    {
+      "id": 14,
+      "type": "sketch_template",
+      "title": "HTTP GET Sketch (ESP32)",
+      "tags": ["sketch", "http", "esp32", "networking", "client"],
+      "content": "#include <WiFi.h> #include <HTTPClient.h> void setup() { WiFi.begin(ssid, password); } void loop() { HTTPClient http; http.begin(\"http://example.com/api\"); int code = http.GET(); String payload = http.getString(); http.end(); delay(10000); } Makes HTTP GET requests. HTTPClient library handles TCP/IP stack. Check http code (200=ok, 404=not found). Payload is response body. Useful for IoT APIs.",
+      "confidence": 0.80,
+      "source": "arduino-esp32 examples"
+    },
+    {
+      "id": 15,
+      "type": "pinout_diagram",
+      "title": "Arduino UNO Pinout",
+      "tags": ["arduino", "uno", "pinout", "diagram", "reference"],
+      "content": "Arduino UNO pins: Digital 0-13, Analog A0-A5, Power (5V, 3.3V, GND). Pin 13=LED. Pins 3,5,6,9,10,11=PWM. Pins 2,3=Interrupt. SPI: 10(CS), 11(MOSI), 12(MISO), 13(SCK). I2C: A4(SDA), A5(SCL). Serial: 0(RX), 1(TX). AREF for analog reference voltage.",
+      "confidence": 0.95,
+      "source": "arduino.cc pinout reference"
+    },
+    {
+      "id": 16,
+      "type": "pinout_diagram",
+      "title": "ESP32 Pinout",
+      "tags": ["esp32", "pinout", "diagram", "reference"],
+      "content": "ESP32 has 38 exposed pins (36 GPIO). Key pins: GPIO0=boot select, GPIO1=TX, GPIO3=RX, GPIO4-5=available, GPIO12-15=available, GPIO34-39=input only, GPIO6-11=flash. PWM: any GPIO via ledc (16 channels). I2C: GPIO21(SDA), GPIO22(SCL). SPI: GPIO18(SCK), GPIO19(MISO), GPIO23(MOSI). ADC: GPIO32-39. Voltage 3.3V only.",
+      "confidence": 0.90,
+      "source": "espressif pinout reference"
+    },
+    {
+      "id": 17,
+      "type": "troubleshooting",
+      "title": "Arduino Upload Fails: 'Port Not Found'",
+      "tags": ["troubleshooting", "upload", "port", "usb"],
+      "content": "Board not detected in IDE. Check: 1) USB cable plugged in both ends, 2) Try different USB port, 3) Install CH340 drivers (clone boards), 4) Linux: add user to dialout group (sudo usermod -aG dialout user), 5) Verify board in Tools menu. If still fails, try uploading bootloader using ISP programmer.",
+      "confidence": 0.90,
+      "source": "arduino community troubleshooting"
+    },
+    {
+      "id": 18,
+      "type": "troubleshooting",
+      "title": "ESP32 Upload Fails: Timeout Waiting for Packet",
+      "tags": ["troubleshooting", "esp32", "upload", "timeout"],
+      "content": "Board not responding during upload. Fix: 1) Hold GPIO0 to ground while uploading (bootloader mode), 2) Try different USB cable (data cable, not power-only), 3) Lower upload speed (Tools > Upload Speed > 115200), 4) Check USB driver (CP2102 on some boards), 5) Try different USB port. If stuck in bootloop, hold reset button during upload.",
+      "confidence": 0.85,
+      "source": "arduino-esp32 GitHub issues"
+    },
+    {
+      "id": 19,
+      "type": "troubleshooting",
+      "title": "LED Not Lighting Up",
+      "tags": ["troubleshooting", "led", "hardware", "debug"],
+      "content": "LED doesn't light when digitalWrite(pin, HIGH). Check: 1) Polarity (long leg = positive/anode), 2) Resistor value (220Ω typical, limits current), 3) Pin is output (pinMode(pin, OUTPUT)), 4) digitalWrite works (Serial.print to verify), 5) Current limit (LED needs ~20mA), 6) Measure voltage with multimeter (should see 5V or 3.3V).",
+      "confidence": 0.90,
+      "source": "arduino learning guide"
+    },
+    {
+      "id": 20,
+      "type": "troubleshooting",
+      "title": "Serial Monitor Shows Garbage",
+      "tags": ["troubleshooting", "serial", "baud", "communication"],
+      "content": "Serial.println() output unreadable. Cause: Baud rate mismatch. Arduino UNO default=9600, ESP32 default=115200. Fix: Check Serial.begin(speed) in sketch matches serial monitor baud dropdown. Common mistake: ESP32 sketch at 115200 but monitor at 9600. Check IDE Tools > Serial Monitor baud rate. Must match exactly.",
+      "confidence": 0.95,
+      "source": "arduino troubleshooting guide"
+    },
+    {
+      "id": 21,
+      "type": "coding_tip",
+      "title": "PWM with analogWrite()",
+      "tags": ["pwm", "coding", "analog", "output"],
+      "content": "analogWrite(pin, value) outputs PWM (0-255). Only works on PWM pins (UNO: 3,5,6,9,10,11). 0=0% duty, 255=100% duty. Frequency: ~490Hz default (UNO). ESP32 uses ledc library with configurable frequency/resolution. Useful for: LED brightness, motor speed, servo control.",
+      "confidence": 0.90,
+      "source": "arduino.cc/reference"
+    },
+    {
+      "id": 22,
+      "type": "coding_tip",
+      "title": "Reading Analog Values with analogRead()",
+      "tags": ["analog", "adc", "coding", "input"],
+      "content": "int value = analogRead(A0) returns 0-1023 based on 0-5V input (UNO). Resolution: 4.88mV per unit (5000mV / 1024). ESP32: analogRead returns 0-4095 (12-bit). Slow operation (~100μs per read). For faster sampling use interrupt mode or analogReadResolution(). Can read temperature sensors, potentiometers, light sensors.",
+      "confidence": 0.90,
+      "source": "arduino.cc reference"
+    },
+    {
+      "id": 23,
+      "type": "coding_tip",
+      "title": "Millis vs Delay",
+      "tags": ["timing", "non-blocking", "coding"],
+      "content": "delay(ms) blocks entire program (bad for responsiveness). Better: use millis() for non-blocking delays. Example: if(millis() - lastTime > 1000) { lastTime = millis(); doSomething(); } Allows loop() to run continuously. Essential for: responsiveness, multiple timers, interrupt handling. millis() resets every ~49 days.",
+      "confidence": 0.95,
+      "source": "arduino.cc best practices"
+    },
+    {
+      "id": 24,
+      "type": "coding_tip",
+      "title": "Memory Management: F() Macro",
+      "tags": ["memory", "flash", "coding", "strings"],
+      "content": "String literals in Flash memory use PROGMEM. Use F() macro to save SRAM: Serial.println(F(\"message\")); vs Serial.println(\"message\"); First uses Flash (32KB), second uses RAM (2KB). For large sketches, F() is essential. Example: if(String count is low, every Serial.print should use F().",
+      "confidence": 0.85,
+      "source": "arduino.cc memory guide"
+    },
+    {
+      "id": 25,
+      "type": "hardware_integration",
+      "title": "Arduino to Morpheus HTTP Request",
+      "tags": ["integration", "http", "api", "morpheus"],
+      "content": "ESP32 sends HTTP request to Morpheus server: HTTPClient http; http.begin(\"http://morpheus:8000/api/decide\"); http.addHeader(\"Content-Type\", \"application/json\"); String payload = \"{\\\"sensor_data\\\": 42}\"; int code = http.POST(payload); String response = http.getString(); Parse JSON response for action. Server returns decision JSON. Useful for: sensor → decision → action loops.",
+      "confidence": 0.80,
+      "source": "design documentation"
+    },
+    {
+      "id": 26,
+      "type": "hardware_integration",
+      "title": "Arduino Interrupt Handling",
+      "tags": ["interrupt", "real-time", "event-driven"],
+      "content": "attachInterrupt(digitalPinToInterrupt(pin), handler, mode) triggers function on pin change. Mode: RISING (low→high), FALLING (high→low), CHANGE (either). Handler must be fast (no delays). UNO: pins 2,3 only. ESP32: any GPIO. Useful for: button press, sensor trigger, precise timing. Disables with detachInterrupt().",
+      "confidence": 0.90,
+      "source": "arduino.cc interrupt reference"
+    },
+    {
+      "id": 27,
+      "type": "performance_tip",
+      "title": "Loop Timing Optimization",
+      "tags": ["performance", "optimization", "timing"],
+      "content": "Arduino loop() runs continuously (~10,000+ times/sec). Minimize blocking operations. Use millis() instead of delay(). Avoid Serial.print() in tight loops (slow). Disable interrupts during critical sections with noInterrupts(). For real-time: use timers/interrupts instead of loop timing. ESP32 can use FreeRTOS tasks for concurrent execution.",
+      "confidence": 0.85,
+      "source": "arduino optimization guide"
+    },
+    {
+      "id": 28,
+      "type": "debugging_tip",
+      "title": "Serial Debugging with Serial Monitor",
+      "tags": ["debugging", "serial", "serial-monitor"],
+      "content": "Print debug info: Serial.print(\"value=\"); Serial.println(sensor); Open Serial Monitor (Tools > Serial Monitor). Set baud rate correctly (must match sketch). Common pattern: if(DEBUG) Serial.println(...); Voltage check: verify pin with analogRead(), compare to expected. Test: upload blink, if LED blinks, board works.",
+      "confidence": 0.95,
+      "source": "arduino debugging guide"
+    },
+    {
+      "id": 29,
+      "type": "debugging_tip",
+      "title": "Multimeter Testing",
+      "tags": ["debugging", "hardware", "multimeter", "test"],
+      "content": "Use multimeter to verify: 1) Power (should see 5V or 3.3V), 2) LED voltage (should see 2-3V when on), 3) Pin voltage (digitalWrite(HIGH) → ~5V, LOW → ~0V), 4) Continuity (beep = connected), 5) Resistance (LED ~200Ω with resistor). Set dial to appropriate range (voltage, resistance, continuity).",
+      "confidence": 0.90,
+      "source": "hardware debugging best practices"
+    },
+    {
+      "id": 30,
+      "type": "best_practice",
+      "title": "Sketch Structure & Organization",
+      "tags": ["best-practice", "coding", "structure"],
+      "content": "Standard structure: 1) Includes (#include), 2) Constants (HIGH, pins), 3) Global variables, 4) setup() function, 5) loop() function, 6) Helper functions. Keep setup() minimal. Put initialization in setup(). Put logic in loop(). Break large sketches into functions. Comment non-obvious code. Use meaningful variable names.",
+      "confidence": 0.95,
+      "source": "arduino coding standards"
+    },
+    {
+      "id": 31,
+      "type": "best_practice",
+      "title": "Power Management on ESP32",
+      "tags": ["best-practice", "esp32", "power", "battery"],
+      "content": "ESP32 deep sleep: esp_deep_sleep(60 * 1000000); // 60 seconds. Wakes with: external pin, timer, or touch sensor. Reduces current to 10μA. Useful for battery-powered devices. Light sleep: esp_light_sleep_start(). Configure wake sources: esp_sleep_enable_timer_wakeup(duration). Voltage regulation: use AMS1117 if needed (3.3V from 5V).",
+      "confidence": 0.80,
+      "source": "espressif low-power guide"
+    },
+    {
+      "id": 32,
+      "type": "best_practice",
+      "title": "EEPROM Usage (Non-Volatile Storage)",
+      "tags": ["best-practice", "storage", "eeprom", "persistence"],
+      "content": "Arduino EEPROM: 1KB on UNO, 4KB on other boards. EEPROM.write(address, value) writes byte (0-255). EEPROM.read(address) reads byte. Limited writes: ~100,000 cycles per location. Useful for: settings, calibration, counters. ESP32: use Preferences library or NVS (Non-Volatile Storage) for key-value pairs.",
+      "confidence": 0.90,
+      "source": "arduino.cc EEPROM reference"
+    },
+    {
+      "id": 33,
+      "type": "installation",
+      "title": "Installing Arduino IDE",
+      "tags": ["setup", "installation", "ide"],
+      "content": "Download from arduino.cc. Linux: unzip, run ./arduino. Windows: installer. macOS: DMG. Launch IDE, Preferences set sketchbook location. Install board managers: Tools > Board Manager > search 'Arduino AVR Boards' or 'ESP32' > Install. Select board: Tools > Board > Arduino AVR Boards > Arduino UNO (or ESP32). Select port: Tools > Port > /dev/ttyUSB0 (Linux/Mac) or COM3 (Windows).",
+      "confidence": 0.95,
+      "source": "arduino.cc getting started"
+    },
+    {
+      "id": 34,
+      "type": "installation",
+      "title": "Installing ESP32 Board in Arduino IDE",
+      "tags": ["setup", "esp32", "board-manager", "installation"],
+      "content": "File > Preferences > Additional Boards Manager URLs: paste https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json > OK. Tools > Board Manager > search 'esp32' > Install 'esp32' by Espressif. Restart IDE. Tools > Board > ESP32 Wrover Module (or Dev Module). Select port. Ready to upload.",
+      "confidence": 0.95,
+      "source": "arduino-esp32 installation guide"
+    },
+    {
+      "id": 35,
+      "type": "library_installation",
+      "title": "Installing Libraries via Library Manager",
+      "tags": ["setup", "library-manager", "libraries"],
+      "content": "Sketch > Include Library > Manage Libraries. Search for library name (e.g., 'DHT'). Click Install. Library downloaded to ~/Arduino/libraries. Or manual: download .zip, Sketch > Include Library > Add .ZIP Library. Restart IDE. Then: #include <LibraryName.h> in sketch. Check examples under File > Examples.",
+      "confidence": 0.95,
+      "source": "arduino.cc library guide"
+    },
+    {
+      "id": 36,
+      "type": "sensor_integration",
+      "title": "Temperature Sensor (DHT11/DHT22)",
+      "tags": ["sensor", "dht", "temperature", "humidity"],
+      "content": "#include <DHT.h> DHT dht(pin, DHT11); dht.begin(); float temp = dht.readTemperature(); float humidity = dht.readHumidity(). DHT11: ±2°C accuracy, 5-95% RH, 1-2 Hz sampling. DHT22: ±0.5°C, 0-100%, 0.5 Hz. Requires 5kΩ pull-up on data pin. 2 second delay between reads. Returns NaN on error.",
+      "confidence": 0.85,
+      "source": "adafruit DHT library"
+    },
+    {
+      "id": 37,
+      "type": "sensor_integration",
+      "title": "Distance Sensor (HC-SR04 Ultrasonic)",
+      "tags": ["sensor", "ultrasonic", "distance", "hcsr04"],
+      "content": "Trigger pin HIGH for 10μs, measure echo pin HIGH time. Distance (cm) = time(μs) / 58. Effective range: 2-400cm. Better libraries available: NewPing.h. Connect: Trig to digital pin, Echo to digital pin (may need voltage divider for ESP32 3.3V). Timing precision critical for accuracy. Fast sampling: 10ms between triggers.",
+      "confidence": 0.80,
+      "source": "HC-SR04 datasheet"
+    },
+    {
+      "id": 38,
+      "type": "sensor_integration",
+      "title": "Light Sensor (Photoresistor/LDR)",
+      "tags": ["sensor", "ldr", "light", "photoresistor"],
+      "content": "Light-dependent resistor (LDR) resistance varies with light. Connect as voltage divider with fixed resistor. Read with analogRead(). Resistance: ~10kΩ in darkness, ~1kΩ in bright light. Need fixed resistor (e.g., 10kΩ) to create divider. Calibrate by measuring analog values in different light levels. No library needed, just analogRead().",
+      "confidence": 0.85,
+      "source": "arduino sensor tutorials"
+    },
+    {
+      "id": 39,
+      "type": "actuator_control",
+      "title": "Servo Motor Control",
+      "tags": ["actuator", "servo", "pwm", "control"],
+      "content": "#include <Servo.h> Servo servo; servo.attach(pin); servo.write(90); // 0-180 degrees. Pulse width: 1ms=0°, 1.5ms=90°, 2ms=180°. Servo library handles PWM timing. Standard servo: 4.8-6V, torque ~10kg·cm. Check servo range (some 0-270°). Non-standard angles may damage servo.",
+      "confidence": 0.90,
+      "source": "arduino.cc servo library"
+    },
+    {
+      "id": 40,
+      "type": "actuator_control",
+      "title": "DC Motor with L298N Driver",
+      "tags": ["actuator", "motor", "pwm", "driver"],
+      "content": "L298N dual motor driver. Motor 1: IN1/IN2 (direction) + ENA (PWM speed 0-255). Forward: IN1=HIGH, IN2=LOW, analogWrite(ENA, 255). Reverse: IN1=LOW, IN2=HIGH. Stop: both LOW. Need power supply for motors (separate from Arduino 5V). Current limit: 2A per channel. GND must connect all grounds (Arduino, driver, power).",
+      "confidence": 0.90,
+      "source": "L298N datasheet & tutorials"
+    },
+    {
+      "id": 41,
+      "type": "communication",
+      "title": "I2C Address Scanning",
+      "tags": ["i2c", "communication", "debugging", "address"],
+      "content": "Scan I2C bus for connected devices: Wire.begin(); Wire.beginTransmission(addr); byte error = Wire.endTransmission(); Reports 0 if device found. Typical addresses: 0x27 (LCD), 0x68 (MPU6050), 0x48-0x4F (ADC). Some devices have configurable addresses (address select pins). Use i2c-scanner sketch from examples.",
+      "confidence": 0.90,
+      "source": "i2c protocol documentation"
+    },
+    {
+      "id": 42,
+      "type": "communication",
+      "title": "JSON Communication with ArduinoJSON",
+      "tags": ["communication", "json", "library"],
+      "content": "#include <ArduinoJson.h> DynamicJsonDocument doc(200); doc[\"key\"] = \"value\"; serializeJson(doc, Serial); Parse: deserializeJson(doc, input); Useful for: WiFi API requests, sensor data formatting, configuration. Size 200 = ~200 bytes for JSON tree. Adjust based on JSON complexity. Makes HTTP communication cleaner.",
+      "confidence": 0.80,
+      "source": "ArduinoJson library documentation"
+    },
+    {
+      "id": 43,
+      "type": "cli_command",
+      "title": "Arduino CLI List Boards Command",
+      "tags": ["cli", "arduino-cli", "command"],
+      "content": "arduino-cli board list - Shows connected boards with port and FQBN. Example output: '/dev/ttyUSB0 Arduino Uno arduino:avr:uno'. arduino-cli board listall - Lists all installed board definitions. arduino-cli board info arduino:avr:uno - Shows detailed info about board.",
+      "confidence": 0.95,
+      "source": "arduino-cli documentation"
+    },
+    {
+      "id": 44,
+      "type": "cli_command",
+      "title": "Arduino CLI Compile Command",
+      "tags": ["cli", "arduino-cli", "command", "compile"],
+      "content": "arduino-cli compile -b arduino:avr:uno sketches/blink_uno - Compiles sketch. -b specifies board (FQBN format). -v verbose output. Output: hex file in build directory. Can compile multiple boards from same sketch. Useful for CI/CD and scripted builds.",
+      "confidence": 0.95,
+      "source": "arduino-cli documentation"
+    },
+    {
+      "id": 45,
+      "type": "cli_command",
+      "title": "Arduino CLI Upload Command",
+      "tags": ["cli", "arduino-cli", "command", "upload"],
+      "content": "arduino-cli upload -p /dev/ttyUSB0 -b esp32:esp32:esp32 sketches/wifi_esp32 - Uploads to board. -p specifies port. -b specifies board. -l shows board list. Requires board connected. Returns error if upload fails. Scripted uploads useful for automated testing.",
+      "confidence": 0.95,
+      "source": "arduino-cli documentation"
+    }
+  ],
+  "indexing": {
+    "board_types": ["Arduino UNO", "Arduino Nano", "ESP32"],
+    "libraries": ["Serial", "WiFi", "Wire", "SPI", "Servo", "DHT", "HTTPClient"],
+    "common_tasks": [
+      "Blink LED",
+      "Connect to WiFi",
+      "Make HTTP request",
+      "Read sensor",
+      "Control motor",
+      "I2C communication",
+      "Serial debugging"
+    ]
+  }
+}
