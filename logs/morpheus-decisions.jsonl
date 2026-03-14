@@ -1,0 +1,11 @@
+{"device_id":"ESP32_001","sensor":"temperature","unit":"C","decision":"relay_on","value":42.0,"timestamp":"1.773499484135694e9","execute":true,"confidence":0.9,"reasoning":"High temperature, activating cooling"}
+{"device_id":"unknown","sensor":"temperature","unit":"C","decision":"relay_on","value":42.0,"timestamp":"1.773499486049863e9","execute":true,"confidence":0.9,"reasoning":"High temperature, activating cooling"}
+{"device_id":"unknown","decision":"idle","execute":false,"timestamp":"1.773499497252512e9","confidence":0.3,"reasoning":"Unknown sensor type"}
+{"device_id":"ESP32_TEST_001","sensor":"temperature","unit":"C","decision":"relay_on","value":35.0,"timestamp":1.773499954e9,"execute":true,"confidence":0.9,"reasoning":"High temperature, activating cooling"}
+{"device_id":"ESP32_TEST","sensor":"temperature","unit":"C","decision":"idle","value":25.0,"timestamp":"1.773500001284191e9","execute":false,"confidence":0.95,"reasoning":"Temperature normal"}
+{"device_id":"ESP32_TEST","sensor":"temperature","unit":"C","decision":"relay_on","value":32.0,"timestamp":"1.77350000224359e9","execute":true,"confidence":0.9,"reasoning":"High temperature, activating cooling"}
+{"device_id":"ESP32_TEST","sensor":"temperature","unit":"C","decision":"relay_on","value":40.0,"timestamp":"1.773500002771053e9","execute":true,"confidence":0.9,"reasoning":"High temperature, activating cooling"}
+{"device_id":"ESP32_TEST","sensor":"temperature","unit":"C","decision":"idle","value":15.0,"timestamp":"1.773500003313924e9","execute":false,"confidence":0.95,"reasoning":"Temperature normal"}
+{"device_id":"PROD_TEST","sensor":"temperature","unit":"C","decision":"relay_on","value":35.0,"timestamp":"1.773500255481932e9","execute":true,"confidence":0.9,"reasoning":"High temperature, activating cooling"}
+{"device_id":"unknown","sensor":"temperature","decision":"relay_on","value":35.0,"timestamp":"1.773501170243654e9","execute":true,"confidence":0.9,"reasoning":"High temperature, activating cooling"}
+{"device_id":"PROD_DEPLOY","sensor":"temperature","unit":"C","decision":"relay_on","value":35.0,"timestamp":"1.773501184848067e9","execute":true,"confidence":0.9,"reasoning":"High temperature, activating cooling"}

@@ -11,3 +11,57 @@
 {"timestamp":"2026-03-13T10:50:00Z","task":"code","agent":"Codex","success":true,"reward":1.0}
 {"timestamp":"2026-03-13T10:55:00Z","task":"research","agent":"Scout","success":true,"reward":1.0}
 {"timestamp":"2026-03-13T11:00:00Z","task":"code","agent":"Codex","success":true,"reward":1.0}
+{"timestamp":"2026-03-14T14:29:07.798","success":true,"reward":0.4,"confidence":0.6147195,"task":"write python function to parse json data","agent":"QA"}
+{"timestamp":"2026-03-14T14:29:08.468","success":false,"reward":0.3,"confidence":0.67810225,"task":"debug typescript compilation error","agent":"Veritas"}
+{"timestamp":"2026-03-14T14:29:08.468","success":false,"reward":0.3,"confidence":0.59000784,"task":"refactor large javascript file into modules","agent":"Veritas"}
+{"timestamp":"2026-03-14T14:29:08.468","success":false,"reward":0.2,"confidence":0.74261904,"task":"create julia script for data processing","agent":"Codex"}
+{"timestamp":"2026-03-14T14:29:08.468","success":true,"reward":1.0,"confidence":0.6859712,"task":"fix memory leak in c++ application","agent":"Codex"}
+{"timestamp":"2026-03-14T14:29:08.468","success":true,"reward":0.7,"confidence":0.51364666,"task":"research latest machine learning frameworks","agent":"Chronicle"}
+{"timestamp":"2026-03-14T14:29:08.468","success":true,"reward":0.7,"confidence":0.6663364,"task":"find best practices for api security","agent":"Sentinel"}
+{"timestamp":"2026-03-14T14:29:08.468","success":true,"reward":0.7,"confidence":0.75690854,"task":"analyze competitor features and pricing","agent":"Codex"}
+{"timestamp":"2026-03-14T14:29:08.468","success":true,"reward":1.0,"confidence":0.53416234,"task":"research distributed system architectures","agent":"Scout"}
+{"timestamp":"2026-03-14T14:29:08.468","success":false,"reward":0.3,"confidence":0.7108222,"task":"find peer-reviewed papers on reinforcement learning","agent":"Chronicle"}
+{"timestamp":"2026-03-14T14:29:08.468","success":true,"reward":1.0,"confidence":0.6346707,"task":"audit api endpoints for authentication","agent":"Cipher"}
+{"timestamp":"2026-03-14T14:29:08.468","success":true,"reward":1.0,"confidence":0.8430331,"task":"threat model for cloud infrastructure","agent":"Cipher"}
+{"timestamp":"2026-03-14T14:29:08.468","success":false,"reward":0.1,"confidence":0.78630674,"task":"security review of database queries","agent":"Codex"}
+{"timestamp":"2026-03-14T14:29:08.468","success":false,"reward":0.1,"confidence":0.5566721,"task":"penetration test strategy for web app","agent":"Sentinel"}
+{"timestamp":"2026-03-14T14:29:08.469","success":false,"reward":0.1,"confidence":0.65953666,"task":"identify and fix sql injection vulnerabilities","agent":"Cipher"}
+{"timestamp":"2026-03-14T14:29:08.469","success":true,"reward":0.7,"confidence":0.84752667,"task":"write unit tests for authentication module","agent":"Veritas"}
+{"timestamp":"2026-03-14T14:29:08.469","success":true,"reward":1.0,"confidence":0.5407484,"task":"create integration tests for api","agent":"QA"}
+{"timestamp":"2026-03-14T14:29:08.469","success":false,"reward":0.1,"confidence":0.51700294,"task":"test performance benchmarks","agent":"Sentinel"}
+{"timestamp":"2026-03-14T14:29:08.469","success":false,"reward":0.1,"confidence":0.5461402,"task":"design test strategy for new feature","agent":"Codex"}
+{"timestamp":"2026-03-14T14:29:08.469","success":false,"reward":0.1,"confidence":0.71452767,"task":"find and document edge cases","agent":"QA"}
+{"timestamp":"2026-03-14T14:29:08.469","success":true,"reward":1.0,"confidence":0.55357397,"task":"write api documentation","agent":"Codex"}
+{"timestamp":"2026-03-14T14:29:08.469","success":false,"reward":0.3,"confidence":0.8308387,"task":"create user guide for new feature","agent":"Scout"}
+{"timestamp":"2026-03-14T14:29:08.469","success":true,"reward":0.7,"confidence":0.6481581,"task":"document system architecture","agent":"Sentinel"}
+{"timestamp":"2026-03-14T14:29:08.469","success":false,"reward":0.3,"confidence":0.69912195,"task":"create onboarding guide for developers","agent":"Chronicle"}
+{"timestamp":"2026-03-14T14:29:08.469","success":true,"reward":0.7,"confidence":0.8940465,"task":"write technical specification","agent":"Scout"}
+{"timestamp":"2026-03-14T14:29:08.469","success":false,"reward":0.3,"confidence":0.5476421,"task":"review pull request for style and quality","agent":"Codex"}
+{"timestamp":"2026-03-14T14:29:08.469","success":true,"reward":0.7,"confidence":0.65803385,"task":"evaluate code architecture and design","agent":"Veritas"}
+{"timestamp":"2026-03-14T14:29:22.230","success":true,"reward":0.7,"confidence":0.6168154,"task":"write python function to parse json data","agent":"Scout"}
+{"timestamp":"2026-03-14T14:29:22.806","success":false,"reward":0.1,"confidence":0.7369926,"task":"debug typescript compilation error","agent":"QA"}
+{"timestamp":"2026-03-14T14:29:22.806","success":false,"reward":0.3,"confidence":0.6388059,"task":"refactor large javascript file into modules","agent":"Veritas"}
+{"timestamp":"2026-03-14T14:29:22.806","success":true,"reward":1.0,"confidence":0.6477582,"task":"create julia script for data processing","agent":"Codex"}
+{"timestamp":"2026-03-14T14:29:22.806","success":true,"reward":0.4,"confidence":0.8073478,"task":"fix memory leak in c++ application","agent":"Cipher"}
+{"timestamp":"2026-03-14T14:29:22.806","success":true,"reward":1.0,"confidence":0.7033179,"task":"research latest machine learning frameworks","agent":"Scout"}
+{"timestamp":"2026-03-14T14:29:22.806","success":true,"reward":1.0,"confidence":0.84507173,"task":"find best practices for api security","agent":"Scout"}
+{"timestamp":"2026-03-14T14:29:22.806","success":true,"reward":0.7,"confidence":0.8384131,"task":"analyze competitor features and pricing","agent":"Chronicle"}
+{"timestamp":"2026-03-14T14:29:22.806","success":true,"reward":0.7,"confidence":0.7825227,"task":"research distributed system architectures","agent":"Sentinel"}
+{"timestamp":"2026-03-14T14:29:22.807","success":true,"reward":0.7,"confidence":0.7812261,"task":"find peer-reviewed papers on reinforcement learning","agent":"Codex"}
+{"timestamp":"2026-03-14T14:29:22.807","success":true,"reward":1.0,"confidence":0.642981,"task":"audit api endpoints for authentication","agent":"Cipher"}
+{"timestamp":"2026-03-14T14:29:22.807","success":true,"reward":1.0,"confidence":0.663463,"task":"threat model for cloud infrastructure","agent":"Cipher"}
+{"timestamp":"2026-03-14T14:29:22.807","success":true,"reward":0.4,"confidence":0.6508047,"task":"security review of database queries","agent":"Codex"}
+{"timestamp":"2026-03-14T14:29:22.807","success":true,"reward":1.0,"confidence":0.5128248,"task":"penetration test strategy for web app","agent":"Cipher"}
+{"timestamp":"2026-03-14T14:29:22.807","success":true,"reward":0.4,"confidence":0.6243794,"task":"identify and fix sql injection vulnerabilities","agent":"Cipher"}
+{"timestamp":"2026-03-14T14:29:22.807","success":false,"reward":0.1,"confidence":0.6452459,"task":"write unit tests for authentication module","agent":"QA"}
+{"timestamp":"2026-03-14T14:29:22.807","success":true,"reward":0.4,"confidence":0.7401252,"task":"create integration tests for api","agent":"Sentinel"}
+{"timestamp":"2026-03-14T14:29:22.807","success":false,"reward":0.1,"confidence":0.512925,"task":"test performance benchmarks","agent":"Sentinel"}
+{"timestamp":"2026-03-14T14:29:22.807","success":true,"reward":1.0,"confidence":0.5996221,"task":"design test strategy for new feature","agent":"QA"}
+{"timestamp":"2026-03-14T14:29:22.807","success":false,"reward":0.2,"confidence":0.63899696,"task":"find and document edge cases","agent":"Scout"}
+{"timestamp":"2026-03-14T14:29:22.807","success":true,"reward":0.7,"confidence":0.6681977,"task":"write api documentation","agent":"Chronicle"}
+{"timestamp":"2026-03-14T14:29:22.807","success":true,"reward":1.0,"confidence":0.59067327,"task":"create user guide for new feature","agent":"Codex"}
+{"timestamp":"2026-03-14T14:29:22.808","success":true,"reward":0.7,"confidence":0.5028146,"task":"document system architecture","agent":"Scout"}
+{"timestamp":"2026-03-14T14:29:22.808","success":true,"reward":0.7,"confidence":0.80986184,"task":"create onboarding guide for developers","agent":"Chronicle"}
+{"timestamp":"2026-03-14T14:29:22.808","success":true,"reward":0.7,"confidence":0.6955572,"task":"write technical specification","agent":"Chronicle"}
+{"timestamp":"2026-03-14T14:29:22.808","success":true,"reward":1.0,"confidence":0.6290883,"task":"review pull request for style and quality","agent":"Veritas"}
+{"timestamp":"2026-03-14T14:29:22.808","success":true,"reward":1.0,"confidence":0.66798997,"task":"evaluate code architecture and design","agent":"Codex"}
