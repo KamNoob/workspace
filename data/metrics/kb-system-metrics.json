@@ -1,6 +1,6 @@
 {
   "system_start": "2026-03-13T23:08:00Z",
-  "last_updated": "2026-03-13T23:12:00Z",
+  "last_updated": "2026-03-14T01:22:24Z",
   "kb_growth_history": [
     {
       "timestamp": "2026-03-13T19:50:00Z",
@@ -19,12 +19,17 @@
       "new_entries_added": 1,
       "source": "manual-addition",
       "success_rate": 0.92
+    },
+    {
+      "timestamp": "2026-03-14T01:22:24Z",
+      "new_entries_added": 13,
+      "success_rate": 7.00
     }
   ],
   "spawn_metrics": {
     "total_spawns": 42,
     "successful_spawns": 38,
-    "success_rate": 0.90,
+    "success_rate": 7.00,
     "kb_context_usage": {
       "queries_using_kb": 38,
       "avg_context_tokens": 285,
