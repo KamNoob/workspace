@@ -34,7 +34,7 @@ _Active threads to explore. Pick one, build momentum, iterate._
 ---
 
 ### 🧠 Predictive Agent Router (Neural Network)
-**Status:** Brainstormed (neuro-net-brainstorm.md)  
+**Status:** ✅ Phase 1-2 Complete (2026-03-14 12:37)  
 **Effort:** 3 days to first model  
 **Impact:** High (20-30% improvement in agent selection)
 
@@ -49,12 +49,20 @@ Julia: Replace spawner-matrix logic
 R: Performance dashboard
 ```
 
-**What to build:**
-1. Python: Collect task/agent/outcome data from RL logs
-2. Train logistic/neural classifier (PyTorch Lightning)
-3. Rust: Build inference server
-4. Julia: Integrate into spawner-matrix.jl
-5. R: Visualize improvement over Q-learning
+**What's done (Phase 1-2):**
+1. ✅ Data prep (Julia): Load RL logs, featurize, encode agents
+   - Script: agent-router-data.jl
+   - Output: 7 train / 6 test samples, 6-dim features, 6 agents
+   
+2. ✅ Neural network trainer (Julia): 3-layer MLP + training loop
+   - Script: train-agent-router.jl
+   - Model: 6 → 16 → 16 → 6 (trained)
+   - Output: agent-router-model.json (5.5KB)
+
+**What's next (Phase 3):**
+3. [ ] Rust: Build inference server (HTTP API on localhost:8000)
+4. [ ] Julia: Integrate into spawner-matrix.jl (query before spawn)
+5. [ ] R: Visualize predictions vs outcomes
 
 **Why:** Strategic improvement, measurable ROI, teaches full stack
 
@@ -184,7 +192,7 @@ R: Performance dashboard
 | Thread | Owner | Status | Started | ETA | Notes |
 |--------|-------|--------|---------|-----|-------|
 | Arduino | — | Phase 1 ✅ | 2026-03-14 | 2d (Phase 2-3) | CLI done, sketches ready, integration plan in place |
-| Agent Router | — | Brainstormed | — | 3d | Data available, ready to build |
+| Agent Router | — | Phase 1-2 ✅ | 2026-03-14 | 1d (Phase 3) | Data + training done, Rust API next |
 | KB Expansion | — | Not started | — | 1d/domain | Tesla done; Arduino next? |
 | Dashboards | — | Not started | — | 3-5d | Low-hanging fruit |
 | Memory System | — | Not started | — | 1w | Nice-to-have, lower priority |
