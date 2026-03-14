@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-03-14 14:14:57.130063",
+  "predictions_total": 2,
+  "method_neural_network": 0,
+  "method_qlearning": 0,
+  "confidence_mean": 0.500,
+  "confidence_high": 0
+}
