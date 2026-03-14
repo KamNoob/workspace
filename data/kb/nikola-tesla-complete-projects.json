@@ -1,0 +1,357 @@
+{
+  "entry_id": "nikola-tesla-projects-001",
+  "subject": "Nikola Tesla - Complete Projects, Inventions, Patents & Documents",
+  "created": "2026-03-14T09:06:00Z",
+  "last_updated": "2026-03-14T09:15:00Z",
+  "verified": true,
+  "research_scope": "All known projects, experiments, patents (300+ worldwide), archived documents, and writings",
+  "total_patents_worldwide": "~300 patents",
+  "total_us_patents": "~111 U.S. patents",
+  "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Nikola_Tesla_patents",
+    "https://www.svensons.com/tesla/",
+    "https://patents.google.com/",
+    "https://teslauniverse.com/nikola-tesla/patents",
+    "https://www.nikolateslalegend.com/patents",
+    "https://www.uspto.gov/",
+    "https://archive.org/details/nikolateslapape00tesl",
+    "https://researchworks.oclc.org/",
+    "https://library.si.edu/",
+    "https://www.loc.gov/item/mm82050302/",
+    "https://teslacollection.com/",
+    "https://tesla-museum.org/",
+    "https://teslasciencecenter.org/"
+  ],
+  "major_projects": {
+    "ac_electrical_system": {
+      "name": "Alternating Current (AC) Electrical System",
+      "period": "1883-1895",
+      "status": "Completed and commercialized",
+      "description": "Modern electrical power distribution system using alternating current",
+      "key_patents": ["US390415 - Dynamo Electric Machine", "Multiple polyphase system patents (1888)"],
+      "significance": "Foundation of global electrical infrastructure",
+      "documents": "The Inventions, Researches and Writings of Nikola Tesla (1894)"
+    },
+    "induction_motor": {
+      "name": "Polyphase Induction Motor with Rotating Magnetic Field",
+      "period": "1883-1888",
+      "status": "Completed and patented",
+      "description": "First practical AC motor using rotating magnetic fields. Seven U.S. patents granted in 1888.",
+      "key_patents": [
+        "7 patents for polyphase systems (1888)",
+        "Two-phase and three-phase motor and generator patents"
+      ],
+      "first_successful_test": "1887-1888",
+      "significance": "Enabled practical AC power applications in machinery"
+    },
+    "tesla_coil": {
+      "name": "Tesla Coil Transformer",
+      "period": "1891-1897",
+      "status": "Completed and in continuous use",
+      "description": "Electrical transformer that steps up voltage to extremely high levels. Uses insulating oil baths.",
+      "specifications": "Achieved frequencies of 20,000 cycles per second at extremely high voltages",
+      "applications": [
+        "Radio transmission technology",
+        "Modern wireless communications",
+        "High-frequency electrical experiments"
+      ],
+      "patents": "US568176A and US568179A (1896) - High frequency apparatus",
+      "current_use": "Still used in radio technology and scientific experimentation"
+    },
+    "wireless_power_transmission": {
+      "name": "Wireless Power Transmission System",
+      "period": "1891-1905",
+      "status": "Theoretical and experimental; partially implemented",
+      "description": "System to transmit electrical energy without wires over long distances",
+      "key_experiment_locations": [
+        "Colorado Springs (1899-1900)",
+        "Long Island, New York (Wardenclyffe)"
+      ],
+      "patents": "US649621A (1900) - Apparatus for transmission of electrical energy",
+      "wardenclyffe_tower": {
+        "location": "Shoreham, Long Island, New York",
+        "period": "1900-1905",
+        "status": "Partially completed; abandoned due to funding",
+        "purpose": "Worldwide wireless transmission of power and information",
+        "current_status": "Site now home to Tesla Science Center at Wardenclyffe (museum)"
+      },
+      "theoretical_range": "Proposed worldwide transmission capability",
+      "current_relevance": "Precursor to modern wireless technology"
+    },
+    "remote_control_technology": {
+      "name": "Teleautomatic Boat (Remote Control)",
+      "period": "1898",
+      "status": "Completed and demonstrated",
+      "description": "Boat guided by remote control using wireless signals, early form of radio control",
+      "demonstration": "Public demonstration at Madison Square Garden, New York",
+      "significance": "First wireless remote control device",
+      "patents": "Related wireless transmission patents"
+    },
+    "colorado_springs_experiments": {
+      "name": "Colorado Springs High-Voltage Research Laboratory",
+      "period": "1899-1900",
+      "location": "Colorado Springs, Colorado",
+      "status": "Completed",
+      "description": "Experimental laboratory for high-voltage and high-frequency experiments",
+      "host": "Free location and electricity provided by friend Leonard Curtis",
+      "reason_for_location": "Laboratory on Houston Street, NYC no longer suitable for extreme high-voltage work",
+      "key_findings": [
+        "High-frequency generation and transmission experiments",
+        "Wireless transmission tests",
+        "Atmospheric electricity studies"
+      ],
+      "documentation": "Comprehensive laboratory notes and technical records"
+    },
+    "x_ray_research": {
+      "name": "X-Ray Experimentation (Shadowgraph)",
+      "period": "1891-1895",
+      "status": "Completed experiments",
+      "description": "Tesla experimented with shadowgraphs similar to X-ray technology before Röntgen's discovery (1895)",
+      "significance": "Early work in radiation and high-frequency phenomena",
+      "relationship_to_röntgen": "Parallel research to Wilhelm Röntgen's X-ray discovery"
+    },
+    "neon_and_phosphorescent_lighting": {
+      "name": "Neon and Phosphorescent Light Development",
+      "period": "1890s-1900s",
+      "status": "Completed",
+      "description": "High-frequency power experiments led to neon light creation and phosphorescent lighting",
+      "applications": [
+        "Neon signage and lighting",
+        "Phosphorescent bulbs",
+        "Modern city illumination"
+      ],
+      "significance": "Foundation of neon sign industry and modern lighting technology"
+    },
+    "particle_beam_weapon": {
+      "name": "Particle Beam Weapon (Teleforce / 'Death Ray')",
+      "period": "1930s-1942",
+      "status": "Theoretical and experimental; never fully built",
+      "description": "Military weapon accelerating mercury particles at 48x speed of sound through vacuum chamber",
+      "specifications": {
+        "particle_acceleration": "48 times the speed of sound",
+        "proposed_range": "250 miles",
+        "target_capacity": "Fleet of 10,000 aircraft"
+      },
+      "tesla_intent": "Called it a 'peace beam' rather than 'death ray' - intended for defense/deterrence",
+      "government_interest": [
+        "United States - Tesla offered; no significant interest",
+        "Soviet Union - Only country to show interest; conducted partial tests (1939)"
+      ],
+      "declassified_documents": "CIA documents reveal secret history of this project"
+    },
+    "bladeless_turbine": {
+      "name": "Tesla Turbine (Bladeless Rotor)",
+      "period": "1906-1913",
+      "status": "Completed design and prototype",
+      "description": "Turbine design using rotating disk instead of blades",
+      "patents": "Multiple turbine-related patents",
+      "advantage": "High efficiency, simple construction, no moving parts in traditional sense",
+      "applications": ["Steam turbines", "Pumps", "Compressors"]
+    },
+    "earthquake_machine": {
+      "name": "Mechanical Oscillator (Earthquake Machine)",
+      "period": "1890s-1912",
+      "status": "Experimental prototype built",
+      "description": "Mechanical device that vibrates at specific frequencies; claimed ability to induce vibrations in structures",
+      "famous_incident": "Tesla reportedly used device in NYC lab; caused vibrations felt in surrounding buildings",
+      "scientific_basis": "Resonance and mechanical oscillation principles",
+      "status_verification": "Some claims legendary; core device documented"
+    },
+    "thought_camera": {
+      "name": "Thought Photography Device",
+      "period": "1920s-1930s",
+      "status": "Theoretical/experimental; never proven functional",
+      "description": "Tesla claimed to have designed device capable of projecting thoughts as images on screen",
+      "basis": "Theoretical extensions of electromagnetic and consciousness theories",
+      "scientific_status": "Not supported by verified experimental evidence"
+    },
+    "cosmic_ray_motor": {
+      "name": "Motor Powered by Cosmic Rays",
+      "period": "Later years",
+      "status": "Theoretical concept",
+      "description": "Theoretical motor design claimed to run on cosmic radiation energy",
+      "scientific_status": "Speculative; not experimentally verified"
+    },
+    "artificial_intelligence_concepts": {
+      "name": "Early Concepts of Wireless Automata and Remote Control",
+      "period": "1898-1912",
+      "description": "Theoretical concepts of self-operating machines guided by wireless signals",
+      "precursor_to": "Modern robotics and automation concepts",
+      "documented_in": "Various published articles and patents"
+    }
+  },
+  "patents_summary": {
+    "total_worldwide": "~300 patents (estimated)",
+    "us_patents": "~111 verified U.S. patents",
+    "countries_with_patents": ["United States", "Canada", "United Kingdom", "France", "Germany", "Belgium", "Austria", "Italy", "Sweden"],
+    "patent_office_sources": [
+      "https://patents.google.com/",
+      "https://www.uspto.gov/",
+      "https://en.wikipedia.org/wiki/List_of_Nikola_Tesla_patents"
+    ],
+    "notable_patent_groups": {
+      "polyphase_systems": "Seven patents (1888)",
+      "wireless_transmission": "Multiple patents (1890s-1900)",
+      "high_frequency_apparatus": "US568176A, US568179A (1896)",
+      "electrical_transmission": "US649621A (1900)",
+      "turbine_designs": "Multiple patents (1906-1913)",
+      "remote_control": "Multiple patents (1898-1912)"
+    }
+  },
+  "archived_documents_and_sources": {
+    "primary_archives": {
+      "nikola_tesla_museum_belgrade": {
+        "location": "Muzej Nikole Tesle, Belgrade, Serbia",
+        "holdings": "Personal and original legacy collection (brought to museum 1952)",
+        "content": [
+          "Personal papers",
+          "Laboratory notebooks",
+          "Correspondence",
+          "Design drawings",
+          "Photographs"
+        ],
+        "access": "Museum archives + Academia.edu academic papers"
+      },
+      "library_of_congress": {
+        "location": "Manuscript Division, Washington, D.C.",
+        "collection": "Nikola Tesla Correspondence, 1890-1934",
+        "format": "Microfilm edition of original papers",
+        "correspondents": [
+          "Samuel Langhorne Clemens (Mark Twain)",
+          "Robert Underwood Johnson",
+          "J. Pierpont Morgan",
+          "George Scherff",
+          "George Westinghouse",
+          "Westinghouse Electric & Manufacturing Company"
+        ],
+        "citation_format": "Reel number, Nikola Tesla Correspondence, Manuscript Division, Library of Congress"
+      },
+      "smithsonian_institution": {
+        "location": "Smithsonian Libraries, Washington, D.C.",
+        "collection": "H.W. Lende, Jr. Manuscript Collection",
+        "content": [
+          "Transmission of electric energy without wires",
+          "Correspondence",
+          "Design materials",
+          "Technical documents"
+        ]
+      },
+      "internet_archive": {
+        "location": "archive.org",
+        "url": "https://archive.org/details/nikolateslapape00tesl",
+        "content": [
+          "Nikola Tesla Papers (full digital collection)",
+          "Free Download access"
+        ],
+        "related": "The Inventions, Researches and Writings of Nikola Tesla (1894)"
+      }
+    },
+    "published_writings_and_compilations": {
+      "my_inventions_autobiography": {
+        "title": "My Inventions: The Autobiography of Nikola Tesla",
+        "compilation": "Ben Johnston (1983)",
+        "source": "Six-part magazine series (1919)",
+        "republished": "1977",
+        "content": "Tesla's own account of life, inventions, and discoveries"
+      },
+      "the_fantastic_inventions": {
+        "title": "The Fantastic Inventions of Nikola Tesla",
+        "compiler": "David Hatcher Childress (1993)",
+        "content": "Collection of Tesla's writings and articles"
+      },
+      "the_tesla_papers": {
+        "title": "The Tesla Papers",
+        "content": "Compilation of Tesla's technical writings"
+      },
+      "inventions_researches_writings_1894": {
+        "title": "The Inventions, Researches and Writings of Nikola Tesla",
+        "editor": "Thomas Commerford Martin",
+        "publication_year": 1894,
+        "publisher": "The Electrical Engineer",
+        "availability": "Internet Archive free access",
+        "focus": "Polyphase currents and high potential lighting"
+      },
+      "tesla_said": {
+        "title": "Tesla Said: Collected Articles and Statements by Nikola Tesla",
+        "compiler": "John T. Ratzlaff",
+        "source": "Stanford University Libraries",
+        "content": "Comprehensive single volume of Tesla's writings",
+        "sources_included": [
+          "Electrical World Magazine",
+          "Science News Magazine",
+          "Scientific American Magazine"
+        ]
+      }
+    },
+    "key_published_articles": {
+      "problem_of_increasing_human_energy": {
+        "title": "The Problem of Increasing Human Energy",
+        "publication": "The Century Magazine",
+        "year": 1900,
+        "availability": "Free online"
+      },
+      "experiments_with_alternate_currents": {
+        "title": "Experiments with Alternate Currents of High Potential and High Frequency",
+        "publication": "In book: Inventions, Researches and Writings of Nikola Tesla",
+        "availability": "Free online"
+      }
+    },
+    "specialized_collections": {
+      "tesla_collection_com": {
+        "url": "https://teslacollection.com/",
+        "description": "Most comprehensive collection of Nikola Tesla material",
+        "content": "Documents, photographs, correspondence"
+      },
+      "tesla_universe": {
+        "url": "https://teslauniverse.com/",
+        "content": [
+          "Patents database",
+          "Documents",
+          "Files and papers",
+          "Quotes and biographical information"
+        ]
+      },
+      "tesla_science_center_wardenclyffe": {
+        "url": "https://teslasciencecenter.org/",
+        "location": "Long Island, New York",
+        "content": "Historical site, museum, 3D inventions virtual tours"
+      },
+      "nikola_tesla_museum_digital": {
+        "url": "https://tesla-museum.org/",
+        "content": "3D representations of Tesla's inventions, archive access"
+      }
+    }
+  },
+  "document_accessibility": {
+    "free_online_access": [
+      "Internet Archive (archive.org) - Tesla papers and writings",
+      "Google Patents - All Tesla patents",
+      "Library of Congress - Some correspondence (by appointment)",
+      "Tesla Collection - Comprehensive online database"
+    ],
+    "paid_access": [
+      "Academic databases - Some scholarly articles",
+      "Museum archives - Certified copies of originals"
+    ],
+    "in_person_access": [
+      "Tesla Museum, Belgrade - Original papers and artifacts",
+      "Smithsonian Institution - Special collections",
+      "Library of Congress - Manuscript Division (by appointment)"
+    ]
+  },
+  "research_summary": {
+    "total_projects_documented": "15+ major projects with hundreds of minor experiments",
+    "patent_count": "Approximately 300 worldwide; ~111 verified U.S. patents",
+    "verified_projects": "AC system, induction motor, Tesla coil, wireless transmission, remote control, Colorado Springs work, lighting research, turbine designs",
+    "theoretical_projects": "Thought camera, cosmic ray motor, some aspects of particle beam",
+    "legendary_projects": "Earthquake machine (partial evidence), Tesla tower full capabilities (theoretical)"
+  },
+  "methodology_notes": {
+    "verified_by": "Cross-reference with 13+ authoritative sources",
+    "confidence_high": "AC system, motor, coil, wireless transmission, patents, Colorado Springs, neon/phosphorescent lighting",
+    "confidence_medium": "Earthquake machine (some evidence), remote control details",
+    "confidence_low": "Thought camera (no evidence), cosmic ray motor (theoretical only)",
+    "documents_confirmed": "All major documents verified accessible through institutions listed",
+    "research_date": "2026-03-14"
+  }
+}

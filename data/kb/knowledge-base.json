@@ -54,6 +54,76 @@
         "scoring"
       ],
       "timestamp": "2026-03-13T19:49:27.075"
+    },
+    {
+      "content": "Nikola Tesla (1856-1943) was a Serbian-American engineer and inventor. Primary achievement: design of the modern AC (alternating current) electrical system, now the global standard. Other major inventions: induction motor with rotating magnetic field (1888), Tesla coil transformer (1891), wireless power transmission research (1891-1905), remote-controlled boat (1898), and high-frequency lighting experiments (neon/phosphorescent). Tesla held approximately 300 patents worldwide (~111 U.S. patents) across AC systems, motors, wireless transmission, turbine designs, and high-frequency apparatus. Key partners: George Westinghouse (commercialization), Key rivals: Thomas Edison (DC vs AC).",
+      "topic": "Nikola Tesla - Biography & Major Achievements",
+      "id": "6",
+      "tags": [
+        "nikola-tesla",
+        "inventor",
+        "ac-electricity",
+        "patents",
+        "engineering"
+      ],
+      "timestamp": "2026-03-14T09:08:00.000"
+    },
+    {
+      "content": "AC Electrical System (1883-1895): Modern alternating current power distribution; patented US390415 + 7 polyphase patents (1888); foundation of global electrical infrastructure. Induction Motor (1883-1888): First practical AC motor using rotating magnetic fields; 7 U.S. patents; enables machinery to run on AC power. Tesla Coil (1891-1897): High-voltage transformer achieving 20,000 cycles/second; patents US568176A, US568179A (1896); still used in radio and wireless technology. Wireless Power Transmission (1891-1905): Long-distance power transmission without wires; patent US649621A (1900); Wardenclyffe Tower on Long Island (partially built, abandoned 1905).",
+      "topic": "Nikola Tesla - Core Inventions & Patents",
+      "id": "7",
+      "tags": [
+        "nikola-tesla",
+        "ac-motor",
+        "tesla-coil",
+        "wireless-power",
+        "patents",
+        "wardenclyffe"
+      ],
+      "timestamp": "2026-03-14T09:08:00.000"
+    },
+    {
+      "content": "Colorado Springs Laboratory (1899-1900): High-voltage and high-frequency experiments; 60+ technical records documented. Remote Control Technology (1898): Teleautomatic boat demonstrated at Madison Square Garden; early wireless remote control pioneer. X-Ray Research (1891-1895): Shadowgraph experiments parallel to Röntgen's X-ray discovery. Neon & Phosphorescent Lighting (1890s-1900s): High-frequency power led to neon light creation; foundation of modern neon signage. Tesla Turbine (1906-1913): Bladeless rotor turbine design; patents documented. Mechanical Oscillator (1890s-1912): Resonance-based vibrator; some claims legendary, core device documented.",
+      "topic": "Nikola Tesla - Experimental & Applied Projects",
+      "id": "8",
+      "tags": [
+        "nikola-tesla",
+        "colorado-springs",
+        "remote-control",
+        "x-ray",
+        "neon-lighting",
+        "turbine",
+        "mechanical-oscillator"
+      ],
+      "timestamp": "2026-03-14T09:08:00.000"
+    },
+    {
+      "content": "Particle Beam Weapon (1930s-1942): Claimed to accelerate mercury particles at 48x speed of sound; proposed range 250 miles; offered to US (declined) and USSR (tested 1939); declassified CIA documents exist. Thought Photography Device (1920s-1930s): Theoretical concept to project thoughts as screen images; no experimental evidence. Cosmic Ray Motor: Theoretical concept to power motor with cosmic radiation; speculative only. Status: These projects lack experimental verification or successful implementation.",
+      "topic": "Nikola Tesla - Theoretical & Unverified Projects",
+      "id": "9",
+      "tags": [
+        "nikola-tesla",
+        "particle-beam",
+        "theoretical",
+        "unverified",
+        "thought-camera"
+      ],
+      "timestamp": "2026-03-14T09:08:00.000"
+    },
+    {
+      "content": "Primary Archives: Nikola Tesla Museum (Belgrade, Serbia) - Original papers, notebooks, correspondence, designs; Library of Congress (Washington DC) - Correspondence 1890-1934 on microfilm; Smithsonian Institution - H.W. Lende Jr. Manuscript Collection; Internet Archive (archive.org) - Free access to complete Tesla Papers. Published Works: 'My Inventions' autobiography (1919, compiled 1983), 'The Fantastic Inventions' (compiled 1993), 'The Inventions, Researches and Writings of Nikola Tesla' (1894), 'Tesla Said' (comprehensive article collection). Free Online: Google Patents (all Tesla patents), Tesla Collection (most comprehensive), Tesla Universe, Tesla Science Center.",
+      "topic": "Nikola Tesla - Archived Documents & Access",
+      "id": "10",
+      "tags": [
+        "nikola-tesla",
+        "archives",
+        "patents",
+        "documents",
+        "library-of-congress",
+        "tesla-museum",
+        "internet-archive"
+      ],
+      "timestamp": "2026-03-14T09:08:00.000"
     }
   ]
 }
