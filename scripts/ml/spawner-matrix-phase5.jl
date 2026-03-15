@@ -13,6 +13,7 @@ Backward compatible with original spawner.
 
 using Dates
 using Statistics
+using JSON
 
 const SCRIPT_DIR = @__DIR__
 const PHASE5_ENABLED = true
