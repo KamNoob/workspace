@@ -1,8 +1,19 @@
 # MEMORY.md - Long-Term Memory
 
-Last updated: 2026-03-14 15:08 GMT  
-Current Session: **ML INTEGRATION ROADMAP COMPLETE** (2026-03-14, 14:39-15:08)  
-Status: ✅ THREE-TIER ML ARCHITECTURE READY - Hardware + ML Frameworks Deployed
+Last updated: 2026-03-15 13:43 GMT
+Current Session: **EMAIL INTEGRATION DECISION** (2026-03-15, 13:37-13:43)  
+Status: ✅ SYSTEM STABLE - Email Scanning Ready (IMAP Skipped)
+
+---
+
+## 2026-03-15 Email System Status (13:37-13:43 GMT)
+
+### Gmail Integration Decision
+- **Issue:** morpheus.phanwises@gmail.com disabled by Google
+- **Previous Status:** IMAP app password invalid/expired
+- **Decision:** Skip Gmail/IMAP integration for now
+- **Status:** Manual email scanner remains available (no IMAP needed)
+- **Impact:** Cipher email security features work without live IMAP; escalated to future phase if needed
 
 ---
 
@@ -651,6 +662,36 @@ _System status: Production-ready. All improvements implemented, tested, document
   - 6325109 feature: auto-learning cron + monitoring dashboard + quick start guide
   - 07d8177 integration: live KB context injection into spawner-matrix
   - d0139e4 kb: knowledge retrieval system - complete
+
+#### System Status
+✅ All 6 core scripts complete & tested
+✅ Live spawner integration active
+✅ KB context auto-injected on agent spawn
+✅ Confidence filtering prevents noise (threshold: 0.6)
+✅ Auto-learning cron job configured
+✅ Monitoring dashboard operational
+✅ Metrics tracking active
+✅ Zero external dependencies
+✅ Comprehensive documentation
+
+#### Ready for Use
+Users can immediately:
+- Query KB: `julia scripts/ml/kb-rag-injector.jl query "term"`
+- Expand queries: `julia scripts/ml/query-reformulate.jl expand "term"`
+- Spawn with KB: `julia scripts/ml/spawner-matrix.jl spawn code Codex,QA`
+- Monitor system: `julia scripts/ml/kb-monitor.jl status`
+- Check metrics: `julia scripts/ml/kb-monitor.jl growth`
+
+#### Next Steps (Optional)
+1. Expand KB with domain-specific knowledge
+2. Monitor cron job execution (daily at 01:00 UTC)
+3. Export metrics to external dashboards
+4. Replace tokenization with real embeddings
+5. Scale KB to vector database for production
+
+---
+
+**Session Complete. System in production.**
 
 #### System Status
 ✅ All 6 core scripts complete & tested
