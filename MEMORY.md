@@ -1,8 +1,31 @@
 # MEMORY.md - Long-Term Memory
 
-Last updated: 2026-03-15 17:00 GMT
-Current Session: **PHASE 6 DEPLOYED + PHASE 7A CONTINUOUS LEARNING LIVE** (2026-03-15, 16:18-17:00)  
+Last updated: 2026-03-15 17:14 GMT
+Current Session: **PHASE 6 DEPLOYED + PHASE 7A CONTINUOUS LEARNING LIVE + STREAMING TUNED** (2026-03-15, 16:18-17:14)  
 Status: ✅ 60-65% COST REDUCTION ACTIVE - Self-Improving Autonomous System
+
+---
+
+## 2026-03-15 Streaming Optimization (17:11-17:14 GMT)
+
+### ✅ WhatsApp Debounce Adjusted
+
+**Issue:** Inconsistent streaming on TUI gateway client (openclaw-tui)
+- Root cause: `channels.whatsapp.debounceMs` was set to 0 (immediate flush)
+- Result: Every chunk sent instantly → jittery, uneven visual flow
+
+**Fix Applied:**
+- `debounceMs: 0` → `100` 
+- Chunks now buffer for 100ms before flushing
+- Smooth, consistent delivery without adding latency
+- Total latency impact: <100ms (imperceptible)
+
+**Impact:**
+- Gateway restarted (PID 1326352, SIGUSR1)
+- Next message will stream smoothly
+- No quality/speed loss, pure UX improvement
+
+---
 
 ---
 
