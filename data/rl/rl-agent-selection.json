@@ -6,14 +6,16 @@
     "gamma": 0.99,
     "lambda": 0.9,
     "epsilon": 0.15,
-    "description": "Q-scores for (task_type, agent) pairs. Higher Q = better choice for that task."
+    "description": "Q-scores for (task_type, agent) pairs. Higher Q = better choice for that task.",
+    "last_refresh": "2026-03-15T15:48:07.300687",
+    "refresh_reason": "phase_3_retraining"
   },
   "task_types": {
     "research": {
       "description": "Research, investigation, information gathering",
       "agents": {
         "Scout": {
-          "q_score": 0.8013,
+          "q_score": 0.803,
           "success_count": 12,
           "failure_count": 0,
           "total_uses": 12,
@@ -21,7 +23,7 @@
           "last_updated": "2026-03-07T20:25:40.927929Z"
         },
         "Veritas": {
-          "q_score": 0.8,
+          "q_score": 0.7771,
           "success_count": 12,
           "failure_count": 0,
           "total_uses": 12,
@@ -29,7 +31,7 @@
           "last_updated": "2026-03-07T20:25:40.927934Z"
         },
         "Chronicle": {
-          "q_score": 0.6912,
+          "q_score": 0.6971,
           "success_count": 7,
           "failure_count": 0,
           "total_uses": 7,
@@ -37,7 +39,7 @@
           "last_updated": "2026-03-07T20:25:40.927910Z"
         },
         "Codex": {
-          "q_score": 0.5,
+          "q_score": 0.5265,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
@@ -58,7 +60,7 @@
       "description": "Code development, building, refactoring, testing",
       "agents": {
         "Codex": {
-          "q_score": 0.6819,
+          "q_score": 0.6902,
           "success_count": 7,
           "failure_count": 0,
           "total_uses": 7,
@@ -66,7 +68,7 @@
           "last_updated": "2026-03-07T20:25:40.927917Z"
         },
         "QA": {
-          "q_score": 0.6873,
+          "q_score": 0.6757,
           "success_count": 7,
           "failure_count": 0,
           "total_uses": 7,
@@ -82,7 +84,7 @@
           "last_updated": "2026-02-28T19:35:00Z"
         },
         "Veritas": {
-          "q_score": 0.5,
+          "q_score": 0.5071,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
@@ -95,7 +97,7 @@
       "description": "Security audits, vulnerability assessment, threat modeling",
       "agents": {
         "Cipher": {
-          "q_score": 0.5525,
+          "q_score": 0.5873,
           "success_count": 2,
           "failure_count": 0,
           "total_uses": 2,
@@ -103,7 +105,7 @@
           "last_updated": "2026-03-07T20:25:40.927953Z"
         },
         "Veritas": {
-          "q_score": 0.5,
+          "q_score": 0.5071,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
@@ -111,7 +113,7 @@
           "last_updated": "2026-02-28T19:35:00Z"
         },
         "Sentinel": {
-          "q_score": 0.5,
+          "q_score": 0.5071,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
@@ -124,7 +126,7 @@
       "description": "Infrastructure, automation, monitoring, deployment",
       "agents": {
         "Sentinel": {
-          "q_score": 0.5544,
+          "q_score": 0.5561,
           "success_count": 2,
           "failure_count": 0,
           "total_uses": 2,
@@ -132,7 +134,7 @@
           "last_updated": "2026-03-07T20:25:40.927962Z"
         },
         "Cipher": {
-          "q_score": 0.5,
+          "q_score": 0.54,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
@@ -140,7 +142,7 @@
           "last_updated": "2026-02-28T19:35:00Z"
         },
         "Veritas": {
-          "q_score": 0.5,
+          "q_score": 0.5071,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
@@ -161,7 +163,7 @@
           "last_updated": "2026-02-28T19:35:00Z"
         },
         "Veritas": {
-          "q_score": 0.5,
+          "q_score": 0.5071,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
@@ -169,7 +171,7 @@
           "last_updated": "2026-02-28T19:35:00Z"
         },
         "Chronicle": {
-          "q_score": 0.5,
+          "q_score": 0.525,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
@@ -182,7 +184,7 @@
       "description": "Documentation, technical writing, guides",
       "agents": {
         "Chronicle": {
-          "q_score": 0.6126,
+          "q_score": 0.6263,
           "success_count": 4,
           "failure_count": 0,
           "total_uses": 4,
@@ -190,7 +192,7 @@
           "last_updated": "2026-03-07T20:25:40.927939Z"
         },
         "Veritas": {
-          "q_score": 0.5,
+          "q_score": 0.5071,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
