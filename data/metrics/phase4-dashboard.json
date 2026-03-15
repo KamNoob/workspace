@@ -1,0 +1,248 @@
+{
+  "agents": {
+    "Chronicle": {
+      "last_used": "2026-03-14T14:29:22.808",
+      "success_rate": 0.75,
+      "total_uses": 8,
+      "success_count": 6
+    },
+    "Cipher": {
+      "last_used": "2026-03-14T14:29:22.807",
+      "success_rate": 0.9,
+      "total_uses": 10,
+      "success_count": 9
+    },
+    "QA": {
+      "last_used": "2026-03-14T14:29:22.807",
+      "success_rate": 0.571,
+      "total_uses": 7,
+      "success_count": 4
+    },
+    "Sentinel": {
+      "last_used": "2026-03-14T14:29:22.807",
+      "success_rate": 0.571,
+      "total_uses": 7,
+      "success_count": 4
+    },
+    "Scout": {
+      "last_used": "2026-03-14T14:29:22.808",
+      "success_rate": 0.818,
+      "total_uses": 11,
+      "success_count": 9
+    },
+    "Veritas": {
+      "last_used": "2026-03-14T14:29:22.808",
+      "success_rate": 0.571,
+      "total_uses": 7,
+      "success_count": 4
+    },
+    "Codex": {
+      "last_used": "2026-03-14T14:29:22.808",
+      "success_rate": 0.765,
+      "total_uses": 17,
+      "success_count": 13
+    }
+  },
+  "tasks": {
+    "find and document edge cases": {
+      "success_rate": 0.0,
+      "agents_used": 2,
+      "success_count": 0,
+      "total_outcomes": 2
+    },
+    "audit api endpoints for authentication": {
+      "success_rate": 1.0,
+      "agents_used": 1,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "write api documentation": {
+      "success_rate": 1.0,
+      "agents_used": 2,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "review pull request for style and quality": {
+      "success_rate": 0.5,
+      "agents_used": 2,
+      "success_count": 1,
+      "total_outcomes": 2
+    },
+    "fix memory leak in c++ application": {
+      "success_rate": 1.0,
+      "agents_used": 2,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "analyze competitor features and pricing": {
+      "success_rate": 1.0,
+      "agents_used": 2,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "threat model for cloud infrastructure": {
+      "success_rate": 1.0,
+      "agents_used": 1,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "code": {
+      "success_rate": 1.0,
+      "agents_used": 1,
+      "success_count": 5,
+      "total_outcomes": 5
+    },
+    "create integration tests for api": {
+      "success_rate": 1.0,
+      "agents_used": 2,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "test performance benchmarks": {
+      "success_rate": 0.0,
+      "agents_used": 1,
+      "success_count": 0,
+      "total_outcomes": 2
+    },
+    "document system architecture": {
+      "success_rate": 1.0,
+      "agents_used": 2,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "find best practices for api security": {
+      "success_rate": 1.0,
+      "agents_used": 2,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "identify and fix sql injection vulnerabilities": {
+      "success_rate": 0.5,
+      "agents_used": 1,
+      "success_count": 1,
+      "total_outcomes": 2
+    },
+    "create user guide for new feature": {
+      "success_rate": 0.5,
+      "agents_used": 2,
+      "success_count": 1,
+      "total_outcomes": 2
+    },
+    "write unit tests for authentication module": {
+      "success_rate": 0.5,
+      "agents_used": 2,
+      "success_count": 1,
+      "total_outcomes": 2
+    },
+    "write python function to parse json data": {
+      "success_rate": 1.0,
+      "agents_used": 2,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "security review of database queries": {
+      "success_rate": 0.5,
+      "agents_used": 1,
+      "success_count": 1,
+      "total_outcomes": 2
+    },
+    "penetration test strategy for web app": {
+      "success_rate": 0.5,
+      "agents_used": 2,
+      "success_count": 1,
+      "total_outcomes": 2
+    },
+    "docs": {
+      "success_rate": 1.0,
+      "agents_used": 1,
+      "success_count": 1,
+      "total_outcomes": 1
+    },
+    "create julia script for data processing": {
+      "success_rate": 0.5,
+      "agents_used": 1,
+      "success_count": 1,
+      "total_outcomes": 2
+    },
+    "research": {
+      "success_rate": 1.0,
+      "agents_used": 1,
+      "success_count": 3,
+      "total_outcomes": 3
+    },
+    "research latest machine learning frameworks": {
+      "success_rate": 1.0,
+      "agents_used": 2,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "debug typescript compilation error": {
+      "success_rate": 0.0,
+      "agents_used": 2,
+      "success_count": 0,
+      "total_outcomes": 2
+    },
+    "review": {
+      "success_rate": 1.0,
+      "agents_used": 1,
+      "success_count": 1,
+      "total_outcomes": 1
+    },
+    "create onboarding guide for developers": {
+      "success_rate": 0.5,
+      "agents_used": 1,
+      "success_count": 1,
+      "total_outcomes": 2
+    },
+    "design test strategy for new feature": {
+      "success_rate": 0.5,
+      "agents_used": 2,
+      "success_count": 1,
+      "total_outcomes": 2
+    },
+    "test": {
+      "success_rate": 1.0,
+      "agents_used": 1,
+      "success_count": 1,
+      "total_outcomes": 1
+    },
+    "evaluate code architecture and design": {
+      "success_rate": 1.0,
+      "agents_used": 2,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "write technical specification": {
+      "success_rate": 1.0,
+      "agents_used": 2,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "refactor large javascript file into modules": {
+      "success_rate": 0.0,
+      "agents_used": 1,
+      "success_count": 0,
+      "total_outcomes": 2
+    },
+    "research distributed system architectures": {
+      "success_rate": 1.0,
+      "agents_used": 2,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "security": {
+      "success_rate": 1.0,
+      "agents_used": 1,
+      "success_count": 2,
+      "total_outcomes": 2
+    },
+    "find peer-reviewed papers on reinforcement learning": {
+      "success_rate": 0.5,
+      "agents_used": 2,
+      "success_count": 1,
+      "total_outcomes": 2
+    }
+  },
+  "timestamp": "2026-03-15T15:51:20.711",
+  "total_outcomes": 67
+}
