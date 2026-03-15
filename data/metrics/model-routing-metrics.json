@@ -1,0 +1,94 @@
+{
+  "stats": {
+    "haiku": {
+      "count": 4,
+      "cost": 1.6,
+      "success": 0
+    },
+    "sonnet": {
+      "count": 3,
+      "cost": 6.300000000000001,
+      "success": 0
+    },
+    "opus": {
+      "count": 1,
+      "cost": 9.0,
+      "success": 0
+    }
+  },
+  "history": [
+    {
+      "model": "haiku",
+      "complexity": 0.013,
+      "reason": "Simple task (complexity 0.01)",
+      "task": "route request to best agent",
+      "agent": "unknown",
+      "estimated_cost": 0.4,
+      "timestamp": "2026-03-15T16:48:20.428650"
+    },
+    {
+      "model": "haiku",
+      "complexity": 0.113,
+      "reason": "Simple task (complexity 0.11)",
+      "task": "design complex multi-agent architecture for production",
+      "agent": "unknown",
+      "estimated_cost": 0.4,
+      "timestamp": "2026-03-15T16:48:20.471067"
+    },
+    {
+      "model": "haiku",
+      "complexity": 0.05,
+      "reason": "Simple task (complexity 0.05)",
+      "task": "refactor API and optimize performance",
+      "agent": "unknown",
+      "estimated_cost": 0.4,
+      "timestamp": "2026-03-15T16:48:20.514021"
+    },
+    {
+      "model": "haiku",
+      "complexity": 0.15,
+      "reason": "Simple task (complexity 0.15)",
+      "task": "route request to best agent",
+      "agent": "unknown",
+      "estimated_cost": 0.4,
+      "timestamp": "2026-03-15T16:48:36.885905"
+    },
+    {
+      "model": "opus",
+      "complexity": 1.0,
+      "reason": "Complex task (complexity 1.00)",
+      "task": "design complex multi-agent architecture for production",
+      "agent": "unknown",
+      "estimated_cost": 9.0,
+      "timestamp": "2026-03-15T16:48:36.934789"
+    },
+    {
+      "model": "sonnet",
+      "complexity": 0.6,
+      "reason": "Standard task (complexity 0.60)",
+      "task": "refactor API and optimize performance",
+      "agent": "unknown",
+      "estimated_cost": 2.1,
+      "timestamp": "2026-03-15T16:48:36.980229"
+    },
+    {
+      "model": "sonnet",
+      "complexity": 0.6,
+      "reason": "Standard task (complexity 0.60)",
+      "task": "refactor API and optimize database queries",
+      "agent": "unknown",
+      "estimated_cost": 2.1,
+      "timestamp": "2026-03-15T16:49:29.461703"
+    },
+    {
+      "model": "sonnet",
+      "complexity": 0.4,
+      "reason": "Standard task (complexity 0.40)",
+      "task": "optimize database queries for production",
+      "agent": "unknown",
+      "estimated_cost": 2.1,
+      "timestamp": "2026-03-15T16:51:59.034943"
+    }
+  ],
+  "timestamp": "2026-03-15T16:51:59.035075"
+}

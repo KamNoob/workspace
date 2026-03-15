@@ -16,7 +16,7 @@ def spawn(task: str, candidates: list) -> dict:
     
     # Call Phase 5 enhanced spawner
     cmd = [
-        "julia",
+        "/snap/julia/165/bin/julia",
         os.path.join(os.path.dirname(__file__), "spawner-matrix-phase5.jl"),
         "spawn",
         task
@@ -35,7 +35,7 @@ def log_outcome(task: str, agent: str, success: bool) -> dict:
     """Log outcome and update Q-values."""
     
     cmd = [
-        "julia",
+        "/snap/julia/165/bin/julia",
         os.path.join(os.path.dirname(__file__), "spawner-matrix-phase5.jl"),
         "log",
         task,

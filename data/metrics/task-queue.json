@@ -1,0 +1,12 @@
+{
+  "queues": {
+    "development": []
+  },
+  "last_batch": {
+    "development": {
+      "batch_size": 4,
+      "timestamp": "2026-03-15T16:42:07.297992"
+    }
+  },
+  "timestamp": "2026-03-15T16:42:07.298101"
+}
