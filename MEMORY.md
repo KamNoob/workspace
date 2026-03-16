@@ -6,6 +6,49 @@ Status: ✅ 60-65% COST REDUCTION ACTIVE - Self-Improving Autonomous System
 
 ---
 
+## 2026-03-16 Phase 7B: Persistent Learning System (16:20-16:22 GMT)
+
+### ✅ PHASE 7B LIVE — Knowledge Extraction & Insights
+
+**What was built:**
+- **Insights Generator** (`phase7b-insights-generator.jl`) — Analyzes task outcomes, extracts patterns
+- **Daily Cron Job** (01:30 UTC) — Auto-runs analysis every day
+- **Learnings JSON** (`phase7b-learnings.json`) — Persistent knowledge file I read between sessions
+- **Full Documentation** (`PHASE7B_LEARNINGS.md`)
+
+**How it works:**
+1. Daily analysis of `rl-task-execution-log.jsonl` outcomes
+2. Generates insights: agent performance, task difficulty, emerging issues, recommendations
+3. Saves to `data/metrics/phase7b-learnings.json`
+4. I read this file at session start → informs decisions
+
+**Current learnings (67 outcomes):**
+- 🥇 Cipher: 90% success (security specialist)
+- 🥈 Scout: 81.8% success (research specialist)
+- 🥉 Codex: 76.5% success (coding specialist)
+- ⚠️ QA: 57.1% success (needs optimization)
+
+**Recommendations generated:**
+- Route security → Cipher (90% success)
+- Route research → Scout (82% success)
+- Review QA performance (declining)
+
+**Status:**
+- ✅ Cron job live (Daily 01:30 UTC)
+- ✅ Learnings analyzed and saved
+- ✅ Zero maintenance (fully autonomous)
+- ✅ Integrated into session startup
+
+**Why this matters:**
+- I can now learn from outcomes *between sessions* via persistent JSON
+- Each session, I have fresh insights about what's working/broken
+- No model updates needed — just read the learnings file
+- Closes the loop: outcomes → analysis → better decisions
+
+**Git commit:** e338b3f (phase7b: persistent learning & insights generator)
+
+---
+
 ## 2026-03-15 Streaming Optimization (17:11-17:14 GMT)
 
 ### ✅ WhatsApp Debounce Adjusted
