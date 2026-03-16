@@ -1,0 +1,72 @@
+{
+  "avg_cost": 0.0,
+  "recommendations": [
+    "✅ Cipher excels at unknown. Consider routing more tasks there.",
+    "✅ Scout excels at unknown. Consider routing more tasks there."
+  ],
+  "overall_success_rate": 0.7313432835820896,
+  "status": "success",
+  "agent_insights": {
+    "Chronicle": {
+      "success_rate": 0.75,
+      "count": 8,
+      "preferred_tasks": [
+        "unknown"
+      ],
+      "avg_cost": 0.0
+    },
+    "Cipher": {
+      "success_rate": 0.9,
+      "count": 10,
+      "preferred_tasks": [
+        "unknown"
+      ],
+      "avg_cost": 0.0
+    },
+    "QA": {
+      "success_rate": 0.5714285714285714,
+      "count": 7,
+      "preferred_tasks": [],
+      "avg_cost": 0.0
+    },
+    "Sentinel": {
+      "success_rate": 0.5714285714285714,
+      "count": 7,
+      "preferred_tasks": [],
+      "avg_cost": 0.0
+    },
+    "Scout": {
+      "success_rate": 0.8181818181818182,
+      "count": 11,
+      "preferred_tasks": [
+        "unknown"
+      ],
+      "avg_cost": 0.0
+    },
+    "Veritas": {
+      "success_rate": 0.5714285714285714,
+      "count": 7,
+      "preferred_tasks": [],
+      "avg_cost": 0.0
+    },
+    "Codex": {
+      "success_rate": 0.7647058823529411,
+      "count": 17,
+      "preferred_tasks": [
+        "unknown"
+      ],
+      "avg_cost": 0.0
+    }
+  },
+  "timestamp": "2026-03-16T16:20:39.345",
+  "task_insights": {
+    "unknown": {
+      "success_rate": 0.7313432835820896,
+      "best_agent": "Cipher",
+      "difficulty": "medium",
+      "count": 67,
+      "avg_cost": 0.0
+    }
+  },
+  "total_outcomes": 67
+}
