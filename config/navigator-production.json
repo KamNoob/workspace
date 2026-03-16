@@ -1,0 +1,49 @@
+{
+  "environment": "production",
+  "version": "1.0.0",
+  "deployment_date": "2026-03-16T17:55:00Z",
+  
+  "sprint_management": {
+    "capacity_per_agent": 15,
+    "rebalancing": {
+      "strategy": "round-robin",
+      "trigger_threshold_percent": 75,
+      "rebalance_window_seconds": 60
+    }
+  },
+  
+  "task_execution": {
+    "blocker_timeout_minutes": 30,
+    "escalation_enabled": true,
+    "escalation_target": "Morpheus"
+  },
+  
+  "capacity_alerts": {
+    "warning_threshold_percent": 75,
+    "critical_threshold_percent": 90,
+    "alert_handler": "log_and_escalate"
+  },
+  
+  "logging": {
+    "execution_outcomes": true,
+    "outcome_log_path": "data/rl/rl-task-execution-log.jsonl",
+    "flush_interval_seconds": 5,
+    "rotation": {
+      "enabled": true,
+      "max_size_mb": 100,
+      "retention_days": 30
+    }
+  },
+  
+  "agent_selection": {
+    "strategy": "quality_predictor_with_fallback",
+    "quality_predictor_enabled": true,
+    "fallback_strategy": "round_robin_least_loaded"
+  },
+  
+  "health_check": {
+    "enabled": true,
+    "interval_seconds": 30,
+    "timeout_seconds": 5
+  }
+}

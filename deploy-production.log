@@ -1,0 +1,17 @@
+[2026-03-16T17:56:33Z] === STAGE 1: Dark Launch (0% Traffic) ===
+[0;32m✓ Backed up current spawner[0m
+[2026-03-16T17:56:33Z] Checking Navigator + Vector DB modules...
+[2026-03-16T17:56:33Z] Configuring for dark launch (0% traffic)...
+[0;32m✓ Stage 1 deployed: Dark Launch active (0% traffic)[0m
+[2026-03-16T17:56:35Z] === STAGE 2: Canary Deployment (10% Traffic) ===
+[2026-03-16T17:56:35Z] Running health checks...
+[2026-03-16T17:56:35Z] Enabling canary mode (10% traffic)...
+[0;32m✓ Stage 2 deployed: Canary active (10% traffic)[0m
+[2026-03-16T17:56:36Z] === STAGE 3: Full Deployment (100% Traffic) ===
+[2026-03-16T17:56:36Z] Enabling full production mode...
+[0;32m✓ Stage 3 deployed: Full production active (100% traffic)[0m
+[2026-03-16T17:56:39Z] === ROLLING BACK TO PRE-DEPLOYMENT ===
+[0;32m✓ Rollback complete[0m
+[2026-03-16T17:56:43Z] === DEPLOYMENT STATUS ===
+[2026-03-16T17:56:43Z] Current Stage: rollback
+[2026-03-16T17:56:43Z] Deployment Mode:

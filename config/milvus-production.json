@@ -1,0 +1,52 @@
+{
+  "environment": "production",
+  "version": "1.0.0",
+  "deployment_date": "2026-03-16T17:55:00Z",
+  
+  "milvus": {
+    "host": "localhost",
+    "port": 19530,
+    "timeout_seconds": 5,
+    "connection_retries": 3,
+    "retry_backoff_ms": 1000
+  },
+  
+  "search": {
+    "default_metric": "cosine",
+    "timeout_seconds": 5,
+    "graceful_timeout": {
+      "enabled": true,
+      "fallback_mode": "json_search"
+    }
+  },
+  
+  "write_operations": {
+    "batch_insert_size": 32,
+    "batch_timeout_seconds": 10,
+    "flush_interval_seconds": 30
+  },
+  
+  "sync_schedule": {
+    "enabled": true,
+    "interval": "daily",
+    "time_utc": "01:30",
+    "timeout_seconds": 300
+  },
+  
+  "performance_sla": {
+    "p95_latency_ms": 100,
+    "p99_latency_ms": 200,
+    "availability_target_percent": 99.5
+  },
+  
+  "fallback": {
+    "mode": "json_search",
+    "path": "data/kb-fallback.json"
+  },
+  
+  "logging": {
+    "enabled": true,
+    "log_file": "milvus-ops.jsonl",
+    "log_level": "info"
+  }
+}

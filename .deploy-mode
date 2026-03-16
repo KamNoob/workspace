@@ -1,0 +1,7 @@
+{
+  "stage": 0,
+  "name": "pre_deployment",
+  "navigator_enabled": false,
+  "vector_db_enabled": false,
+  "traffic_percent": 0
+}
