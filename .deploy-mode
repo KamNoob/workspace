@@ -1,7 +1,8 @@
 {
-  "stage": 0,
-  "name": "pre_deployment",
-  "navigator_enabled": false,
-  "vector_db_enabled": false,
-  "traffic_percent": 0
+  "stage": 1,
+  "name": "dark_launch",
+  "navigator_enabled": true,
+  "vector_db_enabled": true,
+  "traffic_percent": 0,
+  "validation_only": true
 }
