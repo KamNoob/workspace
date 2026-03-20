@@ -1,8 +1,52 @@
 # MEMORY.md - Long-Term Memory
 
-Last updated: 2026-03-20 22:16 GMT
-Current Session: **QA Performance Fix + Phase 7A Learning** (2026-03-20, 22:13-22:16)  
-Status: ✅ 60-65% COST REDUCTION ACTIVE - Self-Improving Autonomous System
+Last updated: 2026-03-20 22:26 GMT
+Current Session: **Phase 8A: Stability Guardrails** (2026-03-20, 22:13-22:26)  
+Status: ✅ 60-65% COST REDUCTION ACTIVE + DRIFT DETECTION LIVE
+
+---
+
+## 2026-03-20 Phase 8A: Stability Guardrails (22:13-22:26 GMT)
+
+### ✅ THREE-LAYER DEFENSE DEPLOYED
+
+**Layer 1: Agent Drift Detector**
+- Script: `scripts/agent-drift-detector.py`
+- Monitors: Q-scores, success rates across all task types
+- Alerts: If any agent Q < 0.55 or success < 50%
+- Current findings:
+  - ✅ Scout (Q=0.803, 100%) — Excellent
+  - ✅ Cipher (Q=0.90, 90%) — Excellent
+  - 🟡 Chronicle (Q=0.616, 67%) — Monitor (research tasks misrouted)
+  - 🟡 Sentinel (Q=0.532, 57%) — Monitor (security tasks misrouted)
+  - 🟢 QA (Q=0.70, baseline) — Fresh start after fix
+
+**Layer 2: Task Validator**
+- Script: `scripts/task-validator.py`
+- Validates: Task definitions match agent specialization
+- Detects: 7 agents with task misalignment (10-20% mismatch rate)
+- Key issues:
+  - Chronicle being assigned research (should be Scout)
+  - Sentinel being assigned security (should be Cipher)
+  - Codex being assigned security review (should be Cipher/Veritas)
+  - Veritas being assigned coding (should be Codex)
+
+**Layer 3: Feedback Loop (Existing)**
+- Phase 7B: Daily insights (01:30 UTC)
+- Phase 4: Weekly dashboard (Monday 10:00 UTC)
+
+**Recommended Cron Jobs:**
+1. Hourly drift detection: `0 * * * *` (every hour)
+2. Daily task validation: `30 6 * * *` (daily 06:30 London)
+
+**Documentation:**
+- STABILITY.md: Complete strategy, thresholds, rollback procedures
+
+**Next Steps (Phase 8B/8C):**
+- Phase 8B: Accelerate Phase 7B from daily to hourly (faster feedback)
+- Phase 8C: Address identified misalignments (update task routing)
+
+**Git Commit:** 1e288f1 (Phase 8A guardrails)
 
 ---
 
