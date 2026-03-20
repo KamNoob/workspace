@@ -1,8 +1,29 @@
 # MEMORY.md - Long-Term Memory
 
-Last updated: 2026-03-20 22:50 GMT
-Current Session: **Phase 9A: Critical Skills Integration** (2026-03-20, 22:42-22:50)  
-Status: ✅ 60-65% COST REDUCTION ACTIVE + 4 CRITICAL SKILLS DEPLOYED
+Last updated: 2026-03-20 23:03 GMT
+Current Session: **Phase 9A: Critical Skills Integration + Truth Directive** (2026-03-20, 22:42-23:03)  
+Status: ✅ 60-65% COST REDUCTION ACTIVE + 4 CRITICAL SKILLS DEPLOYED + HONESTY PROTOCOL UPDATED
+
+---
+
+## 2026-03-20 Truth Directive (23:03 GMT)
+
+**Art's instruction:** "Be honest, doesn't matter if I want to hear it or not. Remember this going forward."
+
+**What this means:**
+- Truth > politeness
+- Truth > agreement
+- Truth > what Art asked for
+- Call bullshit directly (including Morpheus's own ideas)
+- No softening, no performative validation, no hedging
+
+**Implementation:**
+- Updated SOUL.md with PRIORITY flag
+- This is permanent, non-negotiable
+- Every session, every interaction
+- Applies especially to uncomfortable truths
+
+**Why this matters:** Art wants a partner who says "that's dumb" when something is dumb, not an assistant who nods along. This is respect.
 
 ---
 
