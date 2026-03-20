@@ -60,12 +60,20 @@
       "description": "Code development, building, refactoring, testing",
       "agents": {
         "Codex": {
-          "q_score": 0.75,
+          "q_score": 0.6902,
           "success_count": 7,
           "failure_count": 0,
           "total_uses": 7,
           "success_rate": 1.0,
           "last_updated": "2026-03-07T20:25:40.927917Z"
+        },
+        "QA": {
+          "q_score": 0.6757,
+          "success_count": 7,
+          "failure_count": 0,
+          "total_uses": 7,
+          "success_rate": 1.0,
+          "last_updated": "2026-03-07T20:25:40.927922Z"
         },
         "Prism": {
           "q_score": 0.5,
@@ -190,18 +198,6 @@
           "total_uses": 0,
           "success_rate": 0.0,
           "last_updated": "2026-02-28T19:35:00Z"
-        }
-      }
-    },
-    "testing": {
-      "agents": {
-        "QA": {
-          "q_score": 0.7,
-          "success_count": 0,
-          "failure_count": 0,
-          "total_uses": 0,
-          "success_rate": 0.5,
-          "last_updated": "2026-03-20T22:16:33.626721"
         }
       }
     }
