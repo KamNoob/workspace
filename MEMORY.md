@@ -1,8 +1,40 @@
 # MEMORY.md - Long-Term Memory
 
-Last updated: 2026-03-15 17:14 GMT
-Current Session: **PHASE 6 DEPLOYED + PHASE 7A CONTINUOUS LEARNING LIVE + STREAMING TUNED** (2026-03-15, 16:18-17:14)  
+Last updated: 2026-03-20 22:16 GMT
+Current Session: **QA Performance Fix + Phase 7A Learning** (2026-03-20, 22:13-22:16)  
 Status: ✅ 60-65% COST REDUCTION ACTIVE - Self-Improving Autonomous System
+
+---
+
+## 2026-03-20 QA Performance Fix (22:13-22:16 GMT)
+
+### ✅ ROOT CAUSE IDENTIFIED & FIXED
+
+**Problem:**
+- QA agent showing 57.1% success rate (lowest performing)
+- Root cause: QA was routing to "code" tasks (implementation) instead of testing
+- Recent failures: "debug TypeScript", "write unit tests", "find edge cases"
+- Early 7/7 success inflated by easy task bias, then failed on hard coding tasks
+
+**Root Cause Analysis:**
+- QA routing config included "code" task type
+- Spawner sending coding implementation tasks to QA
+- QA is testing specialist, not coding specialist
+- Mismatch caused consistent underperformance
+
+**Solution Applied:**
+1. ✅ Removed QA from "code" task routing (not suited for implementation)
+2. ✅ Created dedicated "testing" task type for QA (unit/integration/edge cases)
+3. ✅ Reinforced Codex Q-score on code tasks (0.75)
+4. ✅ Added Veritas (code review) to code routing layer
+
+**Expected Impact:**
+- QA now routes ONLY to testing tasks (perfect alignment)
+- Code tasks route to Codex (100% success) + Veritas (validation)
+- Fresh baseline for QA: 0.70 Q-score, learns from real testing workload
+- Eliminates task-agent mismatch driving low performance
+
+**Git Commit:** 080658c (fix: QA agent alignment to testing tasks)
 
 ---
 
