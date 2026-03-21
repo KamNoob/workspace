@@ -13,6 +13,10 @@ using Statistics
 
 module SLACalculator
 
+using Dates
+using JSON
+using Statistics
+
 export calculate_sla, check_alerts, get_sla_dashboard
 
 # SLA Targets (configurable)

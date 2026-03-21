@@ -1,0 +1,2 @@
+{"task":"code","q_score":0.0,"session_id":"","spawner_version":"phase5-integrated","agent_selected":"Codex","timestamp":"2026-03-21T09:51:25.460Z","event_type":"task_spawn","confidence":"low"}
+{"task":"code","cost_usd":0.02,"success":true,"duration_ms":0,"quality_score":0.9,"agent":"Codex","timestamp":"2026-03-21T09:51:28.300Z","event_type":"task_outcome"}

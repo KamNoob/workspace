@@ -14,6 +14,9 @@ using JSON
 
 module AuditLogger
 
+using Dates
+using JSON
+
 export log_spawn, log_outcome, log_event, get_today_log_path
 
 const AUDIT_DIR = joinpath(@__DIR__, "..", "..", "data", "audit-logs")

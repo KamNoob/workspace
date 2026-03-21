@@ -13,6 +13,10 @@ using Statistics
 
 module ComplianceReporter
 
+using Dates
+using JSON
+using Statistics
+
 export generate_report, generate_weekly_report, generate_monthly_report
 
 function generate_report(start_date::Date, end_date::Date=Dates.today(); format::String="json")

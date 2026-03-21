@@ -24,8 +24,10 @@ const PHASE5_DEBUG = false
 
 include(joinpath(SCRIPT_DIR, "MatrixRL.jl"))
 include(joinpath(SCRIPT_DIR, "kb-integration.jl"))
+include(joinpath(SCRIPT_DIR, "audit-logger.jl"))
 using .MatrixRL
 using .KBIntegration
+using .AuditLogger
 
 const RL_STATE_PATH = joinpath(SCRIPT_DIR, "..", "..", "data", "rl", "rl-state.jld2")
 const SPAWN_THRESHOLD = 0.70
@@ -157,6 +159,13 @@ function spawn(task::String, candidates::Vector{String}; use_kb::Bool=true, phas
         batching_meta = phase5_add_batching_metadata(task)
     end
     
+    # ─── PHASE 11: Log spawn decision (audit trail)
+    try
+        AuditLogger.log_spawn(task, best.agent, best.q_score, confidence, "")
+    catch err
+        @warn "Audit logging error: $err"
+    end
+    
     result = Dict(
         "agent" => best.agent,
         "task" => task,
@@ -199,6 +208,14 @@ function log_outcome(task::String, agent::String, success::Bool)::Dict{String, A
     catch err
         @error "Cannot save RL state: $err"
         return Dict("error" => string(err))
+    end
+    
+    # ─── PHASE 11: Log outcome (audit trail)
+    try
+        quality_score = success ? 0.9 : 0.3  # Default scoring if not provided
+        AuditLogger.log_outcome(task, agent, success, quality_score, 0, 0.02)
+    catch err
+        @warn "Audit logging error: $err"
     end
     
     return Dict(
