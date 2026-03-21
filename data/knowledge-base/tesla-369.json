@@ -1,0 +1,42 @@
+{
+  "id": "tesla-369-obsession",
+  "title": "Tesla's 3, 6, 9 Obsession",
+  "category": "Historical Science",
+  "created": "2026-03-21T11:35:00Z",
+  "updated": "2026-03-21T11:35:00Z",
+  "tags": ["tesla", "numerology", "physics", "engineering", "history"],
+  "content": {
+    "quote": "If you only knew the magnificence of 3, 6 and 9, then you would have a key to the universe.",
+    "author": "Nikola Tesla",
+    "significance": [
+      {
+        "title": "Three-Phase Electricity (Real Engineering)",
+        "description": "Tesla invented the three-phase AC motor and electrical system. Three phases enable efficient power transmission and remain fundamental to the modern electrical grid today.",
+        "type": "practical"
+      },
+      {
+        "title": "Mathematical Patterns",
+        "description": "3, 6, 9 are divisors and multiples with recurring mathematical relationships. Digital root of these numbers cycles: 3→6→9→3. Harmonic relationships in frequency ratios.",
+        "type": "mathematical"
+      },
+      {
+        "title": "Resonance & Vibration (Physics Foundation)",
+        "description": "Tesla believed in standing waves, resonance, and natural frequencies as keys to efficiency. The 3-6-9 sequence appears in harmonic overtone series and frequency relationships.",
+        "type": "physics"
+      },
+      {
+        "title": "Obsessive Personality (Behavioral)",
+        "description": "Tesla exhibited ritualistic behavior: walked around buildings 3 times before entering, only stayed in hotel rooms with numbers divisible by 3, meticulously documented his numerical obsessions.",
+        "type": "biographical"
+      }
+    ],
+    "reality_check": {
+      "verified": "Three-phase power system is real, engineered, and widely used.",
+      "speculative": "Mystical significance of 3-6-9 lacks scientific basis, though harmonic principles are sound.",
+      "conclusion": "Tesla was a brilliant engineer grounded in math and resonance (real), but his personal numerology was superstition (not verified)."
+    }
+  },
+  "source": "Historical records, Tesla patents, biographical research",
+  "confidence": 0.85,
+  "notes": "Interesting intersection of verified engineering genius and pseudoscientific belief. Still studied by both historians and numerology enthusiasts."
+}
