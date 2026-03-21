@@ -30,22 +30,6 @@
           "success_rate": 1.0,
           "last_updated": "2026-03-07T20:25:40.927934Z"
         },
-        "Chronicle": {
-          "q_score": 0.6971,
-          "success_count": 7,
-          "failure_count": 0,
-          "total_uses": 7,
-          "success_rate": 1.0,
-          "last_updated": "2026-03-07T20:25:40.927910Z"
-        },
-        "Codex": {
-          "q_score": 0.5265,
-          "success_count": 0,
-          "failure_count": 0,
-          "total_uses": 0,
-          "success_rate": 0.0,
-          "last_updated": "2026-02-28T19:35:00Z"
-        },
         "Lens": {
           "q_score": 0.5,
           "success_count": 0,
@@ -67,16 +51,16 @@
           "success_rate": 1.0,
           "last_updated": "2026-03-07T20:25:40.927917Z"
         },
-        "Prism": {
-          "q_score": 0.5,
+        "Veritas": {
+          "q_score": 0.65,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
           "success_rate": 0.0,
           "last_updated": "2026-02-28T19:35:00Z"
         },
-        "Veritas": {
-          "q_score": 0.5071,
+        "Prism": {
+          "q_score": 0.5,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
@@ -97,14 +81,6 @@
           "last_updated": "2026-03-07T20:25:40.927953Z"
         },
         "Veritas": {
-          "q_score": 0.5071,
-          "success_count": 0,
-          "failure_count": 0,
-          "total_uses": 0,
-          "success_rate": 0.0,
-          "last_updated": "2026-02-28T19:35:00Z"
-        },
-        "Sentinel": {
           "q_score": 0.5071,
           "success_count": 0,
           "failure_count": 0,
@@ -182,14 +158,27 @@
           "total_uses": 4,
           "success_rate": 1.0,
           "last_updated": "2026-03-07T20:25:40.927939Z"
-        },
+        }
+      }
+    },
+    "review": {
+      "description": "Code review, validation, quality assurance, PR feedback",
+      "agents": {
         "Veritas": {
-          "q_score": 0.5071,
+          "q_score": 0.65,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
           "success_rate": 0.0,
           "last_updated": "2026-02-28T19:35:00Z"
+        },
+        "QA": {
+          "q_score": 0.70,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.5,
+          "last_updated": "2026-03-20T22:16:33.626721"
         }
       }
     },
