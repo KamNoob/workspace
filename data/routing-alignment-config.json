@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "created": "2026-03-23T07:59:00Z",
+    "phase": "12a_validation",
+    "purpose": "Canonical task-to-agents routing configuration with P0 rules enforced",
+    "note": "Use this config in spawner-matrix.jl to ensure correct agent selection per task type"
+  },
+  "routing_rules": {
+    "research": {
+      "agents": ["Scout", "Veritas", "Lens", "Navigator-Ops", "Analyst-Perf", "Ghost", "Triage", "Mentor"],
+      "primary": "Scout",
+      "notes": "Chronicle and Codex removed (P0 fix). Scout owns research tasks."
+    },
+    "code": {
+      "agents": ["Codex", "Veritas", "Prism", "Navigator-Ops", "Ghost", "Mentor", "Analyst-Perf", "Triage"],
+      "primary": "Codex",
+      "notes": "Codex owns code development. Veritas for code review. Phase 12A: Ghost for optimization."
+    },
+    "security": {
+      "agents": ["Cipher", "Veritas", "Navigator-Ops", "Ghost", "Mentor", "Analyst-Perf", "Triage"],
+      "primary": "Cipher",
+      "notes": "Sentinel removed (P0 fix). Cipher owns security. Phase 12A: Guardian for compliance."
+    },
+    "documentation": {
+      "agents": ["Chronicle", "Navigator-Ops", "Mentor", "Analyst-Perf", "Ghost"],
+      "primary": "Chronicle",
+      "notes": "Chronicle owns documentation. Phase 12A: Mentor for training docs."
+    },
+    "testing": {
+      "agents": ["QA", "Veritas", "Prism", "Sentinel", "Navigator-Ops", "Ghost", "Mentor"],
+      "primary": "QA",
+      "notes": "QA owns testing. Sentinel for infrastructure testing."
+    },
+    "infrastructure": {
+      "agents": ["Sentinel", "Navigator-Ops", "Analyst-Perf", "Ghost", "Mentor"],
+      "primary": "Sentinel",
+      "notes": "Sentinel owns infrastructure/DevOps. Phase 12A: Delta for change management."
+    },
+    "review": {
+      "agents": ["Veritas", "Cipher", "Codex", "QA", "Prism", "Navigator-Ops"],
+      "primary": "Veritas",
+      "notes": "New task type (P0). Veritas leads code review. Cipher for security review."
+    },
+    "analysis": {
+      "agents": ["Lens", "Scout", "Analyst-Perf", "Navigator-Ops", "Ghost", "Mentor"],
+      "primary": "Lens",
+      "notes": "Lens owns analysis. Phase 12A: Analyst-Perf for performance analysis."
+    },
+    "optimization": {
+      "agents": ["Ghost", "Analyst-Perf", "Navigator-Ops", "Codex", "Mentor"],
+      "primary": "Ghost",
+      "notes": "New task type (Phase 12A). Ghost specializes in code optimization."
+    },
+    "compliance": {
+      "agents": ["Guardian", "Cipher", "Navigator-Ops", "Analyst-Perf", "Mentor"],
+      "primary": "Guardian",
+      "notes": "New task type (Phase 12A). Guardian specializes in compliance/audit."
+    },
+    "training": {
+      "agents": ["Mentor", "Navigator-Ops", "Scout", "Chronicle", "Analyst-Perf"],
+      "primary": "Mentor",
+      "notes": "New task type (Phase 12A). Mentor specializes in knowledge sharing."
+    }
+  },
+  "p0_rules": [
+    "Chronicle is NOT in research (removed)",
+    "Codex is NOT in research (removed)",
+    "Sentinel is NOT in security (removed)",
+    "Cipher is protected in security (Q-score >= 0.85)",
+    "QA is NOT in code (only testing)"
+  ],
+  "phase_12a_changes": {
+    "new_agents": ["Navigator-Ops", "Analyst-Perf", "Ghost", "Triage", "Mentor"],
+    "new_task_types": ["optimization", "compliance", "training"],
+    "week_2_agents": ["Guardian", "Forge", "Delta", "Spotter"]
+  },
+  "fallback_behavior": {
+    "unknown_task": ["Scout", "Lens", "Navigator-Ops", "Analyst-Perf"],
+    "escalation": ["Navigator-Ops", "Morpheus"]
+  }
+}
