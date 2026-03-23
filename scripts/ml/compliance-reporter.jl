@@ -39,8 +39,8 @@ function generate_report(start_date::Date, end_date::Date=Dates.today(); format:
         q_scores = Dict()
         if isfile(rl_path)
             rl_data = JSON.parsefile(rl_path)
-            for (task_type, task_data) in get(rl_data, "task_types", {})
-                for (agent, agent_data) in get(task_data, "agents", {})
+            for (task_type, task_data) in get(rl_data, "task_types", Dict())
+                for (agent, agent_data) in get(task_data, "agents", Dict())
                     if !haskey(q_scores, agent)
                         q_scores[agent] = agent_data["q_score"]
                     end
