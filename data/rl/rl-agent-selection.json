@@ -7,8 +7,8 @@
     "lambda": 0.9,
     "epsilon": 0.15,
     "description": "Q-scores for (task_type, agent) pairs. Higher Q = better choice for that task.",
-    "last_refresh": "2026-03-15T15:48:07.300687",
-    "refresh_reason": "phase_3_retraining"
+    "last_refresh": "2026-03-23T07:54:00.743416",
+    "refresh_reason": "phase_12a_week1_expansion"
   },
   "task_types": {
     "research": {
@@ -37,6 +37,46 @@
           "total_uses": 0,
           "success_rate": 0.0,
           "last_updated": "2026-02-28T19:35:00Z"
+        },
+        "Navigator-Ops": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743343Z"
+        },
+        "Analyst-Perf": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743345Z"
+        },
+        "Ghost": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743347Z"
+        },
+        "Triage": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743349Z"
+        },
+        "Mentor": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743350Z"
         }
       }
     },
@@ -66,6 +106,46 @@
           "total_uses": 0,
           "success_rate": 0.0,
           "last_updated": "2026-02-28T19:35:00Z"
+        },
+        "Navigator-Ops": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743352Z"
+        },
+        "Analyst-Perf": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743354Z"
+        },
+        "Ghost": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743355Z"
+        },
+        "Triage": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743359Z"
+        },
+        "Mentor": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743360Z"
         }
       }
     },
@@ -87,6 +167,46 @@
           "total_uses": 0,
           "success_rate": 0.0,
           "last_updated": "2026-02-28T19:35:00Z"
+        },
+        "Navigator-Ops": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743362Z"
+        },
+        "Analyst-Perf": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743363Z"
+        },
+        "Ghost": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743365Z"
+        },
+        "Triage": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743366Z"
+        },
+        "Mentor": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743368Z"
         }
       }
     },
@@ -116,6 +236,46 @@
           "total_uses": 0,
           "success_rate": 0.0,
           "last_updated": "2026-02-28T19:35:00Z"
+        },
+        "Navigator-Ops": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743369Z"
+        },
+        "Analyst-Perf": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743371Z"
+        },
+        "Ghost": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743372Z"
+        },
+        "Triage": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743374Z"
+        },
+        "Mentor": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743377Z"
         }
       }
     },
@@ -145,6 +305,46 @@
           "total_uses": 0,
           "success_rate": 0.0,
           "last_updated": "2026-02-28T19:35:00Z"
+        },
+        "Navigator-Ops": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743379Z"
+        },
+        "Analyst-Perf": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743380Z"
+        },
+        "Ghost": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743382Z"
+        },
+        "Triage": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743383Z"
+        },
+        "Mentor": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743385Z"
         }
       }
     },
@@ -158,6 +358,46 @@
           "total_uses": 4,
           "success_rate": 1.0,
           "last_updated": "2026-03-07T20:25:40.927939Z"
+        },
+        "Navigator-Ops": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743390Z"
+        },
+        "Analyst-Perf": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743392Z"
+        },
+        "Ghost": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743393Z"
+        },
+        "Triage": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743395Z"
+        },
+        "Mentor": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743396Z"
         }
       }
     },
@@ -173,12 +413,52 @@
           "last_updated": "2026-02-28T19:35:00Z"
         },
         "QA": {
-          "q_score": 0.70,
+          "q_score": 0.7,
           "success_count": 0,
           "failure_count": 0,
           "total_uses": 0,
           "success_rate": 0.5,
           "last_updated": "2026-03-20T22:16:33.626721"
+        },
+        "Navigator-Ops": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743398Z"
+        },
+        "Analyst-Perf": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743399Z"
+        },
+        "Ghost": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743401Z"
+        },
+        "Triage": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743402Z"
+        },
+        "Mentor": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743404Z"
         }
       }
     },
@@ -191,6 +471,397 @@
           "total_uses": 0,
           "success_rate": 0.5,
           "last_updated": "2026-03-20T22:16:33.626721"
+        },
+        "Navigator-Ops": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743405Z"
+        },
+        "Analyst-Perf": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743406Z"
+        },
+        "Ghost": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743408Z"
+        },
+        "Triage": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743409Z"
+        },
+        "Mentor": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743411Z"
+        }
+      }
+    },
+    "optimization": {
+      "description": "Task type: optimization",
+      "agents": {
+        "Scout": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743235Z"
+        },
+        "Prism": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743262Z"
+        },
+        "Chronicle": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743265Z"
+        },
+        "Codex": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743267Z"
+        },
+        "QA": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743269Z"
+        },
+        "Cipher": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743271Z"
+        },
+        "Veritas": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743272Z"
+        },
+        "Sentinel": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743274Z"
+        },
+        "Lens": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743275Z"
+        },
+        "Navigator-Ops": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743277Z"
+        },
+        "Analyst-Perf": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743282Z"
+        },
+        "Ghost": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743286Z"
+        },
+        "Triage": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743288Z"
+        },
+        "Mentor": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743290Z"
+        }
+      }
+    },
+    "compliance": {
+      "description": "Task type: compliance",
+      "agents": {
+        "Scout": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743293Z"
+        },
+        "Prism": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743294Z"
+        },
+        "Chronicle": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743296Z"
+        },
+        "Codex": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743297Z"
+        },
+        "QA": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743299Z"
+        },
+        "Cipher": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743301Z"
+        },
+        "Veritas": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743302Z"
+        },
+        "Sentinel": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743306Z"
+        },
+        "Lens": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743308Z"
+        },
+        "Navigator-Ops": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743310Z"
+        },
+        "Analyst-Perf": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743311Z"
+        },
+        "Ghost": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743313Z"
+        },
+        "Triage": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743314Z"
+        },
+        "Mentor": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743316Z"
+        }
+      }
+    },
+    "training": {
+      "description": "Task type: training",
+      "agents": {
+        "Scout": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743318Z"
+        },
+        "Prism": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743320Z"
+        },
+        "Chronicle": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743321Z"
+        },
+        "Codex": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743323Z"
+        },
+        "QA": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743325Z"
+        },
+        "Cipher": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743328Z"
+        },
+        "Veritas": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743330Z"
+        },
+        "Sentinel": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743332Z"
+        },
+        "Lens": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743333Z"
+        },
+        "Navigator-Ops": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743335Z"
+        },
+        "Analyst-Perf": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743336Z"
+        },
+        "Ghost": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743338Z"
+        },
+        "Triage": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743340Z"
+        },
+        "Mentor": {
+          "q_score": 0.5,
+          "success_count": 0,
+          "failure_count": 0,
+          "total_uses": 0,
+          "success_rate": 0.0,
+          "last_updated": "2026-03-23T07:54:00.743341Z"
         }
       }
     }
