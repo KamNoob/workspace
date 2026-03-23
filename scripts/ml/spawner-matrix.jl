@@ -21,6 +21,7 @@ using JSON
 const SCRIPT_DIR = @__DIR__
 const PHASE5_ENABLED = true
 const PHASE5_DEBUG = false
+const PHASE12A_ENABLED = true  # Phase 12A routing alignment enabled
 
 include(joinpath(SCRIPT_DIR, "MatrixRL.jl"))
 include(joinpath(SCRIPT_DIR, "kb-integration.jl"))
@@ -30,8 +31,45 @@ using .KBIntegration
 using .AuditLogger
 
 const RL_STATE_PATH = joinpath(SCRIPT_DIR, "..", "..", "data", "rl", "rl-state.jld2")
+const ROUTING_CONFIG_PATH = joinpath(SCRIPT_DIR, "..", "..", "data", "routing-alignment-config.json")
 const SPAWN_THRESHOLD = 0.70
 const KB_ENABLED = KBIntegration.kb_enabled()
+
+# ─── PHASE 12A: ROUTING CONFIG LOADER ─────────────────────────────────────
+
+function load_routing_config()::Dict{String, Any}
+    """Load canonical task-to-agents routing configuration."""
+    try
+        if isfile(ROUTING_CONFIG_PATH)
+            return JSON.parsefile(ROUTING_CONFIG_PATH)
+        else
+            @warn "Routing config not found at $ROUTING_CONFIG_PATH, using fallback"
+            return Dict()
+        end
+    catch err
+        @warn "Error loading routing config: $err"
+        return Dict()
+    end
+end
+
+function get_task_candidates(task::String, routing_config::Dict{String, Any})::Vector{String}
+    """Get validated candidates for task from routing config. Falls back to all agents if task unknown."""
+    if isempty(routing_config)
+        return String[]
+    end
+    
+    rules = get(routing_config, "routing_rules", Dict())
+    task_rule = get(rules, lowercase(task), nothing)
+    
+    if task_rule !== nothing
+        return get(task_rule, "agents", String[])
+    end
+    
+    # Fallback: return empty (let caller provide candidates)
+    return String[]
+end
+
+const ROUTING_CONFIG = load_routing_config()
 
 # ─── PHASE 5: CACHE WARMUP ─────────────────────────────────────────────────
 
@@ -110,7 +148,21 @@ end
 
 Select best agent for task with Phase 5 optimizations enabled by default.
 """
-function spawn(task::String, candidates::Vector{String}; use_kb::Bool=true, phase5::Bool=PHASE5_ENABLED)::Dict{String, Any}
+function spawn(task::String, candidates::Vector{String}; use_kb::Bool=true, phase5::Bool=PHASE5_ENABLED, phase12a::Bool=PHASE12A_ENABLED)::Dict{String, Any}
+    
+    # ─── PHASE 12A: Validate candidates against routing config
+    validated_candidates = candidates
+    if phase12a && !isempty(ROUTING_CONFIG)
+        config_candidates = get_task_candidates(task, ROUTING_CONFIG)
+        if !isempty(config_candidates)
+            # Filter user candidates to match routing config
+            validated_candidates = filter(c -> c ∈ config_candidates, candidates)
+            if isempty(validated_candidates)
+                @warn "No candidates match routing config for task '$task'. Allowing user candidates with warning."
+                validated_candidates = candidates
+            end
+        end
+    end
     
     # ─── PHASE 5: Cache warmup (non-blocking, once per session)
     if phase5
@@ -127,7 +179,7 @@ function spawn(task::String, candidates::Vector{String}; use_kb::Bool=true, phas
     
     # Get scores
     all_scores = MatrixRL.get_agent_scores(rl, task)
-    candidate_scores = filter(s -> s.agent ∈ candidates, all_scores)
+    candidate_scores = filter(s -> s.agent ∈ validated_candidates, all_scores)
     
     if isempty(candidate_scores)
         return Dict("error" => "No valid candidates for task: $task")
