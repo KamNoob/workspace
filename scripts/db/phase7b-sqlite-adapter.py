@@ -182,6 +182,53 @@ class Phase7BAdapter:
         
         return {}
     
+    def log_insight_archive(self, insight_key: str, insight_text: str, insight_type: str,
+                           confidence: float = 0.7, frequency: int = 1, 
+                           recommendation: str = None, metadata: Dict = None) -> None:
+        """Log insight to persistence archive for inter-session continuity"""
+        import json
+        from datetime import datetime
+        
+        now = datetime.utcnow().isoformat()
+        
+        # Upsert: increment frequency if exists, else create
+        existing = self.conn.execute(
+            "SELECT id, frequency, confidence FROM insights_archive WHERE insight_key = ?",
+            (insight_key,)
+        ).fetchone()
+        
+        if existing:
+            # Update existing: increment frequency, update timestamp, boost confidence
+            new_frequency = existing['frequency'] + frequency
+            new_confidence = min(1.0, existing['confidence'] + 0.05)  # Increment by 5% per observation
+            
+            self.conn.execute("""
+                UPDATE insights_archive 
+                SET frequency = ?, confidence = ?, last_updated = ?
+                WHERE insight_key = ?
+            """, (new_frequency, new_confidence, now, insight_key))
+        else:
+            # Create new insight
+            self.conn.execute("""
+                INSERT INTO insights_archive 
+                (insight_key, insight_text, insight_type, source, confidence, frequency, 
+                 first_observed, last_updated, actionable_recommendation, metadata)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                insight_key,
+                insight_text,
+                insight_type,
+                'phase7b',
+                confidence,
+                frequency,
+                now,
+                now,
+                recommendation,
+                json.dumps(metadata) if metadata else None
+            ))
+        
+        self.conn.commit()
+    
     def log_phase7b_insights(self, insights: Dict) -> None:
         """Log Phase 7B insights output to audit events"""
         self.conn.execute("""
@@ -237,8 +284,24 @@ class Phase7BAdapter:
             'sla_status': self.get_sla_status(),
             'cost_analysis': self.get_cost_analysis(),
             'memory_health': self.get_memory_insights(),
-            'reward_shaping_active': True  # New: Reward shaping enabled
+            'reward_shaping_active': True,
+            'insights_archived': 0
         }
+        
+        # Log key insights to persistence archive
+        perf = insights['agent_performance']
+        if perf and 'top_agents' in perf:
+            for agent in perf['top_agents'][:3]:
+                # Log top agent insight
+                self.log_insight_archive(
+                    insight_key=f"agent_{agent['agent_id']}_strong_performer",
+                    insight_text=f"{agent['agent_id']} is a strong performer (avg Q: {agent.get('avg_q', 0):.3f})",
+                    insight_type='agent_capability',
+                    confidence=min(0.95, 0.5 + (agent.get('success_rate', 0) * 0.5)),
+                    recommendation=f"Prioritize {agent['agent_id']} for {agent.get('primary_task', 'general')} tasks",
+                    metadata={'agent': agent['agent_id'], 'primary_task': agent.get('primary_task')}
+                )
+                insights['insights_archived'] += 1
         
         # Log to audit trail
         self.log_phase7b_insights(insights)
