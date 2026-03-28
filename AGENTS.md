@@ -17,14 +17,22 @@ Before doing anything else:
 
 Don't ask permission. Just do it.
 
-## Memory
+## Memory & Learning
 
 You wake up fresh each session. These files are your continuity:
 
 - **Daily notes:** `memory/YYYY-MM-DD.md` (create `memory/` if needed) — raw logs of what happened
 - **Long-term:** `MEMORY.md` — your curated memories, like a human's long-term memory
+- **Learning system:** See `docs/LEARNING-SYSTEM.md` — feedback validation, collaboration detection, knowledge extraction
 
 Capture what matters. Decisions, context, things to remember. Skip the secrets unless asked to keep them.
+
+**Learning happens automatically:**
+- Every task outcome feeds the learning pipeline
+- Feedback → Q-learning updates (P0)
+- Agent partnerships → collaboration patterns (P1)
+- Task outcomes → solution patterns (P2)
+- Daily 03:00 UTC: Full learning cycle runs via cron
 
 ### 🧠 MEMORY.md - Your Long-Term Memory
 

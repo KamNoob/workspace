@@ -1,7 +1,8 @@
-# OpenClaw Workspace — Architecture
+# OpenClaw Workspace — Architecture & Learning System
 
-**Last Updated:** 2026-03-09 13:16 GMT  
-**Structure Version:** 2.0 (Reorganized)
+**Last Updated:** 2026-03-28 21:13 GMT  
+**Structure Version:** 3.0 (Learning System Integrated)  
+**Status:** ✅ P0+P1+P2 Learning Pipeline LIVE
 
 ---
 
@@ -11,19 +12,22 @@
 |-----------|---------|-----------|
 | **config/** | System identity & rules | SOUL.md, USER.md, HEARTBEAT.md |
 | **agents/** | Agent specs & workflows | AGENTS_CONFIG.md, PROCESS_FLOWS.md |
-| **docs/** | User-facing documentation | - |
-| **docs/guides/** | How-to & best practices | SECURITY_HARDENING_GUIDE.md |
+| **docs/** | User-facing documentation | LEARNING-SYSTEM.md, SYSTEM_OVERVIEW.md, QUICK_START.md |
+| **docs/guides/** | How-to & best practices | SECURITY_HARDENING_GUIDE.md, LEARNING_QUICK_REF.md |
 | **docs/ml/** | ML/RL/neural network docs | NEURAL_NETWORK_ANALYSIS.md |
-| **docs/reference/** | Quick reference | TOKEN_OPTIMIZATION.md |
+| **docs/reference/** | Quick reference | TOKEN_OPTIMIZATION.md, CONFIGURATION.md |
 | **docs/research/** | Research outputs | knowledge-memory-storage-2026.md |
 | **data/** | Runtime state & logs | - |
-| **data/memory/** | Session notes & memory | memory/2026-03-*.md |
-| **data/rl/** | Q-learning state | rl-agent-selection.json |
-| **data/logs/** | Execution logs | *.jsonl |
+| **data/memory/** | Session notes & memory | memory/2026-03-*.md, MEMORY.md |
+| **data/rl/** | Q-learning & agents | rl-agent-selection.json |
+| **data/audit-logs/** | **NEW:** Immutable task history | YYYY-MM-DD.jsonl (Phase 11A) |
+| **data/feedback-logs/** | **NEW:** User validation signals | feedback-validation.jsonl (P0) |
+| **data/collaboration-graph.json** | **NEW:** Agent partnerships (P1) | Top 20 pairs by performance |
+| **data/knowledge-base/** | **NEW:** Solution patterns (P2) | extracted-patterns.json |
 | **scripts/core/** | Automation & setup | log-task-outcome.sh |
-| **scripts/ml/** | ML/RL utilities | check-research-refresh.py |
+| **scripts/ml/** | **NEW:** Learning pipeline | unified-learning-system.jl, feedback-validator.jl, collaboration-graph.jl, knowledge-extractor.jl |
 | **skills/** | OpenClaw extensions | (managed by OpenClaw) |
-| **prototype/** | Rapid development | NEW: Safe sandbox for experiments |
+| **prototype/** | Rapid development | Safe sandbox for experiments |
 | **archive/** | Legacy/deprecated | Kept for reference |
 
 ---
@@ -62,24 +66,40 @@
 ## Key Files at a Glance
 
 ### **Core System**
-- `config/SOUL.md` — Identity, purpose, boundaries
-- `config/HEARTBEAT.md` — Monitoring intervals & checks
-- `agents/AGENTS_CONFIG.md` — Full agent roster & specialization
-- `agents/PROCESS_FLOWS.md` — 11 standard workflows
+- `SOUL.md` — Identity, purpose, boundaries
+- `HEARTBEAT.md` — Monitoring intervals & checks
+- `AGENTS.md` — Full agent roster & specialization
+- `USER.md` — Art's profile & preferences
+
+### **Learning System (NEW — P0+P1+P2)**
+- `docs/LEARNING-SYSTEM.md` — ⭐ Complete learning pipeline reference
+- `docs/QUICK_START.md` — ⭐ Daily operations guide
+- `docs/SYSTEM_OVERVIEW.md` — ⭐ Full architecture diagram
+- `scripts/ml/unified-learning-system.jl` — P0+P1+P2 orchestrator
+- `scripts/ml/feedback-validator.jl` — P0: Feedback → Q-learning
+- `scripts/ml/collaboration-graph.jl` — P1: Agent partnerships
+- `scripts/ml/knowledge-extractor.jl` — P2: Solution patterns
 
 ### **Operations**
-- `agents/MORPHEUS_FAILURES.md` — Failure tracking & patterns
-- `data/memory/MEMORY_MAIN.md` — Long-term persistent memory
-- `data/rl/rl-agent-selection.json` — RL Q-scores
+- `MEMORY.md` — Long-term persistent memory
+- `data/rl/rl-agent-selection.json` — Q-scores (agent routing)
+- `data/audit-logs/` — Immutable task history (Phase 11A)
+- `data/feedback-logs/` — User validation signals (P0)
+- `data/collaboration-graph.json` — High-performing partnerships (P1)
+- `data/knowledge-base/` — Extracted solution patterns (P2)
 
 ### **Documentation**
+- `docs/LEARNING-SYSTEM.md` — Learning system deep dive
+- `docs/SYSTEM_OVERVIEW.md` — Architecture & integration
+- `docs/INFRASTRUCTURE.md` — Phase 11 detailed specs
 - `docs/ml/NEURAL_NETWORK_ANALYSIS.md` — ML system overview
 - `docs/guides/SECURITY_HARDENING_GUIDE.md` — Security setup
-- `docs/guides/RESEARCH_SYSTEM.md` — Knowledge management
+- `docs/guides/LEARNING_QUICK_REF.md` — Quick learning reference
 
 ### **Automation**
+- `scripts/ml/unified-learning-system.jl` — Main learning interface
+- Cron jobs: P0 (6h), Learning cycle (daily 03:00 UTC)
 - `scripts/core/log-task-outcome.sh` — Task logging
-- `scripts/ml/check-research-refresh.py` — Research staleness checker
 
 ---
 

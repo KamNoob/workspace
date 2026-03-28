@@ -131,8 +131,15 @@ git status
 | `scripts/ml/QualityPredictor.jl` | Agent capability scoring | Ready | Julia |
 | `scripts/ml/agent-spawner-qp.jl` | CLI + prediction engine | Ready | Julia |
 | `scripts/ml/quality-predictor.jl` | Legacy version (backup) | Ready | Julia |
+| `scripts/ml/unified-learning-system.jl` | P0+P1+P2 orchestrator | **LIVE** | Julia |
+| `scripts/ml/feedback-validator.jl` | P0: Feedback → Q-learning | **LIVE** | Julia |
+| `scripts/ml/collaboration-graph.jl` | P1: Agent pair analysis | **LIVE** | Julia |
+| `scripts/ml/knowledge-extractor.jl` | P2: Pattern extraction | **LIVE** | Julia |
 | `data/rl/rl-agent-selection.json` | Q-learning profiles | Live | — |
 | `data/rl/rl-task-execution-log.jsonl` | Outcome tracking | Live | — |
+| `data/feedback-logs/feedback-validation.jsonl` | User feedback trail | Live | — |
+| `data/collaboration-graph.json` | Agent pair performance | Live | — |
+| `data/knowledge-base/extracted-patterns.json` | Solution patterns | Live | — |
 
 ### Workflow Templates
 
@@ -180,11 +187,22 @@ openclaw gateway status
 tail -20 /tmp/openclaw/openclaw-*.log | grep -i whatsapp
 ```
 
-### Memory Systems
+### Memory & Learning Systems
 - **Local Embeddings:** EmbeddingGemma-300M-Q8_0 (local, no API)
 - **Search:** Hybrid (85% semantic + 15% keyword)
 - **Sync:** Auto-watches workspace files
 - **Optimizer:** Q-learning with TD(λ) (live, 98% recall rate)
+
+### New: Unified Learning System (P0+P1+P2)
+- **P0 Feedback Validation:** User feedback → Q-learning updates (every 6h)
+- **P1 Collaboration Detection:** Agent pairs → performance patterns
+- **P2 Knowledge Extraction:** Task outcomes → reusable patterns (warm-start)
+- **Status:** ✅ LIVE (deployed 2026-03-28)
+- **Cron Jobs:** 
+  - Feedback processing: Every 6 hours
+  - Full learning cycle: Daily 03:00 UTC
+- **Command:** `julia scripts/ml/unified-learning-system.jl --report`
+- **Docs:** `docs/LEARNING-SYSTEM.md` (complete reference)
 
 ---
 
@@ -426,12 +444,19 @@ tail -20 ~/sync-logs/tasks-to-cron.log
 ## TODO: Setup Actions
 
 - [x] **Install Julia** — ✅ Installed (snap, v1.12.5)
-- [ ] **Activate Phase 2a/2b** — Run a workflow template (5 min)
+- [x] **Activate Phase 2a/2b** — ✅ Completed via workflows
 - [ ] **Verify Notion env** — Check NOTION_KEY + database IDs in ~/.openclaw/.env
 - [ ] **Test GitHub CLI** — Run a code-review workflow
 - [ ] **Add SSH hosts** — If you use remote servers, configure them
 - [ ] **Configure Python venv** — If data engineering work needs specific packages
 - [ ] **Enable TTS (optional)** — If you want voice features
+
+### Recent Completions (2026-03-28)
+- [x] **P0 Feedback Validation System** — ✅ Live, processes feedback every 6h
+- [x] **P1 Collaboration Detection** — ✅ Live, identifies high-performing agent pairs
+- [x] **P2 Knowledge Extraction** — ✅ Live, builds queryable pattern database
+- [x] **Unified Learning Pipeline** — ✅ Live, full cycle runs daily 03:00 UTC
+- [x] **Learning System Documentation** — ✅ Complete at `docs/LEARNING-SYSTEM.md`
 
 ---
 
@@ -445,7 +470,10 @@ tail -20 ~/sync-logs/tasks-to-cron.log
 | Git | /usr/bin/git | `git --version` | ✅ |
 | OpenClaw | ~/.npm-global/bin/openclaw | `openclaw status` | ✅ |
 | Notion Sync | ~/sync-scripts/ | `bash sync-*.sh` | ✅ (needs env) |
-| RL/ML Scripts | scripts/ml/ | `julia *.jl` | ⏳ Blocked on Julia |
+| **Learning System** | scripts/ml/ | `julia unified-learning-system.jl --report` | ✅ **LIVE** |
+| Q-Learning | scripts/ml/ | `julia feedback-validator.jl` | ✅ **LIVE** |
+| Collaboration | scripts/ml/ | `julia collaboration-graph.jl --analyze` | ✅ **LIVE** |
+| Knowledge Base | scripts/ml/ | `julia knowledge-extractor.jl --extract` | ✅ **LIVE** |
 
 ---
 

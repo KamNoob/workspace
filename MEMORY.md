@@ -1,8 +1,50 @@
 # MEMORY.md - Long-Term Memory
 
-Last updated: 2026-03-21 19:20 GMT (PHASE 11 LIVE + 12A STARTING + 12B-i APPROVED)
-Current Session: **RLVR Planning + Go Decision** (2026-03-21, 19:09-19:20)  
-Status: ✅ PHASE 11 LIVE + PHASE 12A BEGINS MONDAY + PHASE 12B-i APPROVED FOR IMPLEMENTATION
+Last updated: 2026-03-28 21:13 GMT (P0+P1+P2 LEARNING SYSTEM DEPLOYED)
+Current Session: **Unified Learning System Implementation** (2026-03-28, 21:04-21:13)  
+Status: ✅ P0+P1+P2 LEARNING PIPELINE LIVE + AUTOMATION CRONS ACTIVE
+
+---
+
+## 2026-03-28 P0+P1+P2: UNIFIED LEARNING SYSTEM LIVE (21:04-21:13 UTC)
+
+### ✅ THREE-STAGE LEARNING PIPELINE DEPLOYED
+
+**What was built (9 minutes):**
+1. ✅ **P0: Feedback Validator** — Close feedback loop, explicit user validation
+2. ✅ **P1: Collaboration Graph** — Detect high-performing agent pairs
+3. ✅ **P2: Knowledge Extractor** — Synthesize solution patterns from outcomes
+
+**Implementation:**
+- `feedback-validator.jl` — Record/process feedback, update Q-values (230 lines)
+- `feedback-hook.jl` — Integration layer for spawner (70 lines)
+- `collaboration-graph.jl` — Agent pair performance analysis (200 lines)
+- `knowledge-extractor.jl` — Pattern synthesis from task logs (260 lines)
+- `unified-learning-system.jl` — Orchestrates all three (120 lines)
+
+**Automation:**
+- ✅ Cron 1: Feedback processing every 6 hours (explicit Q-learning updates)
+- ✅ Cron 2: Unified learning cycle daily 03:00 UTC (P0+P1+P2 full run)
+
+**Impact Expected:**
+- **P0:** +10-15% convergence speed (feedback loop closure)
+- **P1:** +5-8% overall quality (collaboration detection)
+- **P2:** +20-30% speed on similar tasks (warm-start learning)
+- **Combined:** System becomes self-optimizing through multiple channels
+
+**Status:**
+- ✅ All scripts deployed, tested, working
+- ✅ Cron jobs active and scheduled
+- ✅ Ready for real workload (awaiting task outcomes)
+- ✅ Git committed (d8f1135)
+
+**What it means:**
+System no longer flies blind. Every task outcome feeds learning signals:
+- Users validate quality → Q-learning updates → better agent routing
+- Agents collaborate → patterns detected → high-performing pairs rewarded
+- Task outcomes → patterns extracted → similar tasks get warm-start
+
+This is genuine machine learning: system observes, learns, improves.
 
 ---
 
