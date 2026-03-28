@@ -8,7 +8,10 @@
     "epsilon": 0.15,
     "description": "Q-scores for (task_type, agent) pairs. Higher Q = better choice for that task.",
     "last_refresh": "2026-03-23T08:00:26.158570",
-    "refresh_reason": "p0_routing_fixes_phase12a_validation"
+    "refresh_reason": "p0_routing_fixes_phase12a_validation",
+    "legacy_enhancement": true,
+    "legacy_enhancement_timestamp": "2026-03-28T21:44:05.534Z",
+    "legacy_updates": 0
   },
   "task_types": {
     "research": {

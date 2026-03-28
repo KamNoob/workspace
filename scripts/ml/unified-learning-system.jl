@@ -19,15 +19,20 @@ using Statistics
 
 const SCRIPT_DIR = @__DIR__
 
-"""Execute full learning cycle: audit-bridge → feedback → collaboration → knowledge"""
+"""Execute full learning cycle: legacy → audit-bridge → feedback → collaboration → knowledge"""
 function run_full_cycle()
     println("═" ^ 60)
     println("UNIFIED LEARNING SYSTEM - FULL CYCLE")
     println("═" ^ 60)
     println("[$(now())] Starting learning pipeline...\n")
     
+    # Stage -1: Legacy data ingestion (warm-start)
+    println("STAGE -1: LEGACY DATA WARM-START")
+    println("-" ^ 60)
+    run(`/snap/julia/165/bin/julia $(joinpath(SCRIPT_DIR, "legacy-data-ingestion.jl")) --ingest-all`)
+    
     # Stage 0: Consolidate audit logs + feedback
-    println("STAGE 0: AUDIT-FEEDBACK CONSOLIDATION")
+    println("\nSTAGE 0: AUDIT-FEEDBACK CONSOLIDATION")
     println("-" ^ 60)
     run(`/snap/julia/165/bin/julia $(joinpath(SCRIPT_DIR, "audit-feedback-bridge.jl"))`)
     
