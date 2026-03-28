@@ -1,12 +1,11 @@
 {
   "lastChecks": {
-    "gateway": "2026-03-27T15:16:00Z",
+    "gateway": "2026-03-28T20:29:00Z",
     "memory_optimizer": "2026-03-25T04:16:00Z",
     "agent_qscores": "2026-03-27T13:16:00Z",
     "memory_maintenance": "2026-03-21T19:20:00Z",
-    "projects_tasks": "2026-03-21T20:00:00Z",
-    "syncs_infrastructure": "2026-03-22T04:04:00Z",
+    "syncs_infrastructure": "2026-03-28T20:29:00Z",
     "research_knowledge": "2026-03-27T15:16:00Z"
   },
-  "last_updated": "2026-03-27T15:16:00Z"
+  "last_updated": "2026-03-28T20:29:00Z"
 }
