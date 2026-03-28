@@ -15,7 +15,7 @@ from typing import Dict, List, Tuple
 class Phase7BAdapter:
     """Adapter for Phase 7B Insights Generator with SQLite backend"""
     
-    def __init__(self, db_path: str = None):
+    def __init__(self, db_path: str = None, epsilon: float = 0.15, epsilon_decay: float = 0.995):
         if db_path is None:
             db_path = Path(__file__).parent.parent.parent / 'data' / 'morpheus.db'
         
@@ -23,6 +23,11 @@ class Phase7BAdapter:
         self.conn = sqlite3.connect(str(db_path))
         self.conn.row_factory = sqlite3.Row
         self.conn.execute("PRAGMA foreign_keys = ON")
+        
+        # Epsilon-greedy exploration parameters
+        self.epsilon = epsilon  # Exploration rate (0.15 = 15% random)
+        self.epsilon_decay = epsilon_decay  # Decay per episode (0.995 = -0.5% per episode)
+        self.episode_count = 0  # Track episodes for decay
     
     def get_task_outcomes_since(self, hours: int = 24) -> List[Dict]:
         """Get task outcomes from last N hours"""
@@ -73,6 +78,39 @@ class Phase7BAdapter:
         """).fetchall()
         
         return {row['task_type']: row['count'] for row in rows}
+    
+    def select_agent_epsilon_greedy(self, task_type: str) -> str:
+        """
+        Select best agent for task using epsilon-greedy exploration.
+        
+        With probability epsilon: pick random agent (explore)
+        With probability (1-epsilon): pick agent with highest Q (exploit)
+        
+        Epsilon decays over time to converge to exploitation.
+        """
+        import random
+        
+        # Decay epsilon
+        current_epsilon = self.epsilon * (self.epsilon_decay ** self.episode_count)
+        self.episode_count += 1
+        
+        # Get all agents for this task
+        agents = self.conn.execute("""
+            SELECT agent_id, q_value FROM agent_qscores
+            WHERE task_type = ?
+            ORDER BY q_value DESC
+        """, (task_type,)).fetchall()
+        
+        if not agents:
+            return None
+        
+        # Epsilon-greedy decision
+        if random.random() < current_epsilon:
+            # Explore: random agent
+            return random.choice(agents)['agent_id']
+        else:
+            # Exploit: highest Q-value agent
+            return agents[0]['agent_id']
     
     def get_qlearning_convergence_status(self) -> Dict:
         """Check Q-learning convergence metrics"""
@@ -159,6 +197,36 @@ class Phase7BAdapter:
         ))
         self.conn.commit()
     
+    def calculate_shaped_reward(self, outcome: Dict) -> float:
+        """
+        Reward shaping: Optimize for quality + speed + cost efficiency.
+        
+        Components:
+        - Base quality (0.0-1.0): Did the task succeed well?
+        - Speed bonus: Faster execution = better
+        - Cost efficiency: Cheaper operations = better
+        
+        Returns shaped reward suitable for Q-learning update.
+        """
+        quality = outcome.get('outcome_quality', 0.5)
+        execution_time_ms = outcome.get('execution_time_ms', 1000)
+        cost_usd = outcome.get('cost_usd', 0.01)
+        
+        # Base reward from quality (0.0-1.0)
+        base_reward = quality
+        
+        # Speed bonus: normalize to 0-1 range (1000ms = 0 bonus, 100ms = 0.9 bonus)
+        speed_bonus = max(0, (1000 - execution_time_ms) / 1000) * 0.2
+        
+        # Cost efficiency: penalize expensive operations (target ~$0.01 per task)
+        cost_penalty = min(cost_usd / 0.01, 1.0) * 0.1  # Max 0.1 penalty
+        
+        # Total shaped reward
+        shaped_reward = base_reward + speed_bonus - cost_penalty
+        
+        # Clamp to reasonable range (-0.2 to 1.2, centered at 0.5)
+        return max(-0.2, min(1.2, shaped_reward))
+    
     def generate_insights_report(self) -> Dict:
         """Generate comprehensive Phase 7B insights report"""
         insights = {
@@ -168,7 +236,8 @@ class Phase7BAdapter:
             'qlearning_status': self.get_qlearning_convergence_status(),
             'sla_status': self.get_sla_status(),
             'cost_analysis': self.get_cost_analysis(),
-            'memory_health': self.get_memory_insights()
+            'memory_health': self.get_memory_insights(),
+            'reward_shaping_active': True  # New: Reward shaping enabled
         }
         
         # Log to audit trail
