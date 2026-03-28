@@ -1,0 +1,19 @@
+[package]
+name = "api-indexer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "4.4"
+actix-rt = "2.9"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.35", features = ["full"] }
+regex = "1.10"
+dashmap = "5.5"
+lru = "0.12"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
