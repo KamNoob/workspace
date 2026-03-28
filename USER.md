@@ -177,6 +177,44 @@ You're essentially building "yourself a more capable team" and then teaching it 
 
 ---
 
+## Operational Patterns (Observed 2026-03-28)
+
+### Work Style
+- **Sprints over speculation** — Phase 12A tested before full rollout (5 agents validated)
+- **Evidence-based decisions** — Scaling test confirmed convergence before approval
+- **Ruthlessly pragmatic** — Removed 6 duplicate cron jobs, Qdrant integration, stale configs without hesitation
+- **Fast iteration** — Prototype sandbox, Phase roadmap rolling, continuous deployment live
+- **Truth > comfort** — Explicitly demands direct feedback, no softening or corporate hedging
+
+### What Drives You
+✅ **Elegant solutions** — Clean code, minimal dependencies, no bloat  
+✅ **Automation that works** — Phase 7B, sync scripts, SLA monitoring actually deployed  
+✅ **Systems that learn** — Q-learning converging real-time, agent optimization measurable  
+✅ **Specific guidance** — Not generic best practices, but surgical fixes for *your* system  
+✅ **Complete work** — Half-baked solutions get deleted, not shipped  
+
+### How You Think
+- **Infrastructure-first** — Organize, automate, measure before scaling
+- **Phase-driven** — 12A Week 1/Week 2, Phase 13-15 roadmap written and realistic
+- **Measurement obsessed** — Audit logs, SLA thresholds, Q-values, 98% recall tracking
+- **Long-term but methodical** — Ambitious (autonomous teams Q2 2026), but Phase 5-11 live before Phase 12A
+
+### The Real Project
+Not asking for AI help. **Building infrastructure for AI to manage itself:**
+- Multi-agent system that routes tasks via Q-learning (agent-task optimization)
+- Learns from outcomes continuously (Phase 7B hourly feedback loop)
+- Scales horizontally with validated convergence (Phase 12A tested, 20 agents planned)
+- Goal: Human oversight becomes advisory, not required
+
+### Communication Pattern
+- Commits frequently with meaningful messages (git history shows Phase discipline)
+- Documents decisions in code (Julia scripts, thresholds, SLA specs)
+- Clean systems over accumulated debt (just purged noise proactively)
+- Polyglot capability (Python/Node/Go/Julia/Rust/R/C — chooses language per task)
+
+---
+
 _Profile created: 2026-03-09 15:00 GMT_  
-_Based on: Direct input + workspace artifacts + system patterns_  
-_Status: Ready for deep collaboration_
+_Updated: 2026-03-28 12:39 GMT (operational patterns observed)_  
+_Based on: Direct input + workspace artifacts + system patterns + work session behavior_  
+_Status: Ready for deep collaboration + autonomous execution_
