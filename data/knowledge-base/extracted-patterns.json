@@ -1,5 +1,66 @@
 {
-  "total_patterns": 0,
-  "patterns": {},
-  "generated_at": "2026-03-28T21:09:48.389Z"
+  "total_patterns": 4,
+  "patterns": {
+    "code": {
+      "task_type": "code",
+      "pattern_id": "117195",
+      "best_agent": "Codex",
+      "success_rate": 1.0,
+      "avg_duration_ms": 9627.5,
+      "agent_scores": {
+        "Codex": 4.0
+      },
+      "sample_size": 2,
+      "avg_quality": 4.0,
+      "extracted_at": "2026-03-28T21:41:25.938Z",
+      "efficiency_score": 3.89294403892944,
+      "avg_cost_usd": 0.0275
+    },
+    "review": {
+      "task_type": "review",
+      "pattern_id": "365099",
+      "best_agent": "Codex",
+      "success_rate": 0.0,
+      "avg_duration_ms": 8272.0,
+      "agent_scores": {
+        "Codex": 2.0
+      },
+      "sample_size": 1,
+      "avg_quality": 2.0,
+      "extracted_at": "2026-03-28T21:41:26.103Z",
+      "efficiency_score": 1.9135093761959436,
+      "avg_cost_usd": 0.0452
+    },
+    "research": {
+      "task_type": "research",
+      "pattern_id": "739230",
+      "best_agent": "Scout",
+      "success_rate": 1.0,
+      "avg_duration_ms": 8854.0,
+      "agent_scores": {
+        "Scout": 5.0
+      },
+      "sample_size": 1,
+      "avg_quality": 5.0,
+      "extracted_at": "2026-03-28T21:41:26.103Z",
+      "efficiency_score": 4.899078973153047,
+      "avg_cost_usd": 0.0206
+    },
+    "security": {
+      "task_type": "security",
+      "pattern_id": "621374",
+      "best_agent": "Cipher",
+      "success_rate": 1.0,
+      "avg_duration_ms": 11521.0,
+      "agent_scores": {
+        "Cipher": 5.0
+      },
+      "sample_size": 1,
+      "avg_quality": 5.0,
+      "extracted_at": "2026-03-28T21:41:26.103Z",
+      "efficiency_score": 4.798004030323385,
+      "avg_cost_usd": 0.0421
+    }
+  },
+  "generated_at": "2026-03-28T21:41:25.380Z"
 }

@@ -19,15 +19,20 @@ using Statistics
 
 const SCRIPT_DIR = @__DIR__
 
-"""Execute full learning cycle: feedback → collaboration → knowledge"""
+"""Execute full learning cycle: audit-bridge → feedback → collaboration → knowledge"""
 function run_full_cycle()
     println("═" ^ 60)
     println("UNIFIED LEARNING SYSTEM - FULL CYCLE")
     println("═" ^ 60)
     println("[$(now())] Starting learning pipeline...\n")
     
+    # Stage 0: Consolidate audit logs + feedback
+    println("STAGE 0: AUDIT-FEEDBACK CONSOLIDATION")
+    println("-" ^ 60)
+    run(`/snap/julia/165/bin/julia $(joinpath(SCRIPT_DIR, "audit-feedback-bridge.jl"))`)
+    
     # Stage 1: Feedback Processing
-    println("STAGE 1: FEEDBACK PROCESSING & Q-LEARNING UPDATE")
+    println("\nSTAGE 1: FEEDBACK PROCESSING & Q-LEARNING UPDATE")
     println("-" ^ 60)
     run(`/snap/julia/165/bin/julia $(joinpath(SCRIPT_DIR, "feedback-validator.jl")) --sync-to-qlearning`)
     
@@ -36,7 +41,7 @@ function run_full_cycle()
     println("-" ^ 60)
     run(`/snap/julia/165/bin/julia $(joinpath(SCRIPT_DIR, "collaboration-graph.jl")) --analyze`)
     
-    # Stage 3: Knowledge Extraction
+    # Stage 3: Knowledge Extraction (now with consolidated data)
     println("\nSTAGE 3: KNOWLEDGE EXTRACTION & PATTERN SYNTHESIS")
     println("-" ^ 60)
     run(`/snap/julia/165/bin/julia $(joinpath(SCRIPT_DIR, "knowledge-extractor.jl")) --extract`)

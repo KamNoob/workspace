@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created": "2026-02-28T19:35:00Z",
-    "algorithm": "Q-Learning + TD(\u03bb)",
+    "algorithm": "Q-Learning + TD(λ)",
     "alpha": 0.02,
     "gamma": 0.99,
     "lambda": 0.9,

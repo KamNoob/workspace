@@ -1,0 +1,8 @@
+{"task":"research","q_score":0.0,"session_id":"","spawner_version":"phase5-integrated","agent_selected":"Scout","timestamp":"2026-03-28T21:35:58.941Z","event_type":"task_spawn","confidence":"low"}
+{"task":"code","q_score":0.02,"session_id":"","spawner_version":"phase5-integrated","agent_selected":"Codex","timestamp":"2026-03-28T21:36:05.361Z","event_type":"task_spawn","confidence":"low"}
+{"task":"security","q_score":0.0,"session_id":"","spawner_version":"phase5-integrated","agent_selected":"Cipher","timestamp":"2026-03-28T21:36:11.692Z","event_type":"task_spawn","confidence":"low"}
+{"task":"review","q_score":0.0,"session_id":"","spawner_version":"phase5-integrated","agent_selected":"Codex","timestamp":"2026-03-28T21:36:17.995Z","event_type":"task_spawn","confidence":"low"}
+{"task":"research","cost_usd":0.02,"success":true,"duration_ms":0,"quality_score":0.9,"agent":"Scout","timestamp":"2026-03-28T21:36:39.814Z","event_type":"task_outcome"}
+{"task":"code","cost_usd":0.02,"success":true,"duration_ms":0,"quality_score":0.9,"agent":"Codex","timestamp":"2026-03-28T21:36:43.998Z","event_type":"task_outcome"}
+{"task":"security","cost_usd":0.02,"success":true,"duration_ms":0,"quality_score":0.9,"agent":"Cipher","timestamp":"2026-03-28T21:36:48.226Z","event_type":"task_outcome"}
+{"task":"review","cost_usd":0.02,"success":false,"duration_ms":0,"quality_score":0.3,"agent":"Codex","timestamp":"2026-03-28T21:36:52.453Z","event_type":"task_outcome"}

@@ -22,12 +22,13 @@ using Statistics
 using Dates
 
 const AUDIT_LOGS_DIR = "data/audit-logs"
+const CONSOLIDATED_LOG = "data/rl/task-execution-consolidated.jsonl"
 const FEEDBACK_LOG = "data/feedback-logs/feedback-validation.jsonl"
 const KNOWLEDGE_BASE = "data/knowledge-base/extracted-patterns.json"
 const PATTERN_CACHE = "data/knowledge-base/pattern-embeddings.jsonl"
 
 """Extract task context from audit entries"""
-function extract_task_context(entry::Dict{String, Any})::Dict{String, Any}
+function extract_task_context(entry::AbstractDict)::Dict{String, Any}
     """
     Pulls out task-relevant information:
     - What was the problem (task type, description)
@@ -84,7 +85,7 @@ function synthesize_pattern(task_type::String, contexts::Vector{Dict{String, Any
     
     pattern = Dict(
         "task_type" => task_type,
-        "pattern_id" => string(hash(task_type)) % 1000000,  # Deterministic ID
+        "pattern_id" => string(abs(hash(task_type)) % 1000000),  # Deterministic ID
         "sample_size" => length(contexts),
         "best_agent" => best_agent,
         "agent_scores" => agent_performance,
@@ -100,12 +101,34 @@ function synthesize_pattern(task_type::String, contexts::Vector{Dict{String, Any
     return pattern
 end
 
-"""Load all task contexts from audit logs"""
+"""Load all task contexts from consolidated log (preferred) or audit logs (fallback)"""
 function load_task_contexts()::Dict{String, Vector{Dict{String, Any}}}
     """Groups tasks by type, loads all contexts."""
     
     task_contexts = Dict{String, Vector{Dict{String, Any}}}()
     
+    # Try consolidated log first (has feedback + audit data)
+    if isfile(CONSOLIDATED_LOG)
+        open(CONSOLIDATED_LOG, "r") do f
+            for line in eachline(f)
+                try
+                    entry = JSON.parse(line)
+                    ctx = extract_task_context(entry)
+                    task_type = ctx["task_type"]
+                    
+                    if !haskey(task_contexts, task_type)
+                        task_contexts[task_type] = []
+                    end
+                    push!(task_contexts[task_type], ctx)
+                catch
+                    continue
+                end
+            end
+        end
+        return task_contexts
+    end
+    
+    # Fallback to audit logs
     audit_files = filter(f -> endswith(f, ".jsonl"), readdir(AUDIT_LOGS_DIR))
     for audit_file in sort(audit_files)
         audit_path = joinpath(AUDIT_LOGS_DIR, audit_file)
