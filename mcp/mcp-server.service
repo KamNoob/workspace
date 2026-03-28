@@ -1,0 +1,19 @@
+[Unit]
+Description=MCP Server - Model Context Protocol
+After=network.target
+
+[Service]
+Type=simple
+User=art
+WorkingDirectory=/home/art/.openclaw/workspace/mcp
+Environment="NODE_ENV=production"
+Environment="NODE_OPTIONS=--max-old-space-size=512"
+ExecStart=/usr/bin/node dist/server.js
+Restart=always
+RestartSec=10
+StandardOutput=append:/var/log/mcp-server.log
+StandardError=append:/var/log/mcp-server.log
+SyslogIdentifier=mcp-server
+
+[Install]
+WantedBy=multi-user.target
