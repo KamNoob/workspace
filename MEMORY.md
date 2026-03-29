@@ -1,8 +1,46 @@
 # MEMORY.md - Long-Term Memory
 
-Last updated: 2026-03-29 11:04 GMT (CONSOLIDATED MORNING SESSION)
-Current Session: **Legacy Data Recovery & System Consolidation** (2026-03-29, 10:43-11:04 UTC)  
-Status: ✅ LEGACY INGESTION COMPLETE + Q-VALUES WARMED + GATEWAY STABLE + READY FOR PRODUCTION
+Last updated: 2026-03-29 14:07 GMT (FULL SESSION CONSOLIDATION)
+Current Session: **Full Session Summary: Legacy Recovery, Security Fix, Model Update, WhatsApp Resolution** (2026-03-29, 10:43-14:07 UTC)  
+Status: ✅ ALL PRIORITY ITEMS COMPLETE + SYSTEM STABLE + WHATSAPP DISABLED (INVESTIGATING AUTH)
+
+---
+
+## 2026-03-29 FULL SESSION (10:43-14:07 UTC): Complete Consolidation
+
+### ✅ FIVE MAJOR ACCOMPLISHMENTS
+
+**1. Legacy Data Recovery & Q-Learning Warm-Start**
+- Extracted 28 outcomes from audit + workflow logs
+- Built `ingest-legacy-outcomes.py` + `rl-legacy-bridge.py`
+- Q-Values: Scout+research=0.8476, Codex+code=0.7244
+- Agent selection now trained on 6 weeks of data (not 2 weeks)
+- Committed: 71906b5, 78848a8
+
+**2. Gateway Service Config Security Fix (CRITICAL)**
+- Found 7 embedded secrets (API keys, tokens, passwords) in systemd service file
+- Removed all secrets (moved to ~/.openclaw/.env)
+- Service file now clean and secure
+- Gateway restarted (new pid 1397482, 14:03 UTC)
+
+**3. Memory Consolidation (20-day backlog)**
+- Merged daily logs 2026-03-22 through 2026-03-29
+- Updated MEMORY.md + heartbeat-state.json
+- Created 2026-03-29-session-summary.md (5.8KB comprehensive log)
+- Memory now current
+
+**4. Model Configuration Update**
+- Added: claude-sonnet-4-6 (alias sonnet46)
+- Added: claude-opus-4-6 (alias opus46)
+- Updated fallback chain: sonnet-4-6 → opus-4-6 → opus-4-5 → sonnet-4-5
+- New 4.6 models now available for spawning
+
+**5. WhatsApp Flapping Resolution**
+- Issue: Repeated disconnect/reconnect cycles (10+ per interval)
+- Root cause: Plugin-level auth validation issue
+- Solution: Disabled WhatsApp channel
+- Status: Gateway now stable, flapping stopped
+- Next: Investigate auth token validity, re-enable with proper credentials
 
 ---
 
