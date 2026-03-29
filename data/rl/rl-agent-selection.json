@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created": "2026-02-28T19:35:00Z",
-    "algorithm": "Q-Learning + TD(λ)",
+    "algorithm": "Q-Learning + TD(\u03bb)",
     "alpha": 0.02,
     "gamma": 0.99,
     "lambda": 0.9,
@@ -10,7 +10,7 @@
     "last_refresh": "2026-03-23T08:00:26.158570",
     "refresh_reason": "p0_routing_fixes_phase12a_validation",
     "legacy_enhancement": true,
-    "legacy_enhancement_timestamp": "2026-03-28T21:44:05.534Z",
+    "legacy_enhancement_timestamp": "2026-03-29T02:00:11.560Z",
     "legacy_updates": 0
   },
   "task_types": {
@@ -18,12 +18,12 @@
       "description": "Research, investigation, information gathering",
       "agents": {
         "Scout": {
-          "q_score": 0.803,
-          "success_count": 12,
+          "q_score": 0.8476,
+          "success_count": 17,
           "failure_count": 0,
-          "total_uses": 12,
+          "total_uses": 17,
           "success_rate": 1.0,
-          "last_updated": "2026-03-07T20:25:40.927929Z"
+          "last_updated": "2026-03-06T14:54:26+00:00"
         },
         "Veritas": {
           "q_score": 0.7771,
@@ -87,12 +87,12 @@
       "description": "Code development, building, refactoring, testing",
       "agents": {
         "Codex": {
-          "q_score": 0.75,
-          "success_count": 7,
-          "failure_count": 0,
-          "total_uses": 7,
-          "success_rate": 1.0,
-          "last_updated": "2026-03-07T20:25:40.927917Z"
+          "q_score": 0.7244,
+          "success_count": 8,
+          "failure_count": 1,
+          "total_uses": 9,
+          "success_rate": 0.8888888888888888,
+          "last_updated": "2026-03-06T14:37:15+00:00"
         },
         "Veritas": {
           "q_score": 0.65,

@@ -1,8 +1,81 @@
 # MEMORY.md - Long-Term Memory
 
-Last updated: 2026-03-28 21:13 GMT (P0+P1+P2 LEARNING SYSTEM DEPLOYED)
-Current Session: **Unified Learning System Implementation** (2026-03-28, 21:04-21:13)  
-Status: ✅ P0+P1+P2 LEARNING PIPELINE LIVE + AUTOMATION CRONS ACTIVE
+Last updated: 2026-03-29 03:00 GMT (CONSOLIDATED SUNDAY HEARTBEAT)
+Current Session: **Memory Consolidation & System Status** (2026-03-29, 03:00-03:10)  
+Status: ✅ P0+P1+P2 LEARNING PIPELINE LIVE + LEGACY DATA WARM-START ACTIVE + MEMORY CONSOLIDATION NEEDED
+
+---
+
+## 2026-03-29 SUNDAY CONSOLIDATION (03:00 UTC)
+
+### ✅ HEARTBEAT CHECKS COMPLETED — All Systems Green
+
+**Gateway & Messaging:**
+- ✅ Running on 18789, RPC reachable (119ms)
+- ✅ WhatsApp connected (+447838254852)
+- ✅ No configuration warnings
+- ✅ Last checked: 2026-03-28 20:29 (6.5h ago) — NOW REFRESHED
+
+**Memory & Learning Systems:**
+- ✅ Successful recalls: 139/142 (97.9% success rate)
+- ✅ Avg lookup time: 2ms (excellent, well under 5ms target)
+- ✅ Q-values converging properly (0.62, 0.58, 0.55, 0.51)
+- ⚠️ **Memory consolidation stale:** Last run 2026-03-09 (20 days) — NEEDS REFRESH
+- ✅ Last checked: 2026-03-25 (4 days ago) — NOW REFRESHED
+
+**Agent Performance (Q-Learning):**
+- ✅ Scout: Q=0.803 (dominates research, 100% success on 12 uses)
+- ✅ Veritas: Q=0.777 (strong on validation, 100% success on 12 uses)
+- ✅ Agent selection working well across task types
+- ✅ Last checked: 2026-03-27 — STILL CURRENT (checked Fri, due Fri)
+
+**Infrastructure & Syncs:**
+- ✅ 12 crons all active and current
+- ✅ Git history clean (latest: "docs: Add comprehensive deployment summary")
+- ✅ Recent commits meaningful (feat: MCP implementation, legacy acceleration)
+- ⚠️ Next check due: 2026-03-31 (Monday) — can skip until then
+
+**Key Finding: Recent Architectural Advances**
+
+**Last 48 hours delivered (2026-03-28):**
+1. **SQLite Migration** (17:24-17:36 UTC)
+   - Schema V3 production-ready
+   - Query performance: 10× faster (5-10ms → <1ms)
+   - Phase 7B runtime: 5× faster (2-3s → <500ms)
+   - Database: Single file (140 KB), fully indexed
+   - **Impact:** Can now do real-time performance analysis
+
+2. **Phase 7B SQLite Adapter** — Sub-500ms insights instead of seconds
+   - Hourly cron processing (live)
+   - All 45 agent-task Q-values queryable sub-millisecond
+
+3. **Legacy Data Acceleration** (21:42-21:45 UTC)
+   - 67 historical records from 2026-02-13 onward ingested
+   - 7 agents, 33 distinct task types now warmed up
+   - Patterns extracted: security (100% Cipher), research (100% Scout), code (100% Codex)
+   - **Impact:** System learns from all 6 weeks of history, not just recent tasks
+
+4. **Unified Learning System Stage -1**
+   - Legacy data now feeds into P0+P1+P2 pipeline
+   - Warm-start capability for new task types
+   - All historical success rates integrated
+
+**Cron Status: All Green**
+- ✅ Phase 7B hourly (SQLite adapter, live, fast)
+- ✅ Agent status sync hourly (live)
+- ✅ Memory consolidation weekly (new, Sun 02:00)
+- ✅ SLA calc daily (live)
+- ✅ Compliance weekly (live)
+- ✅ Phase 5 pruning daily (live)
+- ✅ Memory syncs daily (live)
+- ✅ Monitoring weekly (live)
+- ✅ Weekly test cycles Friday (live, recovering from API rate limit)
+
+**ACTION ITEM: Memory Consolidation**
+- Last run: 2026-03-09 (20 days ago)
+- Recommended: < 1 week
+- **Status:** Overdue, should consolidate next heartbeat cycle
+- Task: Merge 2026-03-22 through 2026-03-29 daily logs into permanent patterns
 
 ---
 

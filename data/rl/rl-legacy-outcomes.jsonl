@@ -1,0 +1,28 @@
+{"timestamp": "2026-03-21T09:51:28.300Z", "agent": "Codex", "task_type": "unknown", "success": true, "source": "audit-log"}
+{"timestamp": "2026-03-28T21:36:39.814Z", "agent": "Scout", "task_type": "unknown", "success": true, "source": "audit-log"}
+{"timestamp": "2026-03-28T21:36:43.998Z", "agent": "Codex", "task_type": "unknown", "success": true, "source": "audit-log"}
+{"timestamp": "2026-03-28T21:36:48.226Z", "agent": "Cipher", "task_type": "unknown", "success": true, "source": "audit-log"}
+{"timestamp": "2026-03-28T21:36:52.453Z", "agent": "Codex", "task_type": "unknown", "success": false, "source": "audit-log"}
+{"timestamp": "2026-03-06T14:37:09+00:00", "agent": "Scout", "task_type": "research", "success": true, "duration_minutes": 5.2, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:37:09+00:00", "agent": "Scout", "task_type": "research", "success": true, "duration_minutes": 4.8, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:37:09+00:00", "agent": "Codex", "task_type": "code", "success": true, "duration_minutes": 15.5, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:37:09+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 18.0, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:37:15+00:00", "agent": "Scout", "task_type": "research", "success": true, "duration_minutes": 5.5, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:37:15+00:00", "agent": "Codex", "task_type": "code", "success": false, "duration_minutes": 20.0, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:37:15+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 12.0, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:37:15+00:00", "agent": "Scout", "task_type": "research", "success": true, "duration_minutes": 4.9, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:37:15+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 6.5, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:37:15+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 1.2, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:40:43+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 15, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:40:43+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 18, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:40:47+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 120, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:54:26+00:00", "agent": "Scout", "task_type": "research", "success": true, "duration_minutes": 20, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:54:26+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 15, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:54:26+00:00", "agent": "Unknown", "task_type": "unknown", "success": false, "duration_minutes": 60, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:54:26+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 20, "source": "workflow-log"}
+{"timestamp": "2026-03-06T14:54:26+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 10, "source": "workflow-log"}
+{"timestamp": "2026-03-07T19:52:33+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 30, "source": "workflow-log"}
+{"timestamp": "2026-03-07T19:52:36+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 60, "source": "workflow-log"}
+{"timestamp": "2026-03-07T20:16:30+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 15, "source": "workflow-log"}
+{"timestamp": "2026-03-07T20:27:19+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 3, "source": "workflow-log"}
+{"timestamp": "2026-03-07T20:35:17+00:00", "agent": "Unknown", "task_type": "unknown", "success": true, "duration_minutes": 25, "source": "workflow-log"}
