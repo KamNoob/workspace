@@ -1,8 +1,44 @@
 # MEMORY.md - Long-Term Memory
 
-Last updated: 2026-03-29 14:07 GMT (FULL SESSION CONSOLIDATION)
-Current Session: **Full Session Summary: Legacy Recovery, Security Fix, Model Update, WhatsApp Resolution** (2026-03-29, 10:43-14:07 UTC)  
-Status: ✅ ALL PRIORITY ITEMS COMPLETE + SYSTEM STABLE + WHATSAPP DISABLED (INVESTIGATING AUTH)
+Last updated: 2026-03-29 23:25 GMT (EVENING SESSION CONSOLIDATION)
+Current Session: **Evening Session: Container Sandboxing Decision + Framework Evaluation** (2026-03-29, 21:00-23:25 UTC)  
+Status: ✅ CONTAINER SANDBOXING ADDED AS PHASE 12A BLOCKER + OPENJARVIS EVALUATED + UNSLOTH BACKLOGGED
+
+---
+
+## 2026-03-29 EVENING SESSION (21:00-23:25 UTC): Framework Evaluation & Security Hardening
+
+### ✅ THREE MAJOR DECISIONS
+
+**1. Container Sandboxing Added as Phase 12A Blocker (CRITICAL)**
+- **Decision:** Wrap agent execution in Docker/Podman containers
+- **Why:** Scale 11 → 20 agents requires execution isolation
+- **Risk:** Rogue agent can't trash filesystem, consume all resources, or exfiltrate data
+- **Implementation:** 1-2 hours effort (Dockerfile + wrapper script)
+- **Blocker:** Phase 12A launch Monday depends on this
+- **Status:** Fully documented in `docs/PHASE12A_SANDBOX_REQUIREMENT.md` + `TODO-SANDBOX.md`
+- **Committed:** 67ce4dc, b4d5e04, bbbb491
+
+**2. OpenJarvis Evaluated Against Current System**
+- **What is it:** Stanford's local-first personal AI framework (9 agent types, efficiency-aware evaluation)
+- **Comparison:** Your system is MORE specialized (11 domain agents vs their 9 generic) and MORE sophisticated learning (P0+P1+P2 pipeline)
+- **Gap they have:** Container sandboxing (which you're now adding), standardized tool registry, formal efficiency metrics (energy/FLOPs)
+- **Decision:** Don't adopt OpenJarvis wholesale. Your architecture is better-tailored. Steal container sandboxing pattern (done).
+- **Phase 15 note:** Could integrate their model abstraction layer later (multi-provider support)
+
+**3. Unsloth Fine-Tuning: Deferred to Phase 14-15**
+- **What is it:** 2x faster LLM fine-tuning with 70% less VRAM (Unsloth AI, open-source)
+- **Why not now:** Q-learning routing is more efficient than fine-tuning for your use case. No GPU in current setup.
+- **When to revisit:** Phase 14-15, if agent-task patterns need model-level customization
+- **Backlog entry:** Added to `OPENCLAW_IMPROVEMENTS_ROADMAP.md`
+
+### 📊 TOOLS & FRAMEWORKS EVALUATED
+
+| Tool | Status | Reason |
+|------|--------|--------|
+| **Unsloth** | Backlog (Phase 14-15) | Useful later, not now. Q-learning superior for routing. |
+| **OpenJarvis** | Reference only | More generic than your agents. Steal container idea (done). |
+| **NotebookLM-py** | Interesting | Reversible. Could build Rust version for bulk operations. |
 
 ---
 
