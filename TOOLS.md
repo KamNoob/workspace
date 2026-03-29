@@ -74,36 +74,29 @@ cd /home/art/.openclaw/workspace
 
 ---
 
-### ✅ Notion Integration (Configured but Verify)
+### ⏳ Notion Integration (DISABLED — Backlog)
 **Purpose:** Task/project syncing, knowledge base, team status  
-**Status:** Scripts exist, but .env needs verification
+**Status:** DISABLED 2026-03-29 16:30 UTC
 
-**Required environment variables (in ~/.openclaw/.env):**
+**Disabled cron jobs:**
+- ~~`sync-memory-to-kb.sh`~~ — Was: Daily 00:05 UTC (MEMORY.md → Knowledge Base) → DISABLED
+- ~~`sync-tasks-to-cron.sh`~~ — Was: Daily 01:00 UTC (Tasks → Cron Queue) → DISABLED
+- ~~`sync-agent-status.sh`~~ — Was: Hourly :00 (Agent Status → Team DB) → DISABLED
+
+**Why disabled:**
+- Notion integration no longer needed (local systems sufficient)
+- Reduces complexity and maintenance overhead
+- 3 cron jobs freed up
+
+**If re-enabling later:**
 ```bash
-NOTION_KEY=ntn_...                    # Notion API token
-NOTION_COMMAND_CENTER_ID=52dab2f6... # Main hub database
-NOTION_PROJECTS_DB_ID=...            # Project tracking
-NOTION_TASKS_DB_ID=...               # Task board
-NOTION_TEAM_DB_ID=...                # Agent/team status
-NOTION_KB_DB_ID=...                  # Knowledge base
+# Cron IDs to restore:
+# - a1c1f39c-2c30-473a-9894-03c7e06e64ee (Agent Status Hourly)
+# - f2a2f272-de61-41e5-86f9-05dacff13f67 (Memory to KB)
+# - 32ba23a0-abe0-40df-b58c-1f1af8f972bb (Tasks to Cron)
+
+# To enable: openclaw cron update <job-id> --enabled true
 ```
-
-**Verify Notion setup:**
-```bash
-# Check env variables
-env | grep NOTION
-
-# Test API connectivity
-curl -H "Authorization: Bearer $NOTION_KEY" https://api.notion.com/v1/users/me
-
-# View workspace sync logs
-tail -f ~/sync-logs/memory-to-kb.log
-```
-
-**Sync scripts (run automatically via cron):**
-- `sync-memory-to-kb.sh` — Daily 00:05 UTC (MEMORY.md → Knowledge Base)
-- `sync-tasks-to-cron.sh` — Daily 01:00 UTC (Tasks → Cron Queue)
-- `sync-agent-status.sh` — Hourly :00 (Agent Status → Team DB)
 
 ---
 
@@ -445,7 +438,8 @@ tail -20 ~/sync-logs/tasks-to-cron.log
 
 - [x] **Install Julia** — ✅ Installed (snap, v1.12.5)
 - [x] **Activate Phase 2a/2b** — ✅ Completed via workflows
-- [ ] **Verify Notion env** — Check NOTION_KEY + database IDs in ~/.openclaw/.env
+- [x] **Remove Notion workflows** — ✅ All 3 cron jobs disabled 2026-03-29
+- [ ] **Memory compression** — **BACKLOG** (consolidation + dedup + differential storage)
 - [ ] **Test GitHub CLI** — Run a code-review workflow
 - [ ] **Add SSH hosts** — If you use remote servers, configure them
 - [ ] **Configure Python venv** — If data engineering work needs specific packages
@@ -457,6 +451,14 @@ tail -20 ~/sync-logs/tasks-to-cron.log
 - [x] **P2 Knowledge Extraction** — ✅ Live, builds queryable pattern database
 - [x] **Unified Learning Pipeline** — ✅ Live, full cycle runs daily 03:00 UTC
 - [x] **Learning System Documentation** — ✅ Complete at `docs/LEARNING-SYSTEM.md`
+
+### 2026-03-29 Backlog Items
+- ⏳ **Memory compression** — Three strategies queued:
+  1. Consolidation run (merge Q<0.05 entries)
+  2. KB deduplication (collapse redundant patterns)
+  3. MEMORY.md restructuring (80KB → 5KB curated + JSON logs)
+  - Impact: 50-80% size reduction, 0-2% recall loss, +faster search
+  - Trigger: When ready (sprint planning)
 
 ---
 
