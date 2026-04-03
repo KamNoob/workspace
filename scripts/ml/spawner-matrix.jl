@@ -22,6 +22,7 @@ const SCRIPT_DIR = @__DIR__
 const PHASE5_ENABLED = true
 const PHASE5_DEBUG = false
 const PHASE12A_ENABLED = true  # Phase 12A routing alignment enabled
+const PHASE12A_SANDBOX_ENABLED = true  # Phase 12A container sandboxing enabled
 
 include(joinpath(SCRIPT_DIR, "MatrixRL.jl"))
 include(joinpath(SCRIPT_DIR, "kb-integration.jl"))
