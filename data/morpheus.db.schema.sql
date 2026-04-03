@@ -2,6 +2,7 @@
 -- Morpheus AI System Unified Data Store
 -- Enable foreign keys: PRAGMA foreign_keys = ON;
 -- Created: 2026-03-28 17:24 UTC
+-- Updated: 2026-04-03 22:51 UTC (KB tables added)
 -- Confidence: 99.5%
 
 PRAGMA foreign_keys = ON;
@@ -108,6 +109,59 @@ CREATE TABLE IF NOT EXISTS sla_metrics (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 CREATE INDEX IF NOT EXISTS idx_sla_date ON sla_metrics(metric_date DESC);
+
+-- ============================================================================
+-- KNOWLEDGE BASE TABLES (Added 2026-04-03 22:51 UTC)
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS kb_documents (
+  id TEXT PRIMARY KEY,
+  name TEXT UNIQUE NOT NULL,
+  category TEXT,
+  content TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  version INTEGER DEFAULT 1,
+  source_file TEXT,
+  file_size INTEGER
+);
+CREATE INDEX IF NOT EXISTS idx_kb_category ON kb_documents(category);
+CREATE INDEX IF NOT EXISTS idx_kb_created ON kb_documents(created_at);
+
+CREATE TABLE IF NOT EXISTS kb_sections (
+  id TEXT PRIMARY KEY,
+  document_id TEXT NOT NULL,
+  section_name TEXT NOT NULL,
+  section_content TEXT,
+  order_index INTEGER,
+  FOREIGN KEY (document_id) REFERENCES kb_documents(id) ON DELETE CASCADE
+);
+CREATE INDEX IF NOT EXISTS idx_kb_sections_doc ON kb_sections(document_id);
+
+CREATE TABLE IF NOT EXISTS kb_tags (
+  id TEXT PRIMARY KEY,
+  tag_name TEXT UNIQUE NOT NULL,
+  category TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_kb_tags_category ON kb_tags(category);
+
+CREATE TABLE IF NOT EXISTS kb_document_tags (
+  id TEXT PRIMARY KEY,
+  document_id TEXT NOT NULL,
+  tag_id TEXT NOT NULL,
+  FOREIGN KEY (document_id) REFERENCES kb_documents(id) ON DELETE CASCADE,
+  FOREIGN KEY (tag_id) REFERENCES kb_tags(id) ON DELETE CASCADE
+);
+CREATE INDEX IF NOT EXISTS idx_kb_doctags_doc ON kb_document_tags(document_id);
+CREATE INDEX IF NOT EXISTS idx_kb_doctags_tag ON kb_document_tags(tag_id);
+
+-- Full-Text Search virtual table for KB
+CREATE VIRTUAL TABLE IF NOT EXISTS kb_search USING fts5(
+  name,
+  section_name,
+  content,
+  category
+);
 
 -- Bootstrap agents
 INSERT OR IGNORE INTO agents (id, name, role) VALUES

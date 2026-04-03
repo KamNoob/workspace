@@ -6,61 +6,61 @@
       "pattern_id": "117195",
       "best_agent": "Codex",
       "success_rate": 1.0,
-      "avg_duration_ms": 10781.0,
+      "avg_duration_ms": 8576.0,
       "agent_scores": {
         "Codex": 4.0
       },
       "sample_size": 2,
       "avg_quality": 4.0,
-      "extracted_at": "2026-03-29T02:00:24.837Z",
-      "efficiency_score": 3.918495297805643,
-      "avg_cost_usd": 0.0208
+      "extracted_at": "2026-04-01T02:00:27.130Z",
+      "efficiency_score": 3.840245775729646,
+      "avg_cost_usd": 0.0416
     },
     "review": {
       "task_type": "review",
       "pattern_id": "365099",
       "best_agent": "Codex",
       "success_rate": 0.0,
-      "avg_duration_ms": 8879.0,
+      "avg_duration_ms": 14876.0,
       "agent_scores": {
         "Codex": 2.0
       },
       "sample_size": 1,
       "avg_quality": 2.0,
-      "extracted_at": "2026-03-29T02:00:25.002Z",
-      "efficiency_score": 1.8969932656739068,
-      "avg_cost_usd": 0.0543
+      "extracted_at": "2026-04-01T02:00:27.327Z",
+      "efficiency_score": 1.9569471624266144,
+      "avg_cost_usd": 0.022
     },
     "research": {
       "task_type": "research",
       "pattern_id": "739230",
       "best_agent": "Scout",
       "success_rate": 1.0,
-      "avg_duration_ms": 6076.0,
+      "avg_duration_ms": 8311.0,
       "agent_scores": {
         "Scout": 5.0
       },
       "sample_size": 1,
       "avg_quality": 5.0,
-      "extracted_at": "2026-03-29T02:00:25.002Z",
-      "efficiency_score": 4.9431537320810675,
-      "avg_cost_usd": 0.0115
+      "extracted_at": "2026-04-01T02:00:27.327Z",
+      "efficiency_score": 4.91448791035974,
+      "avg_cost_usd": 0.0174
     },
     "security": {
       "task_type": "security",
       "pattern_id": "621374",
       "best_agent": "Cipher",
       "success_rate": 1.0,
-      "avg_duration_ms": 14698.0,
+      "avg_duration_ms": 11691.0,
       "agent_scores": {
         "Cipher": 5.0
       },
       "sample_size": 1,
       "avg_quality": 5.0,
-      "extracted_at": "2026-03-29T02:00:25.002Z",
-      "efficiency_score": 4.883766360617308,
-      "avg_cost_usd": 0.0238
+      "extracted_at": "2026-04-01T02:00:27.328Z",
+      "efficiency_score": 4.900999803960008,
+      "avg_cost_usd": 0.0202
     }
   },
-  "generated_at": "2026-03-29T02:00:24.317Z"
+  "generated_at": "2026-04-01T02:00:26.606Z"
 }

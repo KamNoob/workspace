@@ -1,9 +1,10 @@
 # Knowledge Base SQLite Migration Plan
 
-**Status:** ⏳ PLANNED (not yet implemented)  
-**Priority:** Medium (performance + organization)  
-**Effort:** 2-3 hours  
-**Timeline:** This week or next week
+**Status:** ⏳ READY FOR IMPLEMENTATION (schema exists, KB tables missing)  
+**Priority:** Medium (completes v2.0 SQLite architecture)  
+**Effort:** 1-2 hours (schema already there, just add KB tables)  
+**Timeline:** This week (quick win)
+**Relevant:** RELEASE_v2.0_SQLITE_PRODUCTION.md (March 28 deployment)
 
 ---
 

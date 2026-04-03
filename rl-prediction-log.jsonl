@@ -7,3 +7,4 @@
 {"timestamp":"2026-03-09T16:41:37.436","task_type":"research","candidates":["Scout"],"selected_agent":"Scout","prob":0.92,"confidence":"high","actual_success":null}
 {"timestamp":"2026-03-09T16:41:40.655","task_type":"security","candidates":["Cipher","Veritas"],"selected_agent":"Cipher","prob":0.95,"confidence":"high","actual_success":null}
 {"timestamp":"2026-03-09T20:35:00.004","task_type":"infrastructure","candidates":["Sentinel","Lens"],"selected_agent":"Sentinel","prob":0.93,"confidence":"high","actual_success":null}
+{"timestamp":"2026-04-01T08:00:12.035","task_type":"code","candidates":["Codex","QA","Prism","Veritas"],"selected_agent":"Codex","prob":0.93,"confidence":"high","actual_success":null}

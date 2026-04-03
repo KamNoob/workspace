@@ -65,3 +65,5 @@
 {"timestamp":"2026-03-14T14:29:22.808","success":true,"reward":0.7,"confidence":0.6955572,"task":"write technical specification","agent":"Chronicle"}
 {"timestamp":"2026-03-14T14:29:22.808","success":true,"reward":1.0,"confidence":0.6290883,"task":"review pull request for style and quality","agent":"Veritas"}
 {"timestamp":"2026-03-14T14:29:22.808","success":true,"reward":1.0,"confidence":0.66798997,"task":"evaluate code architecture and design","agent":"Codex"}
+{"task_id":"code-review-001","task_type":"code-review","subtask":"async-iterator optimization","complexity":"high","selected_agent":"Codex","probability":0.93,"confidence":"high","timestamp":"2026-04-01T08:00:12.035Z","outcome":"dispatched","phase":"2b-monthly-cycle"}
+{"task_id":"research-001","task_type":"research","subtask":"machine learning inference optimization","complexity":"standard","selected_agent":"Scout","probability":0.92,"confidence":"high","timestamp":"2026-04-01T08:00:12.041Z","outcome":"dispatched","phase":"2b-monthly-cycle"}

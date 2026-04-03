@@ -89,7 +89,8 @@ function generate_report()
     println("\n📊 SYSTEM STATUS:\n")
     
     if isfile(feedback_log)
-        feedback_count = parse(Int, readlines(`wc -l $feedback_log`)[1])
+        wc_output = readlines(`wc -l $feedback_log`)[1]
+        feedback_count = parse(Int, split(wc_output)[1])
         println("✅ Feedback System: ACTIVE ($feedback_count feedback entries)")
     else
         println("⏳ Feedback System: Awaiting first feedback")
