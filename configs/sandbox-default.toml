@@ -1,0 +1,79 @@
+# sandbox-default.toml - Default container sandbox configuration
+# Used by spawner-sandboxed.jl for Phase 12A agent execution
+
+[container]
+image = "myclaw:agent-latest"
+runtime = "docker"
+remove_after_exit = true
+
+[mounts]
+# Working directory (read-write)
+work = { source = "/home/art/.openclaw/workspace", target = "/work", mode = "rw" }
+
+# Memory (read-only) - for context access
+memory = { source = "/home/art/.openclaw/workspace/memory", target = "/memory", mode = "ro" }
+
+# Data (read-write) - for output, logs
+data = { source = "/home/art/.openclaw/workspace/data", target = "/data", mode = "rw" }
+
+# Scripts (read-only) - agent scripts
+scripts = { source = "/home/art/.openclaw/workspace/scripts", target = "/scripts", mode = "ro" }
+
+# Skills (read-only) - knowledge bases
+skills = { source = "/home/art/.openclaw/workspace/skills", target = "/skills", mode = "ro" }
+
+[resources]
+# Memory limit (2GB per agent)
+memory_limit = "2G"
+
+# CPU limit (2 cores per agent)
+cpus = 2.0
+
+# Swap limit (disabled)
+memswap_limit = "0"
+
+# PID limit (prevent fork bombs)
+pids_limit = 256
+
+[network]
+# Network isolation
+network_mode = "none"  # No network access by default
+dns_disabled = true
+
+[timeout]
+# Maximum execution time (30 minutes)
+max_duration_seconds = 1800
+
+# Grace period before hard kill (5 seconds)
+grace_period_seconds = 5
+
+[logging]
+# Capture stdout/stderr
+capture_output = true
+log_driver = "json-file"
+log_max_size = "50m"
+log_max_file = 3
+
+[security]
+# Drop capabilities
+drop_capabilities = [
+  "NET_RAW",
+  "SYS_PTRACE",
+  "SYS_ADMIN",
+  "SYS_MODULE",
+  "SYS_BOOT"
+]
+
+# Read-only root filesystem (except /tmp, /work)
+readonly_rootfs = false  # false for now (Julia needs /home)
+
+# No privileged mode
+privileged = false
+
+# User namespace isolation
+userns_mode = "host"  # Use host user namespace (appuser maps to host)
+
+[tmpfs]
+# Temporary storage (in-memory, cleaned up after exit)
+size = "256M"
+mount_path = "/tmp"

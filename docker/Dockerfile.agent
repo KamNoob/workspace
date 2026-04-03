@@ -1,0 +1,35 @@
+# Dockerfile.agent - Sandboxed agent execution environment
+# Base: Julia 1.12 slim + minimal dependencies
+# Purpose: Isolated execution for Phase 12A agents
+
+FROM julia:latest
+
+# Create unprivileged appuser
+RUN useradd -m -u 1000 appuser && \
+    mkdir -p /home/appuser/.julia && \
+    chown -R appuser:appuser /home/appuser
+
+# Install minimal dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /work
+
+# Switch to unprivileged user
+USER appuser
+
+# Set Julia environment
+ENV JULIA_PROJECT="/work" \
+    JULIA_DEPOT_PATH="/home/appuser/.julia" \
+    JULIA_NUM_THREADS=2
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD julia --version || exit 1
+
+# Default command (override with agent-specific tasks)
+CMD ["julia", "--version"]
