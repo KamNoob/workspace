@@ -1,0 +1,290 @@
+{
+  "title": "Oracle Cloud Infrastructure (OCI) 2026 Knowledge Base",
+  "created": "2026-04-03T23:44:00Z",
+  "last_updated": "2026-04-03T23:44:00Z",
+  "source": "Web research + Oracle official documentation",
+  "total_sections": 8,
+  "sections": {
+    "overview": {
+      "title": "OCI Overview & Strategy",
+      "content": "Oracle Cloud Infrastructure (OCI) is a comprehensive cloud computing platform offering IaaS, PaaS, and SaaS solutions designed for enterprise workloads. OCI is architected for scale-up workloads with ultralow-latency networks, built-in security, and clustering for high availability.",
+      "key_points": [
+        "Multi-cloud and hybrid-cloud capable",
+        "Dedicated regions for government and compliance (FedRAMP, DISA IL5)",
+        "Free Tier: 20+ services with no time limits",
+        "US$300 in free credits for additional services",
+        "Focus on AI/ML integration across all services"
+      ],
+      "positioning": "Compete with AWS, Azure; strength in database, enterprise workloads, AI"
+    },
+    "core_services": {
+      "title": "Core OCI Services (2026)",
+      "compute": {
+        "description": "Virtual computing resources",
+        "services": [
+          "Compute (VM instances)",
+          "Bare Metal (physical servers for high-performance)",
+          "Container Engine for Kubernetes (OKE)",
+          "Functions (serverless)",
+          "App Container Cloud"
+        ],
+        "use_cases": "Application servers, databases, HPC, containerized apps"
+      },
+      "storage": {
+        "description": "Data storage solutions",
+        "services": [
+          "Object Storage (S3-like, scalable)",
+          "Block Storage (persistent volumes)",
+          "File Storage (NFS-compatible)",
+          "Archive Storage (long-term, cost-effective)"
+        ],
+        "pricing": "Object Storage: ~$0.0255/GB/month; Block: ~$0.0425/GB/month"
+      },
+      "database": {
+        "description": "Database services (OCI strength)",
+        "services": [
+          "Autonomous Database (AI-optimized, self-managing)",
+          "Autonomous Data Warehouse (analytics-focused)",
+          "MySQL HeatWave (real-time analytics + AI/ML)",
+          "Exadata Cloud Service (enterprise OLTP)",
+          "Exadata Cloud@Customer (on-premises with OCI mgmt)"
+        ],
+        "standout": "Autonomous Database: 66% more efficient DBAs, $5M annual benefits for large orgs"
+      },
+      "networking": {
+        "description": "Network infrastructure",
+        "services": [
+          "Virtual Cloud Network (VCN, like VPC)",
+          "FastConnect (dedicated connections)",
+          "Load Balancer (L4/L7)",
+          "DNS (managed)",
+          "DDoS Protection"
+        ],
+        "advantage": "Ultralow-latency networks designed for demanding workloads"
+      }
+    },
+    "ai_ml_services": {
+      "title": "Oracle AI & ML Services (2026 Focus)",
+      "description": "AI/ML is deeply integrated into OCI services, not just bolt-on",
+      "services": {
+        "Oracle_AI_Cloud": {
+          "description": "Suite of ML services integrated into OCI",
+          "capabilities": [
+            "Generative AI services (embeddings, text generation)",
+            "Machine Learning (classification, regression, clustering)",
+            "Automated ML (AutoML for rapid model building)",
+            "Data Labeling (for training data preparation)"
+          ]
+        },
+        "AI_Accelerator_Packs": {
+          "description": "Prebuilt, self-service AI solutions",
+          "deploy_time": "Minutes, not weeks",
+          "target": "Organizations starting AI adoption"
+        },
+        "Autonomous_Database_AI": {
+          "description": "AI built into Autonomous Database",
+          "features": [
+            "Automated performance tuning",
+            "Self-healing capabilities",
+            "Automatic indexing & optimization",
+            "Generative AI for SQL generation"
+          ]
+        },
+        "MySQL_HeatWave": {
+          "description": "In-memory query acceleration + AI",
+          "capabilities": [
+            "100x faster real-time analytics",
+            "Automated ML (AutoML)",
+            "Integrated generative AI",
+            "Massive data warehouse + OLTP on same DB"
+          ]
+        }
+      }
+    },
+    "government_compliance": {
+      "title": "Government & Compliance (OCI Advantage)",
+      "programs": {
+        "FedRAMP": {
+          "description": "Federal Risk and Authorization Management Program",
+          "status": "FedRAMP Authorized for OCI (Moderate & High impact)",
+          "use_cases": "US federal agencies, contractors"
+        },
+        "DISA_IL5": {
+          "description": "Defense Information Security Agency Impact Level 5",
+          "services": "Exadata Cloud@Customer, Generative AI, other authorized services",
+          "use_cases": "Department of Defense, military classified workloads"
+        },
+        "Cloud_One_DoD": {
+          "description": "Department of Defense cloud modernization program",
+          "benefits": [
+            "Proven security and performance",
+            "Resiliency across multiple classification levels",
+            "Secure Cloud Computing Architecture (SCCA) compatible",
+            "Defense Information Systems Network (DISN) protection"
+          ],
+          "case_study": "US Air Force accelerating cloud modernization with OCI (Feb 2026)"
+        }
+      }
+    },
+    "hybrid_multicloud": {
+      "title": "Hybrid & Multi-Cloud Architecture",
+      "offerings": {
+        "Exadata_Cloud_At_Customer": {
+          "description": "Run Oracle Exadata in your own data center, managed by OCI",
+          "advantages": [
+            "Keep data on-premises for compliance",
+            "Enhanced physical control",
+            "OCI managed updates & security patches",
+            "Hybrid: on-prem + cloud seamlessly"
+          ],
+          "ideal_for": "Regulated industries (healthcare, finance), data residency requirements"
+        },
+        "Dedicated_Regions": {
+          "description": "OCI regions for specific orgs/governments",
+          "examples": "US government (IL5), EU regions, Japan"
+        },
+        "Multicloud": {
+          "description": "Design spanning public cloud, hybrid, edge, and on-prem",
+          "tools": "OCI Architecture Center provides multicloud patterns"
+        }
+      }
+    },
+    "developer_tools": {
+      "title": "Developer & DevOps Tools",
+      "tools": [
+        "OCI Cloud Shell (browser-based CLI)",
+        "OCI Container Registry (OCIR, like ECR)",
+        "Container Engine for Kubernetes (OKE, managed K8s)",
+        "Service Mesh (Istio-based)",
+        "Crossplane Provider for OCI (Infrastructure as Code, expanding coverage)",
+        "OCI CLI & SDKs (Python, Java, Go, etc.)",
+        "Terraform support (Infrastructure as Code)"
+      ],
+      "infrastructure_as_code": {
+        "terraform": "Full OCI provider support",
+        "crossplane": "Latest update expands core services (Compute, Storage, more coming)"
+      }
+    },
+    "oracle_fusion": {
+      "title": "Oracle Fusion Cloud ERP (2026)",
+      "description": "SaaS enterprise resource planning suite, built on OCI",
+      "modules": {
+        "financials": {
+          "capabilities": [
+            "General Ledger, Accounts Payable/Receivable",
+            "Budgeting & Planning",
+            "Cash Management",
+            "Asset Management",
+            "Financial Close & Consolidation"
+          ]
+        },
+        "hrms": {
+          "capabilities": [
+            "Human Capital Management",
+            "Talent Management",
+            "Workforce Planning",
+            "Payroll (multi-country)",
+            "Employee Engagement"
+          ]
+        },
+        "supply_chain": {
+          "capabilities": [
+            "Procurement",
+            "Inventory Management",
+            "Order Management",
+            "Logistics & Transportation",
+            "Supplier Relationship Management"
+          ]
+        },
+        "manufacturing": {
+          "capabilities": [
+            "Production Planning",
+            "Quality Management",
+            "Maintenance Management",
+            "Shop Floor Control"
+          ]
+        },
+        "customer_experience": {
+          "capabilities": [
+            "Sales Cloud",
+            "Service Cloud",
+            "Marketing Cloud",
+            "Commerce Cloud (B2B, B2C)"
+          ]
+        }
+      },
+      "key_features": {
+        "ai_embedded": "AI/ML throughout: demand forecasting, predictive analytics, anomaly detection",
+        "real_time": "Real-time dashboards, insights, reporting",
+        "mobile_first": "Full mobile app for all modules",
+        "automation": "Intelligent automation for recurring tasks (invoice processing, etc.)",
+        "analytics": "Embedded analytics, business intelligence",
+        "extensibility": "Low-code customization via OCI Integration Cloud"
+      }
+    },
+    "oci_vs_competitors": {
+      "title": "OCI vs. AWS / Azure (2026 Positioning)",
+      "strengths": {
+        "database": "Autonomous Database, MySQL HeatWave, Exadata = best-in-class",
+        "government": "FedRAMP, DISA IL5, dedicated government regions",
+        "ai_integration": "AI embedded in most services, not just add-on",
+        "hybrid": "Exadata Cloud@Customer = best on-prem + cloud hybrid",
+        "price": "Generally 3-4x cheaper per compute unit vs. AWS/Azure for same performance",
+        "ecosystem": "Oracle apps (Fusion, NetSuite, etc.) integrate seamlessly"
+      },
+      "challenges": {
+        "market_share": "3-5% cloud market (vs. AWS 32%, Azure 23%)",
+        "services_breadth": "Fewer total services than AWS (but focused selection)",
+        "developer_mind_share": "Less popular among startups, more enterprise-focused"
+      },
+      "ideal_customers": [
+        "Enterprises running Oracle databases (easy lift-and-shift)",
+        "Large orgs needing cost savings on compute/database",
+        "Government agencies (FedRAMP, DISA compliant)",
+        "Organizations already using Fusion or other Oracle apps",
+        "Companies needing on-prem + cloud hybrid"
+      ]
+    }
+  },
+  "key_statistics": {
+    "oci_free_tier_services": 20,
+    "free_tier_credit_value": "$300 USD",
+    "dba_efficiency_gain": "66% more efficient (Autonomous Database)",
+    "annual_benefits_large_org": "$5,000,000 USD",
+    "mysql_heatwave_speedup": "100x faster analytics",
+    "market_share_oci": "3-5%",
+    "market_share_aws": "32%",
+    "market_share_azure": "23%",
+    "price_advantage_vs_aws": "3-4x cheaper per compute unit"
+  },
+  "certifications": {
+    "oci_foundations": {
+      "questions": 55,
+      "duration_minutes": 90,
+      "pass_score_percent": 65,
+      "coverage": ["OCI services", "architecture patterns", "best practices"]
+    },
+    "oci_architect_associate": {
+      "questions": "variable",
+      "pass_score_percent": 65,
+      "prerequisites": "Foundations recommended"
+    },
+    "oci_architect_professional": {
+      "pass_score_percent": 70,
+      "difficulty": "Expert level"
+    }
+  },
+  "latest_news_feb_2026": [
+    "US Air Force accelerates cloud modernization with OCI Cloud One program",
+    "Exadata Cloud@Customer adds DISA IL5, FedRAMP authorized services",
+    "MySQL HeatWave expands AI/ML capabilities (AutoML, generative AI)",
+    "Crossplane Provider for OCI updated with expanded resource coverage",
+    "OCI AI Accelerator Packs launched (prebuilt, deploy-in-minutes AI solutions)"
+  ],
+  "recommended_reading": [
+    "Oracle Cloud Infrastructure for Solutions Architects (book)",
+    "OCI Architecture Center (oracle.com/cloud/architecture-center/)",
+    "OCI Official Documentation (docs.oracle.com)",
+    "OCI Blogs (blogs.oracle.com/cloud-infrastructure/)"
+  ]
+}
