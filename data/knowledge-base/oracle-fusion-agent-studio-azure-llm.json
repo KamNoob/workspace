@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "title": "Oracle AI Agent Studio - Use Azure Foundry LLM (External LLM Setup)",
+    "type": "integration_guide",
+    "source": "Oracle Fusion AI Docs + Oracle FusionInsider Blog",
+    "created": "2026-04-04T16:59:00Z",
+    "keywords": ["Oracle", "Fusion", "Agent Studio", "Azure Foundry", "LLM", "OpenAI", "external model", "credentials"]
+  },
+  "overview": "Oracle AI Agent Studio (built into Oracle Fusion Applications) supports bringing your own LLM. Azure Foundry models are added via the 'OpenAI via Microsoft Azure' provider option under the Credentials tab.",
+  "supported_external_providers": [
+    "OpenAI (via Microsoft Azure) — includes Azure Foundry deployed models",
+    "Google Gemini (via Google Vertex AI)",
+    "Google Gemini (via direct API)",
+    "Anthropic (via Google Vertex AI)",
+    "Cohere",
+    "Meta (Llama)",
+    "xAI"
+  ],
+  "quickstart": {
+    "title": "Add Azure Foundry LLM to Oracle Fusion Agent Studio",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Get Azure Foundry credentials",
+        "where": "Azure AI Foundry portal (ai.azure.com)",
+        "what_to_copy": [
+          "Endpoint URL (e.g. https://your-project.openai.azure.com/)",
+          "API Key (from Keys & Endpoint section)",
+          "Deployment name (your deployed model name)"
+        ]
+      },
+      {
+        "step": 2,
+        "action": "Open Oracle AI Agent Studio",
+        "where": "Oracle Fusion Apps → AI Agent Studio",
+        "navigation": "Go to AI Agent Studio > Credentials tab"
+      },
+      {
+        "step": 3,
+        "action": "Add credentials",
+        "sub_steps": [
+          "Click 'Add Credential'",
+          "Select provider: 'OpenAI (via Microsoft Azure)'",
+          "Enter Azure Foundry Endpoint URL",
+          "Enter API Key",
+          "Enter Deployment Name",
+          "Save"
+        ]
+      },
+      {
+        "step": 4,
+        "action": "Select your LLM when building an agent",
+        "where": "Agent Studio > New Agent / Edit Agent > LLM selection",
+        "sub_steps": [
+          "Create or open an agent",
+          "In the LLM dropdown, select your saved Azure credential",
+          "Choose deployment",
+          "Configure prompts, tools, and logic"
+        ]
+      },
+      {
+        "step": 5,
+        "action": "Test and deploy",
+        "sub_steps": [
+          "Use built-in test panel to verify LLM responds",
+          "Add tools/calculators as needed",
+          "Deploy agent to your Fusion workflow"
+        ]
+      }
+    ]
+  },
+  "key_facts": {
+    "philosophy": "Built-in, not bolted-on — Agent Studio is native to Oracle Fusion Apps",
+    "no_code_option": "Can create agents with no code via Agent Studio UI",
+    "oracle_default_llms": "Oracle provides its own optimized LLMs for Fusion Apps by default",
+    "custom_llm": "You can replace or supplement Oracle LLMs with any external LLM",
+    "mcp_support": "MCP (Model Context Protocol) supported for external tool integration",
+    "marketplace": "Oracle AI Agent Studio has a marketplace for pre-built agents/tools"
+  },
+  "azure_foundry_specific": {
+    "provider_name_in_oracle": "OpenAI (via Microsoft Azure)",
+    "why": "Azure Foundry serves OpenAI-compatible models (GPT-4, DeepSeek, etc.) via Azure OpenAI endpoints — same API format Oracle supports",
+    "credential_fields": {
+      "endpoint": "Your Azure Foundry project endpoint URL",
+      "api_key": "Azure API key from Keys & Endpoint section",
+      "deployment_name": "The name you gave your model deployment"
+    },
+    "compatible_models": [
+      "GPT-4 (all versions)",
+      "GPT-3.5-Turbo",
+      "DeepSeek-V3.1",
+      "Any OpenAI-compatible model deployed on Azure Foundry"
+    ]
+  },
+  "troubleshooting": [
+    {
+      "issue": "Credential not saving",
+      "solution": "Ensure endpoint URL includes trailing slash and is HTTPS"
+    },
+    {
+      "issue": "Model not responding",
+      "solution": "Check API key is valid and deployment is active in Azure Foundry portal"
+    },
+    {
+      "issue": "LLM not appearing in dropdown",
+      "solution": "Credentials must be saved first before appearing in agent LLM selection"
+    },
+    {
+      "issue": "Permission denied",
+      "solution": "Ensure your Oracle Fusion user has AI Agent Studio admin role"
+    }
+  ],
+  "resources": {
+    "oracle_add_llm_docs": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/add-your-llm.html",
+    "oracle_agent_studio_guide": "https://docs.oracle.com/en/cloud/saas/fusion-ai/aiaas/how-do-i-use-ai-agent-studio.pdf",
+    "fusion_insider_intro": "https://blogs.oracle.com/fusioninsider/new-oracle-ai-agent-studio-for-fusion-apps",
+    "architecture_overview": "https://blogs.oracle.com/fusioncoe/understanding_ai_agent_studio"
+  },
+  "summary": "Azure Foundry LLMs plug into Oracle AI Agent Studio via the 'OpenAI via Microsoft Azure' credential provider. Takes about 5 minutes. Go to Agent Studio > Credentials > Add > OpenAI (via Microsoft Azure) > paste your Azure Foundry endpoint + API key + deployment name. Done."
+}
