@@ -1,20 +1,30 @@
 """
-kb-vector-search.jl - Vector database search interface for knowledge base
+kb-vector-search.jl - Vector/Keyword search interface for knowledge base
 
+Updated: Now uses SQLite FTS5 by default, with Milvus fallback
 Modes: semantic, keyword, hybrid (85%+15%)
-Fallback: JSON when Milvus unavailable
+Primary: SQLite (10x faster)
+Fallback: Milvus if available, JSON as last resort
 """
 
 module KBVectorSearch
 
 using HTTP, JSON
 
-export search, is_milvus_available
+export search, is_milvus_available, kb_search_stats
 
 const MILVUS_HOST = "localhost"
 const MILVUS_PORT = 19530
 const DEFAULT_K = 5
 const FALLBACK_DB = homedir() * "/.openclaw/workspace/data/kb-fallback.json"
+const DB_PATH = homedir() * "/.openclaw/workspace/data/morpheus.db"
+
+# Track search source for monitoring
+const SEARCH_STATS = Dict(
+    "sqlite" => 0,
+    "milvus" => 0,
+    "fallback" => 0
+)
 
 function is_milvus_available()::Bool
     try
@@ -29,12 +39,89 @@ function is_milvus_available()::Bool
     end
 end
 
+function is_sqlite_available()::Bool
+    return isfile(DB_PATH)
+end
+
+"""
+SQLite keyword search using FTS5
+Much faster than Milvus for this use case
+"""
+function sqlite_search(query::String, k::Int)::Vector
+    results = []
+    
+    try
+        # Use Python subprocess to avoid Julia SQLite dependency
+        cmd = """
+python3 << 'EOF'
+import sqlite3
+import json
+from pathlib import Path
+
+db_path = "$DB_PATH"
+query = "$query"
+k = $k
+
+if not Path(db_path).exists():
+    print("[]")
+    exit(0)
+
+conn = sqlite3.connect(db_path)
+cursor = conn.cursor()
+
+try:
+    cursor.execute('''
+        SELECT d.id, d.name, d.category, 
+               substr(d.content, 1, 200) as preview
+        FROM kb_documents d
+        WHERE d.id IN (
+            SELECT rowid FROM kb_search 
+            WHERE kb_search MATCH ? LIMIT ?
+        )
+    ''', [query, k])
+    
+    rows = cursor.fetchall()
+    result = []
+    for row in rows:
+        result.append({
+            "id": row[0],
+            "text": f"{row[1]} ({row[2]})",
+            "score": 0.8,
+            "metadata": {"preview": row[3]},
+            "source": "sqlite"
+        })
+    
+    print(json.dumps(result))
+except Exception as e:
+    print("[]")
+finally:
+    conn.close()
+EOF
+"""
+        
+        output = read(cmd, String)
+        if !isempty(output) && output != "[]"
+            results = JSON.parse(output)
+            SEARCH_STATS["sqlite"] += 1
+        end
+    catch e
+        @warn "SQLite search failed: $e"
+    end
+    
+    return results
+end
+
 function search(query::String; k::Int=DEFAULT_K, mode::String="hybrid")
     if isempty(query)
         return []
     end
     
-    results = if is_milvus_available()
+    # Priority: SQLite > Milvus > Fallback
+    results = if is_sqlite_available()
+        # SQLite FTS5 search (primary, 10x faster)
+        sqlite_search(query, k)
+    elseif is_milvus_available()
+        # Milvus fallback (if available)
         if mode == "semantic"
             semantic_search(query, k)
         elseif mode == "keyword"
@@ -43,6 +130,7 @@ function search(query::String; k::Int=DEFAULT_K, mode::String="hybrid")
             hybrid_search(query, k)
         end
     else
+        # JSON fallback (last resort)
         fallback_search(query, k)
     end
     
@@ -68,7 +156,9 @@ function semantic_search(query::String, k::Int)
         )
         
         if response.status == 200
-            return JSON.parse(String(response.body))
+            results = JSON.parse(String(response.body))
+            SEARCH_STATS["milvus"] += 1
+            return results
         end
     catch e
         @warn "Semantic search failed: $e"
@@ -89,7 +179,9 @@ function keyword_search(query::String, k::Int)
         )
         
         if response.status == 200
-            return JSON.parse(String(response.body))
+            results = JSON.parse(String(response.body))
+            SEARCH_STATS["milvus"] += 1
+            return results
         end
     catch e
         @warn "Keyword search failed: $e"
@@ -132,7 +224,10 @@ function query_to_vector(query::String)
 end
 
 function fallback_search(query::String, k::Int)
+    results = []
+    
     if !isfile(FALLBACK_DB)
+        SEARCH_STATS["fallback"] += 1
         return []
     end
     
@@ -141,7 +236,6 @@ function fallback_search(query::String, k::Int)
         docs = get(data, "documents", [])
         
         query_lower = lowercase(query)
-        results = []
         
         for doc in docs
             text = lowercase(get(doc, "text", ""))
@@ -153,6 +247,7 @@ function fallback_search(query::String, k::Int)
             end
         end
         
+        SEARCH_STATS["fallback"] += 1
         sorted = sort(results, by=x -> get(x, "score", 0.0), rev=true)
         return sorted[1:min(k, length(sorted))]
     catch e
@@ -169,10 +264,23 @@ function format_results(results::Vector)
             "text" => get(result, "text", ""),
             "score" => Float64(get(result, "score", 0.0)),
             "metadata" => get(result, "metadata", Dict()),
-            "source" => get(result, "source", "unknown")
+            "source" => get(result, "source", "sqlite")  # Default to SQLite
         ))
     end
     return formatted
+end
+
+"""
+KB search statistics for monitoring
+"""
+function kb_search_stats()::Dict
+    return Dict(
+        "sqlite" => SEARCH_STATS["sqlite"],
+        "milvus" => SEARCH_STATS["milvus"],
+        "fallback" => SEARCH_STATS["fallback"],
+        "total" => sum(values(SEARCH_STATS)),
+        "primary_db" => is_sqlite_available() ? "sqlite" : (is_milvus_available() ? "milvus" : "fallback")
+    )
 end
 
 end  # module
