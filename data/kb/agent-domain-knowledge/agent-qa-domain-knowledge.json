@@ -1,0 +1,70 @@
+{
+    "recommendations": {
+        "avoid_when": "tasks outside its domain",
+        "when_to_use": "qa is optimal for its domain tasks",
+        "confidence": "Very High (95%+)"
+    },
+    "domain_summary": {
+        "avg_reward": 1.0,
+        "success_rate": 1.0,
+        "specialization": "General specialization",
+        "proven_approaches": 3,
+        "agent_role": "Specialist"
+    },
+    "frameworks": {
+        "design test strategy for new feature": {
+            "name": "design test strategy for new feature",
+            "avg_reward": 1.0,
+            "examples": [
+                "design test strategy for new feature"
+            ],
+            "frequency": 1
+        },
+        "test": {
+            "name": "test",
+            "avg_reward": 1.0,
+            "examples": [
+                "test"
+            ],
+            "frequency": 1
+        },
+        "create integration tests for api": {
+            "name": "create integration tests for api",
+            "avg_reward": 1.0,
+            "examples": [
+                "create integration tests for api"
+            ],
+            "frequency": 1
+        }
+    },
+    "agent": "qa",
+    "metadata": {
+        "source": "3 extracted patterns",
+        "tier": "2-domain-knowledge",
+        "phase": "13",
+        "generated_at": "2026-04-04T17:07:14.411"
+    },
+    "pitfalls": {},
+    "success_indicators": {
+        "domain_coverage": {
+            "indicator": true,
+            "task_count": 3,
+            "task_types": [
+                "design test strategy for new feature",
+                "test",
+                "create integration tests for api"
+            ],
+            "description": "Broad capability across multiple task types"
+        },
+        "success_rate": {
+            "indicator": true,
+            "value": 1.0,
+            "description": "Perfect success rate on high-confidence tasks"
+        },
+        "high_avg_reward": {
+            "threshold": 1.0,
+            "indicator": true,
+            "description": "Consistent high-quality outcomes (avg reward > 1.0)"
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "recommendations": {
+        "avoid_when": "tasks outside its domain",
+        "when_to_use": "veritas is optimal for its domain tasks",
+        "confidence": "High (85-95%)"
+    },
+    "domain_summary": {
+        "avg_reward": 0.85,
+        "success_rate": 1.0,
+        "specialization": "General specialization",
+        "proven_approaches": 4,
+        "agent_role": "Specialist"
+    },
+    "frameworks": {
+        "write unit tests for authentication module": {
+            "name": "write unit tests for authentication module",
+            "avg_reward": 0.7,
+            "examples": [
+                "write unit tests for authentication module"
+            ],
+            "frequency": 1
+        },
+        "review pull request for style and quality": {
+            "name": "review pull request for style and quality",
+            "avg_reward": 1.0,
+            "examples": [
+                "review pull request for style and quality"
+            ],
+            "frequency": 1
+        },
+        "evaluate code architecture and design": {
+            "name": "evaluate code architecture and design",
+            "avg_reward": 0.7,
+            "examples": [
+                "evaluate code architecture and design"
+            ],
+            "frequency": 1
+        },
+        "review": {
+            "name": "review",
+            "avg_reward": 1.0,
+            "examples": [
+                "review"
+            ],
+            "frequency": 1
+        }
+    },
+    "agent": "veritas",
+    "metadata": {
+        "source": "4 extracted patterns",
+        "tier": "2-domain-knowledge",
+        "phase": "13",
+        "generated_at": "2026-04-04T17:07:14.412"
+    },
+    "pitfalls": {},
+    "success_indicators": {
+        "domain_coverage": {
+            "indicator": true,
+            "task_count": 4,
+            "task_types": [
+                "write unit tests for authentication module",
+                "review pull request for style and quality",
+                "evaluate code architecture and design",
+                "review"
+            ],
+            "description": "Broad capability across multiple task types"
+        },
+        "success_rate": {
+            "indicator": true,
+            "value": 1.0,
+            "description": "Perfect success rate on high-confidence tasks"
+        },
+        "high_avg_reward": {
+            "threshold": 0.85,
+            "indicator": false,
+            "description": "Consistent high-quality outcomes (avg reward > 0.85)"
+        }
+    }
+}

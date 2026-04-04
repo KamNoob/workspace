@@ -1,0 +1,119 @@
+{
+    "recommendations": {
+        "avoid_when": "tasks outside its domain",
+        "when_to_use": "codex is optimal for its domain tasks",
+        "confidence": "High (85-95%)"
+    },
+    "domain_summary": {
+        "avg_reward": 0.9499999999999998,
+        "success_rate": 1.0,
+        "specialization": "General specialization",
+        "proven_approaches": 8,
+        "agent_role": "Specialist"
+    },
+    "frameworks": {
+        "create user guide for new feature": {
+            "name": "create user guide for new feature",
+            "avg_reward": 1.0,
+            "examples": [
+                "create user guide for new feature"
+            ],
+            "frequency": 1
+        },
+        "write api documentation": {
+            "name": "write api documentation",
+            "avg_reward": 1.0,
+            "examples": [
+                "write api documentation"
+            ],
+            "frequency": 1
+        },
+        "evaluate code architecture and design": {
+            "name": "evaluate code architecture and design",
+            "avg_reward": 1.0,
+            "examples": [
+                "evaluate code architecture and design"
+            ],
+            "frequency": 1
+        },
+        "fix memory leak in c++ application": {
+            "name": "fix memory leak in c++ application",
+            "avg_reward": 1.0,
+            "examples": [
+                "fix memory leak in c++ application"
+            ],
+            "frequency": 1
+        },
+        "analyze competitor features and pricing": {
+            "name": "analyze competitor features and pricing",
+            "avg_reward": 0.7,
+            "examples": [
+                "analyze competitor features and pricing"
+            ],
+            "frequency": 1
+        },
+        "code": {
+            "name": "code",
+            "avg_reward": 1.0,
+            "examples": [
+                "code",
+                "code",
+                "code",
+                "code",
+                "code"
+            ],
+            "frequency": 5
+        },
+        "create julia script for data processing": {
+            "name": "create julia script for data processing",
+            "avg_reward": 1.0,
+            "examples": [
+                "create julia script for data processing"
+            ],
+            "frequency": 1
+        },
+        "find peer-reviewed papers on reinforcement learning": {
+            "name": "find peer-reviewed papers on reinforcement learning",
+            "avg_reward": 0.7,
+            "examples": [
+                "find peer-reviewed papers on reinforcement learning"
+            ],
+            "frequency": 1
+        }
+    },
+    "agent": "codex",
+    "metadata": {
+        "source": "12 extracted patterns",
+        "tier": "2-domain-knowledge",
+        "phase": "13",
+        "generated_at": "2026-04-04T17:07:14.411"
+    },
+    "pitfalls": {},
+    "success_indicators": {
+        "domain_coverage": {
+            "indicator": true,
+            "task_count": 8,
+            "task_types": [
+                "create user guide for new feature",
+                "write api documentation",
+                "evaluate code architecture and design",
+                "fix memory leak in c++ application",
+                "analyze competitor features and pricing",
+                "code",
+                "create julia script for data processing",
+                "find peer-reviewed papers on reinforcement learning"
+            ],
+            "description": "Broad capability across multiple task types"
+        },
+        "success_rate": {
+            "indicator": true,
+            "value": 1.0,
+            "description": "Perfect success rate on high-confidence tasks"
+        },
+        "high_avg_reward": {
+            "threshold": 0.9499999999999998,
+            "indicator": true,
+            "description": "Consistent high-quality outcomes (avg reward > 0.9499999999999998)"
+        }
+    }
+}

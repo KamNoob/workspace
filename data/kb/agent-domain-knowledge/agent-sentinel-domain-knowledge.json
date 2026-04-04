@@ -1,0 +1,70 @@
+{
+    "recommendations": {
+        "avoid_when": "tasks outside its domain",
+        "when_to_use": "sentinel is optimal for its domain tasks",
+        "confidence": "Baseline (50-75%)"
+    },
+    "domain_summary": {
+        "avg_reward": 0.6999999999999998,
+        "success_rate": 1.0,
+        "specialization": "General specialization",
+        "proven_approaches": 3,
+        "agent_role": "Specialist"
+    },
+    "frameworks": {
+        "find best practices for api security": {
+            "name": "find best practices for api security",
+            "avg_reward": 0.7,
+            "examples": [
+                "find best practices for api security"
+            ],
+            "frequency": 1
+        },
+        "document system architecture": {
+            "name": "document system architecture",
+            "avg_reward": 0.7,
+            "examples": [
+                "document system architecture"
+            ],
+            "frequency": 1
+        },
+        "research distributed system architectures": {
+            "name": "research distributed system architectures",
+            "avg_reward": 0.7,
+            "examples": [
+                "research distributed system architectures"
+            ],
+            "frequency": 1
+        }
+    },
+    "agent": "sentinel",
+    "metadata": {
+        "source": "3 extracted patterns",
+        "tier": "2-domain-knowledge",
+        "phase": "13",
+        "generated_at": "2026-04-04T17:07:14.412"
+    },
+    "pitfalls": {},
+    "success_indicators": {
+        "domain_coverage": {
+            "indicator": true,
+            "task_count": 3,
+            "task_types": [
+                "find best practices for api security",
+                "document system architecture",
+                "research distributed system architectures"
+            ],
+            "description": "Broad capability across multiple task types"
+        },
+        "success_rate": {
+            "indicator": true,
+            "value": 1.0,
+            "description": "Perfect success rate on high-confidence tasks"
+        },
+        "high_avg_reward": {
+            "threshold": 0.6999999999999998,
+            "indicator": false,
+            "description": "Consistent high-quality outcomes (avg reward > 0.6999999999999998)"
+        }
+    }
+}

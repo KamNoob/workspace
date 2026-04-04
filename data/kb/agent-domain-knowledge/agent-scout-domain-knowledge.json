@@ -1,0 +1,108 @@
+{
+    "recommendations": {
+        "avoid_when": "tasks outside its domain",
+        "when_to_use": "scout is optimal for its domain tasks",
+        "confidence": "High (85-95%)"
+    },
+    "domain_summary": {
+        "avg_reward": 0.8999999999999999,
+        "success_rate": 1.0,
+        "specialization": "General specialization",
+        "proven_approaches": 7,
+        "agent_role": "Specialist"
+    },
+    "frameworks": {
+        "find best practices for api security": {
+            "name": "find best practices for api security",
+            "avg_reward": 1.0,
+            "examples": [
+                "find best practices for api security"
+            ],
+            "frequency": 1
+        },
+        "research latest machine learning frameworks": {
+            "name": "research latest machine learning frameworks",
+            "avg_reward": 1.0,
+            "examples": [
+                "research latest machine learning frameworks"
+            ],
+            "frequency": 1
+        },
+        "write python function to parse json data": {
+            "name": "write python function to parse json data",
+            "avg_reward": 0.7,
+            "examples": [
+                "write python function to parse json data"
+            ],
+            "frequency": 1
+        },
+        "document system architecture": {
+            "name": "document system architecture",
+            "avg_reward": 0.7,
+            "examples": [
+                "document system architecture"
+            ],
+            "frequency": 1
+        },
+        "write technical specification": {
+            "name": "write technical specification",
+            "avg_reward": 0.7,
+            "examples": [
+                "write technical specification"
+            ],
+            "frequency": 1
+        },
+        "research distributed system architectures": {
+            "name": "research distributed system architectures",
+            "avg_reward": 1.0,
+            "examples": [
+                "research distributed system architectures"
+            ],
+            "frequency": 1
+        },
+        "research": {
+            "name": "research",
+            "avg_reward": 1.0,
+            "examples": [
+                "research",
+                "research",
+                "research"
+            ],
+            "frequency": 3
+        }
+    },
+    "agent": "scout",
+    "metadata": {
+        "source": "9 extracted patterns",
+        "tier": "2-domain-knowledge",
+        "phase": "13",
+        "generated_at": "2026-04-04T17:07:14.412"
+    },
+    "pitfalls": {},
+    "success_indicators": {
+        "domain_coverage": {
+            "indicator": true,
+            "task_count": 7,
+            "task_types": [
+                "find best practices for api security",
+                "research latest machine learning frameworks",
+                "write python function to parse json data",
+                "document system architecture",
+                "write technical specification",
+                "research distributed system architectures",
+                "research"
+            ],
+            "description": "Broad capability across multiple task types"
+        },
+        "success_rate": {
+            "indicator": true,
+            "value": 1.0,
+            "description": "Perfect success rate on high-confidence tasks"
+        },
+        "high_avg_reward": {
+            "threshold": 0.8999999999999999,
+            "indicator": true,
+            "description": "Consistent high-quality outcomes (avg reward > 0.8999999999999999)"
+        }
+    }
+}

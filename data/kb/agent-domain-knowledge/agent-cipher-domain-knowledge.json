@@ -1,0 +1,82 @@
+{
+    "recommendations": {
+        "avoid_when": "tasks outside its domain",
+        "when_to_use": "cipher is optimal for its domain tasks",
+        "confidence": "Very High (95%+)"
+    },
+    "domain_summary": {
+        "avg_reward": 1.0,
+        "success_rate": 1.0,
+        "specialization": "General specialization",
+        "proven_approaches": 4,
+        "agent_role": "Specialist"
+    },
+    "frameworks": {
+        "audit api endpoints for authentication": {
+            "name": "audit api endpoints for authentication",
+            "avg_reward": 1.0,
+            "examples": [
+                "audit api endpoints for authentication",
+                "audit api endpoints for authentication"
+            ],
+            "frequency": 2
+        },
+        "penetration test strategy for web app": {
+            "name": "penetration test strategy for web app",
+            "avg_reward": 1.0,
+            "examples": [
+                "penetration test strategy for web app"
+            ],
+            "frequency": 1
+        },
+        "threat model for cloud infrastructure": {
+            "name": "threat model for cloud infrastructure",
+            "avg_reward": 1.0,
+            "examples": [
+                "threat model for cloud infrastructure",
+                "threat model for cloud infrastructure"
+            ],
+            "frequency": 2
+        },
+        "security": {
+            "name": "security",
+            "avg_reward": 1.0,
+            "examples": [
+                "security",
+                "security"
+            ],
+            "frequency": 2
+        }
+    },
+    "agent": "cipher",
+    "metadata": {
+        "source": "7 extracted patterns",
+        "tier": "2-domain-knowledge",
+        "phase": "13",
+        "generated_at": "2026-04-04T17:07:14.411"
+    },
+    "pitfalls": {},
+    "success_indicators": {
+        "domain_coverage": {
+            "indicator": true,
+            "task_count": 4,
+            "task_types": [
+                "audit api endpoints for authentication",
+                "penetration test strategy for web app",
+                "threat model for cloud infrastructure",
+                "security"
+            ],
+            "description": "Broad capability across multiple task types"
+        },
+        "success_rate": {
+            "indicator": true,
+            "value": 1.0,
+            "description": "Perfect success rate on high-confidence tasks"
+        },
+        "high_avg_reward": {
+            "threshold": 1.0,
+            "indicator": true,
+            "description": "Consistent high-quality outcomes (avg reward > 1.0)"
+        }
+    }
+}
