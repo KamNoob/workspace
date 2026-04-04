@@ -1,0 +1,180 @@
+{
+    "agent": "Codex",
+    "metadata": {
+        "extracted_at": "2026-04-04T16:52:45.137",
+        "min_reward_threshold": 0.7,
+        "tier": "1-pattern-extraction",
+        "phase": "13"
+    },
+    "stats": {
+        "avg_reward": 0.9499999999999998,
+        "patterns_by_task": {
+            "create user guide for new feature": 1,
+            "write api documentation": 1,
+            "evaluate code architecture and design": 1,
+            "fix memory leak in c++ application": 1,
+            "analyze competitor features and pricing": 1,
+            "code": 5,
+            "create julia script for data processing": 1,
+            "find peer-reviewed papers on reinforcement learning": 1
+        },
+        "pattern_count": 12,
+        "task_types": [
+            "create user guide for new feature",
+            "write api documentation",
+            "evaluate code architecture and design",
+            "fix memory leak in c++ application",
+            "analyze competitor features and pricing",
+            "code",
+            "create julia script for data processing",
+            "find peer-reviewed papers on reinforcement learning"
+        ],
+        "total_high_confidence": 12
+    },
+    "patterns": [
+        {
+            "task_type": "code",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-13T10:00:00Z",
+            "confidence": 1.0
+        },
+        {
+            "task_type": "code",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-13T10:10:00Z",
+            "confidence": 1.0
+        },
+        {
+            "task_type": "code",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-13T10:30:00Z",
+            "confidence": 1.0
+        },
+        {
+            "task_type": "code",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-13T10:50:00Z",
+            "confidence": 1.0
+        },
+        {
+            "task_type": "code",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-13T11:00:00Z",
+            "confidence": 1.0
+        },
+        {
+            "task_type": "fix memory leak in c++ application",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:08.468",
+            "confidence": 0.6859712
+        },
+        {
+            "task_type": "analyze competitor features and pricing",
+            "reward": 0.7,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:08.468",
+            "confidence": 0.75690854
+        },
+        {
+            "task_type": "write api documentation",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:08.469",
+            "confidence": 0.55357397
+        },
+        {
+            "task_type": "create julia script for data processing",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.806",
+            "confidence": 0.6477582
+        },
+        {
+            "task_type": "find peer-reviewed papers on reinforcement learning",
+            "reward": 0.7,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.807",
+            "confidence": 0.7812261
+        },
+        {
+            "task_type": "create user guide for new feature",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.807",
+            "confidence": 0.59067327
+        },
+        {
+            "task_type": "evaluate code architecture and design",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.808",
+            "confidence": 0.66798997
+        }
+    ]
+}

@@ -1,0 +1,142 @@
+{
+    "agent": "Scout",
+    "metadata": {
+        "extracted_at": "2026-04-04T16:52:45.137",
+        "min_reward_threshold": 0.7,
+        "tier": "1-pattern-extraction",
+        "phase": "13"
+    },
+    "stats": {
+        "avg_reward": 0.8999999999999999,
+        "patterns_by_task": {
+            "find best practices for api security": 1,
+            "research latest machine learning frameworks": 1,
+            "write python function to parse json data": 1,
+            "document system architecture": 1,
+            "write technical specification": 1,
+            "research distributed system architectures": 1,
+            "research": 3
+        },
+        "pattern_count": 9,
+        "task_types": [
+            "find best practices for api security",
+            "research latest machine learning frameworks",
+            "write python function to parse json data",
+            "document system architecture",
+            "write technical specification",
+            "research distributed system architectures",
+            "research"
+        ],
+        "total_high_confidence": 9
+    },
+    "patterns": [
+        {
+            "task_type": "research",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-13T10:05:00Z",
+            "confidence": 1.0
+        },
+        {
+            "task_type": "research",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-13T10:20:00Z",
+            "confidence": 1.0
+        },
+        {
+            "task_type": "research",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-13T10:55:00Z",
+            "confidence": 1.0
+        },
+        {
+            "task_type": "research distributed system architectures",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:08.468",
+            "confidence": 0.53416234
+        },
+        {
+            "task_type": "write technical specification",
+            "reward": 0.7,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:08.469",
+            "confidence": 0.8940465
+        },
+        {
+            "task_type": "write python function to parse json data",
+            "reward": 0.7,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.230",
+            "confidence": 0.6168154
+        },
+        {
+            "task_type": "research latest machine learning frameworks",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.806",
+            "confidence": 0.7033179
+        },
+        {
+            "task_type": "find best practices for api security",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.806",
+            "confidence": 0.84507173
+        },
+        {
+            "task_type": "document system architecture",
+            "reward": 0.7,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.808",
+            "confidence": 0.5028146
+        }
+    ]
+}

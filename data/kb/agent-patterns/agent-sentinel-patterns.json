@@ -1,0 +1,62 @@
+{
+    "agent": "Sentinel",
+    "metadata": {
+        "extracted_at": "2026-04-04T16:52:45.137",
+        "min_reward_threshold": 0.7,
+        "tier": "1-pattern-extraction",
+        "phase": "13"
+    },
+    "stats": {
+        "avg_reward": 0.6999999999999998,
+        "patterns_by_task": {
+            "find best practices for api security": 1,
+            "document system architecture": 1,
+            "research distributed system architectures": 1
+        },
+        "pattern_count": 3,
+        "task_types": [
+            "find best practices for api security",
+            "document system architecture",
+            "research distributed system architectures"
+        ],
+        "total_high_confidence": 3
+    },
+    "patterns": [
+        {
+            "task_type": "find best practices for api security",
+            "reward": 0.7,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:08.468",
+            "confidence": 0.6663364
+        },
+        {
+            "task_type": "document system architecture",
+            "reward": 0.7,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:08.469",
+            "confidence": 0.6481581
+        },
+        {
+            "task_type": "research distributed system architectures",
+            "reward": 0.7,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.806",
+            "confidence": 0.7825227
+        }
+    ]
+}

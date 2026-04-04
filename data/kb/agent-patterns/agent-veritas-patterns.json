@@ -1,0 +1,76 @@
+{
+    "agent": "Veritas",
+    "metadata": {
+        "extracted_at": "2026-04-04T16:52:45.137",
+        "min_reward_threshold": 0.7,
+        "tier": "1-pattern-extraction",
+        "phase": "13"
+    },
+    "stats": {
+        "avg_reward": 0.85,
+        "patterns_by_task": {
+            "write unit tests for authentication module": 1,
+            "review pull request for style and quality": 1,
+            "evaluate code architecture and design": 1,
+            "review": 1
+        },
+        "pattern_count": 4,
+        "task_types": [
+            "write unit tests for authentication module",
+            "review pull request for style and quality",
+            "evaluate code architecture and design",
+            "review"
+        ],
+        "total_high_confidence": 4
+    },
+    "patterns": [
+        {
+            "task_type": "review",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-13T10:35:00Z",
+            "confidence": 1.0
+        },
+        {
+            "task_type": "write unit tests for authentication module",
+            "reward": 0.7,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:08.469",
+            "confidence": 0.84752667
+        },
+        {
+            "task_type": "evaluate code architecture and design",
+            "reward": 0.7,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:08.469",
+            "confidence": 0.65803385
+        },
+        {
+            "task_type": "review pull request for style and quality",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.808",
+            "confidence": 0.6290883
+        }
+    ]
+}

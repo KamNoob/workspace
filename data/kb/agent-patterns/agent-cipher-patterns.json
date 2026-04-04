@@ -1,0 +1,112 @@
+{
+    "agent": "Cipher",
+    "metadata": {
+        "extracted_at": "2026-04-04T16:52:45.137",
+        "min_reward_threshold": 0.7,
+        "tier": "1-pattern-extraction",
+        "phase": "13"
+    },
+    "stats": {
+        "avg_reward": 1.0,
+        "patterns_by_task": {
+            "audit api endpoints for authentication": 2,
+            "penetration test strategy for web app": 1,
+            "threat model for cloud infrastructure": 2,
+            "security": 2
+        },
+        "pattern_count": 7,
+        "task_types": [
+            "audit api endpoints for authentication",
+            "penetration test strategy for web app",
+            "threat model for cloud infrastructure",
+            "security"
+        ],
+        "total_high_confidence": 7
+    },
+    "patterns": [
+        {
+            "task_type": "security",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-13T10:15:00Z",
+            "confidence": 1.0
+        },
+        {
+            "task_type": "security",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-13T10:45:00Z",
+            "confidence": 1.0
+        },
+        {
+            "task_type": "audit api endpoints for authentication",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:08.468",
+            "confidence": 0.6346707
+        },
+        {
+            "task_type": "threat model for cloud infrastructure",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:08.468",
+            "confidence": 0.8430331
+        },
+        {
+            "task_type": "audit api endpoints for authentication",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.807",
+            "confidence": 0.642981
+        },
+        {
+            "task_type": "threat model for cloud infrastructure",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.807",
+            "confidence": 0.663463
+        },
+        {
+            "task_type": "penetration test strategy for web app",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.807",
+            "confidence": 0.5128248
+        }
+    ]
+}

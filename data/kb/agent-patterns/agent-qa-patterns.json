@@ -1,0 +1,62 @@
+{
+    "agent": "QA",
+    "metadata": {
+        "extracted_at": "2026-04-04T16:52:45.137",
+        "min_reward_threshold": 0.7,
+        "tier": "1-pattern-extraction",
+        "phase": "13"
+    },
+    "stats": {
+        "avg_reward": 1.0,
+        "patterns_by_task": {
+            "design test strategy for new feature": 1,
+            "test": 1,
+            "create integration tests for api": 1
+        },
+        "pattern_count": 3,
+        "task_types": [
+            "design test strategy for new feature",
+            "test",
+            "create integration tests for api"
+        ],
+        "total_high_confidence": 3
+    },
+    "patterns": [
+        {
+            "task_type": "test",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-13T10:40:00Z",
+            "confidence": 1.0
+        },
+        {
+            "task_type": "create integration tests for api",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:08.469",
+            "confidence": 0.5407484
+        },
+        {
+            "task_type": "design test strategy for new feature",
+            "reward": 1.0,
+            "success": true,
+            "metadata": {
+                "subtask": "",
+                "complexity": "standard",
+                "task_id": ""
+            },
+            "timestamp": "2026-03-14T14:29:22.807",
+            "confidence": 0.5996221
+        }
+    ]
+}
