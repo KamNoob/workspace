@@ -1,7 +1,7 @@
 # MEMORY.md - Long-Term Memory (Condensed)
 
-Last updated: 2026-04-04 10:15 UTC — KB SQLite Migration Complete (Phase 1 & 2)  
-Status: ✅ PHASE 12A LIVE | KB MIGRATION COMPLETE | SYSTEM STABLE | ALL CHECKS PASSED
+Last updated: 2026-04-04 17:08 UTC — KB-First Protocol + Freshness Verification Active  
+Status: ✅ PHASE 12A LIVE | KB MIGRATION COMPLETE | KB-FIRST ACTIVE | SYSTEM STABLE | ALL CHECKS PASSED
 
 ---
 
@@ -94,6 +94,10 @@ Status: ✅ PHASE 12A LIVE | KB MIGRATION COMPLETE | SYSTEM STABLE | ALL CHECKS 
 
 | Date | Decision | Reason |
 |------|----------|--------|
+| 2026-04-04 | KB Freshness Verification protocol | Always verify KB age before answering (critical for accuracy) |
+| 2026-04-04 | Scout KB-first protocol | Research agent optimized for KB foundation + web supplement |
+| 2026-04-04 | Morpheus KB-first + verification | Lead agent now KB-first with freshness checks |
+| 2026-04-04 | Added 4 KB docs to database | Azure Foundry (2), Fusion Agent Studio, Oracle integration guides |
 | 2026-04-03 | Phase 12A launched with container sandboxing | Sandboxing complete, all 4 tests passed, 92% confidence |
 | 2026-04-03 | Keep bind mounts (not Docker volumes) | Simpler, debuggable, host filesystem access |
 | 2026-03-29 | Disabled WhatsApp (flapping) | Auth validation issue, gateway stability priority |
@@ -160,8 +164,41 @@ Status: ✅ PHASE 12A LIVE | KB MIGRATION COMPLETE | SYSTEM STABLE | ALL CHECKS 
 | Memory compression | Backlog | 50-80% size reduction |
 | Phase 12B | Planned | Agent pair optimization |
 
+## TODAY'S WORK (2026-04-04)
+
+### KB System Enhancements
+- ✅ KB-First Search Protocol (Morpheus + Scout)
+- ✅ KB Freshness Verification (always check age)
+- ✅ Added 4 new KB documents (Azure Foundry, Fusion, Oracle)
+- ✅ KB Update Guide created (6 methods for KB management)
+- ✅ Total KB docs: 9 (azure-foundry, fusion-agent-studio, oracle-fusion, nikola-tesla x2, extracted-patterns, tesla-369, knowledge-base)
+
+### Protocols Activated
+- ✅ MORPHEUS-KB-FIRST.md (KB search priority)
+- ✅ MORPHEUS-KB-VERIFICATION.md (freshness checks)
+- ✅ SCOUT-KB-FIRST.md (research agent optimization)
+- ✅ Updated SOUL.md + IDENTITY.md to reflect changes
+
+### System Health
+- ✅ Gateway: Running normally (port 18789, RPC OK)
+- ✅ Memory: 97.9% recall, 2ms lookup
+- ✅ Phase 7B: Hourly cycles nominal (16:02 UTC completed)
+- ✅ Q-Learning: 15 top agent-task pairs, avg Q=0.548
+- ✅ Bonjour mDNS: Cosmetic flapping (no impact)
+
+### Today's Key Commits
+- d6877bd: Azure Foundry KB guide
+- dc3bddc: Fusion Agent Studio KB guide  
+- df6ddfe: Oracle Fusion Agent Studio KB guide
+- cf5a4f4: Morpheus KB-first protocol
+- 42659a4: Scout KB-first protocol
+- caaac4c: KB Update Guide documentation
+- c107d93: KB Freshness Verification protocol
+- 275873d: SOUL.md update
+
 ---
 
-_Condensed: 2026-04-03 23:28 UTC (84KB → ~5KB, ~94% reduction)_  
-_Previous: Full daily log history in memory/YYYY-MM-DD.md files_  
+_Consolidated: 2026-04-04 17:11 UTC_  
+_Memory: 59 files → consolidated into core + daily logs_  
+_Daily files remain at: memory/YYYY-MM-DD.md for reference_  
 _Next review: Sunday 2026-04-05 (memory maintenance heartbeat)_
