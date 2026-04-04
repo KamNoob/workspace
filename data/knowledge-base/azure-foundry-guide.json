@@ -1,0 +1,265 @@
+{
+  "metadata": {
+    "title": "Azure AI Foundry - Complete Guide",
+    "type": "platform_documentation",
+    "source": "Microsoft Learn + Official Documentation",
+    "created": "2026-04-04T16:14:00Z",
+    "last_updated": "2026-04-04T16:14:00Z",
+    "keywords": ["Azure", "Foundry", "AI", "agents", "models", "platform", "deployment"],
+    "version": "1.0"
+  },
+  "overview": {
+    "description": "Microsoft Foundry is a comprehensive Azure-based platform for building, deploying, and managing AI applications and agents at scale. It provides integrated tools for creating generative AI applications, managing models, monitoring performance, and implementing trustworthy AI practices.",
+    "purpose": "Enable developers and teams to build production-grade AI applications with enterprise-grade governance, monitoring, and safety features."
+  },
+  "key_features": {
+    "ai_application_development": {
+      "description": "Build AI apps and agents using pre-integrated Azure services",
+      "components": [
+        "AI app templates for rapid prototyping",
+        "Agent creation and management",
+        "Model deployment and configuration",
+        "Code samples and pre-built integrations"
+      ]
+    },
+    "project_management": {
+      "description": "Organize and manage AI projects",
+      "features": [
+        "Project-based resource organization",
+        "Default project designation",
+        "Multi-project support per Foundry resource",
+        "Team member access controls"
+      ]
+    },
+    "model_deployment": {
+      "description": "Deploy and manage large language models",
+      "capabilities": [
+        "Support for various LLM models (DeepSeek-V3.1, etc.)",
+        "Model configuration and fine-tuning",
+        "Endpoint creation and authentication",
+        "Version management (2.x API standard)"
+      ]
+    },
+    "monitoring_and_analytics": {
+      "description": "Track and analyze application performance",
+      "tools": [
+        "Application analytics dashboard",
+        "Azure Monitor Application Insights integration",
+        "Azure Workbooks for visualization",
+        "Performance metrics and signal tracking"
+      ]
+    },
+    "governance_and_safety": {
+      "description": "Ensure responsible AI deployment",
+      "components": [
+        "Foundry IQ (governance framework)",
+        "Content Safety features",
+        "AI Red Teaming Agent (preview)",
+        "Trustworthy AI evaluation",
+        "Agentic workflow evaluation"
+      ]
+    },
+    "observability": {
+      "description": "Monitor and trace applications",
+      "capabilities": [
+        "Application tracing via project library",
+        "Distributed tracing support",
+        "Real-time monitoring"
+      ]
+    }
+  },
+  "how_it_works": {
+    "architecture": "Foundry is built on Azure subscription-based resources, providing a unified portal for managing AI projects and their associated services.",
+    "project_lifecycle": [
+      {
+        "step": 1,
+        "phase": "Setup",
+        "description": "Create a Foundry project in Azure subscription",
+        "tasks": [
+          "Create/select Foundry resource",
+          "Create new project",
+          "Configure Azure services integration"
+        ]
+      },
+      {
+        "step": 2,
+        "phase": "Model Deployment",
+        "description": "Deploy AI models for your application",
+        "tasks": [
+          "Select model (e.g., DeepSeek-V3.1)",
+          "Configure model parameters",
+          "Create deployment endpoint",
+          "Verify authentication"
+        ]
+      },
+      {
+        "step": 3,
+        "phase": "Agent Creation",
+        "description": "Define agent behavior and instructions",
+        "tasks": [
+          "Define agent behavior",
+          "Set system instructions",
+          "Configure agent parameters",
+          "Test agent responses"
+        ]
+      },
+      {
+        "step": 4,
+        "phase": "Application Development",
+        "description": "Build application logic using Foundry SDK",
+        "tasks": [
+          "Use Azure AI Projects SDK 2.x",
+          "Implement agent conversations",
+          "Handle responses and errors",
+          "Test end-to-end flows"
+        ]
+      },
+      {
+        "step": 5,
+        "phase": "Monitoring & Optimization",
+        "description": "Track performance and refine",
+        "tasks": [
+          "Monitor via analytics dashboard",
+          "Review performance metrics",
+          "Optimize based on insights",
+          "Ensure governance compliance"
+        ]
+      }
+    ]
+  },
+  "quickstart_guide": {
+    "prerequisites": [
+      "Azure subscription",
+      "Python 3.8+ (for SDK usage)",
+      "Basic understanding of AI/LLMs"
+    ],
+    "setup_steps": [
+      {
+        "step": 1,
+        "action": "Navigate to Azure AI Foundry portal",
+        "url": "https://ai.azure.com"
+      },
+      {
+        "step": 2,
+        "action": "Create or select a project"
+      },
+      {
+        "step": 3,
+        "action": "Deploy a model from available options"
+      },
+      {
+        "step": 4,
+        "action": "Verify project endpoint and authentication"
+      },
+      {
+        "step": 5,
+        "action": "Create an agent with behavior instructions"
+      },
+      {
+        "step": 6,
+        "action": "Test agent with sample inputs"
+      }
+    ],
+    "code_example": {
+      "language": "Python",
+      "sdk_version": "Azure AI Projects 2.x",
+      "sample": "response = run_agent_conversation(model='DeepSeek-V3.1', instructions='You are a creative assistant who writes beautiful short poems.', user_input='Write a poem about spring and hope.')"
+    }
+  },
+  "key_concepts": {
+    "project": {
+      "definition": "Container for organizing AI application resources",
+      "features": [
+        "Resource grouping",
+        "Team collaboration",
+        "Access control",
+        "Default project designation"
+      ]
+    },
+    "agent": {
+      "definition": "Autonomous entity that defines application behavior",
+      "characteristics": [
+        "Consistent responses without repeating instructions",
+        "User interaction management",
+        "Behavior definition via instructions",
+        "Model-based decision making"
+      ]
+    },
+    "model_deployment": {
+      "definition": "Live instance of an LLM accessible via API endpoint",
+      "components": [
+        "Model selection",
+        "Endpoint configuration",
+        "Authentication credentials",
+        "Request/response handling"
+      ]
+    }
+  },
+  "versions_and_compatibility": {
+    "current_version": "Foundry (latest portal)",
+    "api_version": "Azure AI Projects 2.x",
+    "legacy": {
+      "name": "Foundry (classic)",
+      "note": "Older version using Azure AI Projects 1.x",
+      "compatibility": "Not compatible with 2.x API"
+    },
+    "migration_note": "New projects should use 2.x API. Legacy projects can reference Foundry (classic) documentation."
+  },
+  "portal_features": {
+    "foundry_portal": {
+      "url": "https://ai.azure.com",
+      "features": [
+        "Single default project per Foundry resource display",
+        "Project customization (left pane per user, per project)",
+        "Management center for governance",
+        "Analytics dashboard",
+        "Resource navigation"
+      ]
+    },
+    "management_center": {
+      "purpose": "Streamline governance and management",
+      "capabilities": [
+        "User access management",
+        "Resource organization",
+        "Policy enforcement",
+        "Audit logging"
+      ]
+    }
+  },
+  "pricing": {
+    "model": "Pay-as-you-go based on services used",
+    "details": "Each Azure service (compute, storage, API calls) has individual billing. Total Foundry cost = sum of component service costs.",
+    "cost_factors": [
+      "Model deployment compute",
+      "API call volume",
+      "Storage usage",
+      "Monitoring/analytics features"
+    ]
+  },
+  "best_practices": [
+    "Start with a well-defined project structure",
+    "Use agents to abstract behavior logic",
+    "Monitor performance via analytics dashboard regularly",
+    "Implement Content Safety for user-facing applications",
+    "Use Application Insights for distributed tracing",
+    "Version control your agent definitions",
+    "Test agents thoroughly before production deployment",
+    "Leverage pre-built code samples from GitHub"
+  ],
+  "resources": {
+    "official_documentation": "https://learn.microsoft.com/en-us/azure/foundry/",
+    "quickstart": "https://learn.microsoft.com/en-us/azure/foundry/quickstarts/get-started-code",
+    "github_samples": "GitHub - customizable code samples and pre-integrated Azure services",
+    "portal": "https://ai.azure.com",
+    "tutorials": "https://learn.microsoft.com/en-us/azure/foundry/tutorials/quickstart-create-foundry-resources"
+  },
+  "use_cases": [
+    "Generative AI chatbots",
+    "Autonomous agents for task automation",
+    "Content generation applications",
+    "Data analysis and insights",
+    "Customer service automation",
+    "Code assistance tools"
+  ],
+  "fts_keywords": "azure foundry AI platform agent deployment model LLM endpoint project management monitoring governance trustworthy ai content safety"
+}
