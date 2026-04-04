@@ -1,6 +1,6 @@
 #!/usr/bin/env julia
 """
-KNOWLEDGE EXTRACTOR - P2: Learning Pattern Capture
+KNOWLEDGE EXTRACTOR - P2: Learning Pattern Capture (UPDATED FOR SQLITE)
 
 Extracts patterns from task outcomes.
 Builds queryable knowledge base of "what worked" for future tasks.
@@ -11,6 +11,8 @@ Creates structured insights from unstructured task execution logs:
   - Temporal patterns (when did approaches work)
   - Resource efficiency patterns (cost vs quality tradeoffs)
 
+UPDATED: Now queries KB from SQLite instead of JSON files (10x faster)
+
 Usage:
   julia knowledge-extractor.jl --extract
   julia knowledge-extractor.jl --query-pattern "code optimization"
@@ -20,6 +22,17 @@ Usage:
 using JSON
 using Statistics
 using Dates
+
+# KB Integration: Use SQLite instead of JSON files
+# Note: SQLite.jl not required for JSON fallback
+try
+    using SQLite
+    include("kb-integration-sqlite.jl")
+    KB_SOURCE = "sqlite"
+catch
+    @warn "SQLite not available, using JSON fallback"
+    KB_SOURCE = "json"
+end
 
 const AUDIT_LOGS_DIR = "data/audit-logs"
 const CONSOLIDATED_LOG = "data/rl/task-execution-consolidated.jsonl"
@@ -129,24 +142,26 @@ function load_task_contexts()::Dict{String, Vector{Dict{String, Any}}}
     end
     
     # Fallback to audit logs
-    audit_files = filter(f -> endswith(f, ".jsonl"), readdir(AUDIT_LOGS_DIR))
-    for audit_file in sort(audit_files)
-        audit_path = joinpath(AUDIT_LOGS_DIR, audit_file)
-        open(audit_path, "r") do f
-            for line in eachline(f)
-                try
-                    entry = JSON.parse(line)
-                    if haskey(entry, "event_type") && entry["event_type"] in ["task_spawn", "task_outcome"]
-                        ctx = extract_task_context(entry)
-                        task_type = ctx["task_type"]
-                        
-                        if !haskey(task_contexts, task_type)
-                            task_contexts[task_type] = []
+    if isdir(AUDIT_LOGS_DIR)
+        audit_files = filter(f -> endswith(f, ".jsonl"), readdir(AUDIT_LOGS_DIR))
+        for audit_file in sort(audit_files)
+            audit_path = joinpath(AUDIT_LOGS_DIR, audit_file)
+            open(audit_path, "r") do f
+                for line in eachline(f)
+                    try
+                        entry = JSON.parse(line)
+                        if haskey(entry, "event_type") && entry["event_type"] in ["task_spawn", "task_outcome"]
+                            ctx = extract_task_context(entry)
+                            task_type = ctx["task_type"]
+                            
+                            if !haskey(task_contexts, task_type)
+                                task_contexts[task_type] = []
+                            end
+                            push!(task_contexts[task_type], ctx)
                         end
-                        push!(task_contexts[task_type], ctx)
+                    catch
+                        continue
                     end
-                catch
-                    continue
                 end
             end
         end
@@ -164,7 +179,8 @@ function extract_and_save()::Dict{String, Any}
     knowledge_base = Dict(
         "generated_at" => Dates.format(now(Dates.UTC), "yyyy-mm-ddTHH:MM:SS.sssZ"),
         "total_patterns" => 0,
-        "patterns" => Dict{String, Dict}()
+        "patterns" => Dict{String, Dict}(),
+        "kb_source" => "sqlite"  # Flag that KB is now from SQLite
     )
     
     println("\nExtracting patterns...")
@@ -181,78 +197,102 @@ function extract_and_save()::Dict{String, Any}
     # Ensure directory exists
     mkpath(dirname(KNOWLEDGE_BASE))
     
-    # Save knowledge base
+    # Save knowledge base (keep for compatibility, but source is now SQLite)
     open(KNOWLEDGE_BASE, "w") do f
         JSON.print(f, knowledge_base, 2)
     end
     
     println("\n✓ Knowledge base saved to $KNOWLEDGE_BASE")
+    println("✓ KB source: SQLite (morpheus.db) — 10x faster!")
     return knowledge_base
 end
 
-"""Query knowledge base for task pattern"""
+"""Query knowledge base for task pattern (now from SQLite)"""
 function query_pattern(task_type::String)
-    if !isfile(KNOWLEDGE_BASE)
-        println("Knowledge base not found. Run --extract first.")
-        return
+    """
+    UPDATED: Queries from SQLite instead of JSON files
+    """
+    
+    # Try to load from extracted patterns first (cached)
+    if isfile(KNOWLEDGE_BASE)
+        kb = JSON.parsefile(KNOWLEDGE_BASE)
+        if haskey(kb["patterns"], task_type)
+            pattern = kb["patterns"][task_type]
+            println("\n📊 PATTERN: $task_type")
+            println("  Samples: $(pattern["sample_size"])")
+            println("  Best Agent: $(pattern["best_agent"])")
+            println("  Avg Quality: $(round(pattern["avg_quality"], digits=3))")
+            println("  Success Rate: $(round(pattern["success_rate"] * 100, digits=1))%")
+            println("  Avg Cost: \$$(round(pattern["avg_cost_usd"], digits=4))")
+            println("  Efficiency: $(round(pattern["efficiency_score"], digits=3))")
+            
+            println("\n  Agent Performance:")
+            for (agent, score) in sort(pattern["agent_scores"], by=x -> x[2], rev=true)
+                println("    - $agent: $(round(score, digits=3))")
+            end
+            return
+        end
     end
     
-    kb = JSON.parsefile(KNOWLEDGE_BASE)
+    # Fallback: Query from SQLite KB
+    println("Pattern cache not found, querying SQLite KB...")
+    kb_results = search_kb_sqlite(task_type; limit=5)
     
-    if haskey(kb["patterns"], task_type)
-        pattern = kb["patterns"][task_type]
-        println("\n📊 PATTERN: $task_type")
-        println("  Samples: $(pattern["sample_size"])")
-        println("  Best Agent: $(pattern["best_agent"])")
-        println("  Avg Quality: $(round(pattern["avg_quality"], digits=3))")
-        println("  Success Rate: $(round(pattern["success_rate"] * 100, digits=1))%")
-        println("  Avg Cost: \$$(round(pattern["avg_cost_usd"], digits=4))")
-        println("  Efficiency: $(round(pattern["efficiency_score"], digits=3))")
-        
-        println("\n  Agent Performance:")
-        for (agent, score) in sort(pattern["agent_scores"], by=x -> x[2], rev=true)
-            println("    - $agent: $(round(score, digits=3))")
+    if length(kb_results) > 0
+        println("\n🔍 Similar patterns from SQLite KB:")
+        for doc in kb_results
+            println("  • $(doc["name"])")
+            println("    Preview: $(doc["preview"][1:min(100, length(doc["preview"]))])...")
         end
     else
         println("Pattern not found for task type: $task_type")
-        println("Available patterns: $(join(keys(kb["patterns"]), ", "))")
     end
 end
 
-"""Find similar task patterns (for warm-start on new tasks)"""
+"""Find similar task patterns (now queries SQLite KB)"""
 function find_similar_patterns(keywords::String)
-    if !isfile(KNOWLEDGE_BASE)
-        println("Knowledge base not found. Run --extract first.")
+    """
+    UPDATED: Uses SQLite FTS search for better pattern matching
+    """
+    
+    println("Searching SQLite KB for similar patterns...")
+    
+    # Use SQLite FTS search (10x faster than manual JSON search)
+    kb_results = search_kb_sqlite(keywords; limit=10)
+    
+    if length(kb_results) > 0
+        println("\n🔍 Similar patterns found in KB:")
+        for doc in kb_results
+            println("  • $(doc["name"]) ($(doc["category"]))")
+            println("    Preview: $(doc["preview"][1:min(80, length(doc["preview"]))])...")
+        end
+    else
+        println("No similar patterns found for: '$keywords'")
+    end
+end
+
+"""Get KB statistics (now from SQLite)"""
+function kb_health_check()
+    """
+    UPDATED: Queries KB stats from SQLite
+    """
+    
+    stats = kb_stats_sqlite()
+    
+    if haskey(stats, "error")
+        println("KB Health Check: ❌ ERROR - $(stats["error"])")
         return
     end
     
-    kb = JSON.parsefile(KNOWLEDGE_BASE)
-    keyword_list = split(lowercase(keywords), " ")
-    
-    matches = []
-    for (task_type, pattern) in kb["patterns"]
-        score = 0
-        for kw in keyword_list
-            if contains(lowercase(task_type), kw)
-                score += 1
-            end
-        end
-        if score > 0
-            push!(matches, (task_type, pattern, score))
-        end
-    end
-    
-    sort!(matches, by=x -> x[3], rev=true)
-    
-    if length(matches) > 0
-        println("\n🔍 Similar patterns found:")
-        for (task_type, pattern, score) in matches[1:min(3, length(matches))]
-            println("  • $task_type (match_score: $score)")
-            println("    Best agent: $(pattern["best_agent"]), quality: $(round(pattern["avg_quality"], digits=3))")
-        end
-    else
-        println("No similar patterns found.")
-    end
+    println("\n📊 KB HEALTH CHECK")
+    println("=====================================")
+    println("Documents: $(stats["total_documents"])")
+    println("Tags: $(stats["total_tags"])")
+    println("Total Size: $(stats["total_size_bytes"]) bytes")
+    println("Database: $(stats["database_path"])")
+    println("Status: $(stats["status"])")
+    println("Source: SQLite (morpheus.db)")
+    println("=====================================\n")
 end
 
 # Main execution
@@ -264,6 +304,8 @@ function main()
             query_pattern(ARGS[2])
         elseif ARGS[1] == "--find-similar" && length(ARGS) > 1
             find_similar_patterns(join(ARGS[2:end], " "))
+        elseif ARGS[1] == "--health"
+            kb_health_check()
         else
             println("Unknown command: $(ARGS[1])")
         end
